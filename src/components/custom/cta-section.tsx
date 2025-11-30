@@ -13,6 +13,16 @@ export default function CTASection() {
   const isInView = useInView(ref, { once: true });
   const t = useI18n();
 
+  // Get industries from translation
+  const industries = [
+    t("cta.industries.0"),
+    t("cta.industries.1"),
+    t("cta.industries.2"),
+    t("cta.industries.3"),
+    t("cta.industries.4"),
+    t("cta.industries.5")
+  ];
+
   return (
     <section ref={ref} className="relative py-24 overflow-hidden">
       {/* Background with African Pattern */}
@@ -92,15 +102,15 @@ export default function CTASection() {
               {t("cta.trustedBy")}
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              {[0, 1, 2, 3, 4, 5].map((index) => (
+              {industries.map((industry, index) => (
                 <motion.span
-                  key={index}
+                  key={industry}
                   className="text-xs text-foreground bg-accent px-3 py-1 rounded-full"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                   transition={{ duration: 0.4, delay: 1 + index * 0.1, ease: "easeOut" }}
                 >
-                  {t(`cta.industries.${index}`)}
+                  {industry}
                 </motion.span>
               ))}
             </div>

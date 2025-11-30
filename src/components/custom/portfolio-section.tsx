@@ -121,7 +121,7 @@ const caseStudies = [
     client: "Petroleum Industry",
     category: "AI & IoT",
     description: "Intelligent fuel monitoring system combining IoT sensors and AI to detect leaks, track consumption, prevent theft, and optimize fuel distribution across multiple locations.",
-    image: "/portfolio/fuelguard-ai.jpg",
+    image: "/portfolio/fuelguard.webp",
     technologies: ["IoT Sensors", "Machine Learning", "React", "Python", "Cloud Functions"],
     results: {
       theftPrevention: "95%",

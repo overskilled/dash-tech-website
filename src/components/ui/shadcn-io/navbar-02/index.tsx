@@ -373,7 +373,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
             {isMobile && (
               <div className="flex items-center gap-2">
                 {/* Language Selector - Mobile */}
-                <LanguageSelector />
+                {/* <LanguageSelector /> */}
 
                 {/* Mobile menu */}
                 <Popover>

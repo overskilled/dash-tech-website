@@ -53,6 +53,89 @@ const processSteps = [
   }
 ];
 
+// Define the exact translation keys as const
+const stepKeys = {
+  titles: [
+    "process.stepsData.0.title",
+    "process.stepsData.1.title",
+    "process.stepsData.2.title",
+    "process.stepsData.3.title",
+    "process.stepsData.4.title",
+    "process.stepsData.5.title"
+  ] as const,
+  descriptions: [
+    "process.stepsData.0.description",
+    "process.stepsData.1.description",
+    "process.stepsData.2.description",
+    "process.stepsData.3.description",
+    "process.stepsData.4.description",
+    "process.stepsData.5.description"
+  ] as const,
+  durations: [
+    "process.stepsData.0.duration",
+    "process.stepsData.1.duration",
+    "process.stepsData.2.duration",
+    "process.stepsData.3.duration",
+    "process.stepsData.4.duration",
+    "process.stepsData.5.duration"
+  ] as const,
+  people: [
+    "process.stepsData.0.people",
+    "process.stepsData.1.people",
+    "process.stepsData.2.people",
+    "process.stepsData.3.people",
+    "process.stepsData.4.people",
+    "process.stepsData.5.people"
+  ] as const,
+  deliverables: [
+    [
+      "process.stepsData.0.deliverables.0",
+      "process.stepsData.0.deliverables.1",
+      "process.stepsData.0.deliverables.2"
+    ] as const,
+    [
+      "process.stepsData.1.deliverables.0",
+      "process.stepsData.1.deliverables.1",
+      "process.stepsData.1.deliverables.2"
+    ] as const,
+    [
+      "process.stepsData.2.deliverables.0",
+      "process.stepsData.2.deliverables.1",
+      "process.stepsData.2.deliverables.2"
+    ] as const,
+    [
+      "process.stepsData.3.deliverables.0",
+      "process.stepsData.3.deliverables.1",
+      "process.stepsData.3.deliverables.2"
+    ] as const,
+    [
+      "process.stepsData.4.deliverables.0",
+      "process.stepsData.4.deliverables.1",
+      "process.stepsData.4.deliverables.2"
+    ] as const,
+    [
+      "process.stepsData.5.deliverables.0",
+      "process.stepsData.5.deliverables.1",
+      "process.stepsData.5.deliverables.2"
+    ] as const
+  ] as const
+};
+
+// Define the translation key type
+type TranslationKey = 
+  | "process.title"
+  | "process.highlightedTitle"
+  | "process.subtitle"
+  | "process.steps.stepNumber"
+  | "process.steps.keyDeliverables"
+  | "process.cta.text"
+  | "process.cta.button"
+  | typeof stepKeys.titles[number]
+  | typeof stepKeys.descriptions[number]
+  | typeof stepKeys.durations[number]
+  | typeof stepKeys.people[number]
+  | typeof stepKeys.deliverables[number][number];
+
 export default function ProcessSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true});
@@ -88,7 +171,7 @@ export default function ProcessSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-            {t("process.title")} <span className="text-primary">{t("process.highlightedTitle")}</span>
+            {t("process.title" as TranslationKey)} <span className="text-primary">{t("process.highlightedTitle" as TranslationKey)}</span>
           </h2>
           <motion.p
             className="text-lg sm:text-xl text-muted-foreground leading-relaxed"
@@ -96,7 +179,7 @@ export default function ProcessSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            {t("process.subtitle")}
+            {t("process.subtitle" as TranslationKey)}
           </motion.p>
         </motion.div>
 
@@ -193,7 +276,7 @@ export default function ProcessSection() {
                             <h3 className={`text-xl font-bold transition-colors duration-300 ${
                               isActive ? "text-primary" : "text-foreground"
                             }`}>
-                              {t(`process.stepsData.${index}.title`)}
+                              {t(stepKeys.titles[index])}
                             </h3>
                             {isActive && (
                               <motion.div
@@ -210,11 +293,11 @@ export default function ProcessSection() {
                           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                             <div className="flex items-center gap-1">
                               <Clock className="w-4 h-4" />
-                              {t(`process.stepsData.${index}.duration`)}
+                              {t(stepKeys.durations[index])}
                             </div>
                             <div className="flex items-center gap-1">
                               <Users className="w-4 h-4" />
-                              {t(`process.stepsData.${index}.people`)}
+                              {t(stepKeys.people[index])}
                             </div>
                           </div>
                         </div>
@@ -225,13 +308,13 @@ export default function ProcessSection() {
                             ? "bg-primary text-primary-foreground"
                             : "bg-accent text-muted-foreground"
                         }`}>
-                          {t("process.steps.stepNumber")} {index + 1}
+                          {t("process.steps.stepNumber" as TranslationKey)} {index + 1}
                         </div>
                       </div>
 
                       {/* Description */}
                       <p className="text-muted-foreground mb-6 leading-relaxed">
-                        {t(`process.stepsData.${index}.description`)}
+                        {t(stepKeys.descriptions[index])}
                       </p>
 
                       {/* Deliverables */}
@@ -245,19 +328,19 @@ export default function ProcessSection() {
                         className="overflow-hidden"
                       >
                         <h4 className="text-sm font-semibold text-foreground mb-3">
-                          {t("process.steps.keyDeliverables")}
+                          {t("process.steps.keyDeliverables" as TranslationKey)}
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                          {[0, 1, 2].map((deliverableIndex) => (
+                          {stepKeys.deliverables[index].map((deliverableKey, idx) => (
                             <motion.div
-                              key={deliverableIndex}
+                              key={deliverableKey}
                               className="flex items-center gap-2 text-sm text-muted-foreground"
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.1 * deliverableIndex }}
+                              transition={{ delay: 0.1 * idx }}
                             >
                               <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                              {t(`process.stepsData.${index}.deliverables.${deliverableIndex}`)}
+                              {t(deliverableKey)}
                             </motion.div>
                           ))}
                         </div>
@@ -278,10 +361,10 @@ export default function ProcessSection() {
           transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
         >
           <p className="text-muted-foreground text-lg mb-6">
-            {t("process.cta.text")}
+            {t("process.cta.text" as TranslationKey)}
           </p>
           <Button size="lg">
-            {t("process.cta.button")}
+            {t("process.cta.button" as TranslationKey)}
           </Button>
         </motion.div>
       </div>

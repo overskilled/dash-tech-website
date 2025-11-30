@@ -239,7 +239,7 @@ export default function Footer() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <span>{t("footer.copyright", { year: currentYear })}</span>
+                            <span>{t("footer.copyright")}</span>
                             <span className="flex items-center gap-1">
                                 {t("footer.madeWith")} <Heart className="w-3 h-3 text-red-500" /> {t("footer.inAfrica")}
                             </span>

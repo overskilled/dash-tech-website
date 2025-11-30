@@ -115,7 +115,7 @@ export default {
         "ceo": {
             "quote": "La technologie a le pouvoir de transformer l'avenir de l'Afrique. Chez Dash Tech, nous ne nous contentons pas de construire des solutions—nous bâtissons des partenariats qui génèrent des changements significatifs et créent un impact durable à travers notre continent.",
             "name": "Diletta EGBE",
-            "position": "PDG & Fondatrice",
+            "position": "DG & Fondatrice",
             "company": "Dash Tech"
         },
         "features": {
@@ -363,7 +363,7 @@ export default {
             "placeholder": "Entrez votre email",
             "button": "S'abonner"
         },
-        "copyright": "© {{year}} Dash Tech. Tous droits réservés.",
+        "copyright": "© 2025 Dash Tech. Tous droits réservés.",
         "madeWith": "Fait avec",
         "inAfrica": "en Afrique",
         "legal": {
