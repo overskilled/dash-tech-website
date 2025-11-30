@@ -6,10 +6,12 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Star, Zap, Users } from "lucide-react";
 import { Button } from "../ui/button";
+import { useI18n } from "@/locales/client";
 
 export default function CTASection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const t = useI18n();
 
   return (
     <section ref={ref} className="relative py-24 overflow-hidden">
@@ -34,9 +36,9 @@ export default function CTASection() {
             className="mb-8"
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Ready to Transform Your{" "}
+              {t("cta.title.line1")}{" "}
               <span className="text-primary relative">
-                Business?
+                {t("cta.title.highlighted")}
                 <motion.div
                   className="absolute -bottom-2 left-0 w-full h-1 bg-primary"
                   initial={{ scaleX: 0 }}
@@ -45,48 +47,10 @@ export default function CTASection() {
                 />
               </span>
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              Join the growing number of African businesses leveraging our innovative 
-              digital solutions to drive growth and efficiency.
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              {t("cta.subtitle")}
             </p>
           </motion.div>
-
-          {/* Stats */}
-          {/* <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          >
-            {[
-              { icon: Users, number: "100+", label: "Clients Served" },
-              { icon: Zap, number: "50+", label: "Projects Delivered" },
-              { icon: Star, number: "98%", label: "Satisfaction Rate" },
-            ].map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  className="text-center p-4"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1, ease: "easeOut" }}
-                >
-                  <div className="flex justify-center mb-3">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="text-2xl font-bold text-foreground mb-1">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-gray-300 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div> */}
 
           {/* CTA Buttons */}
           <motion.div
@@ -96,7 +60,7 @@ export default function CTASection() {
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
             <Button size={"lg"}>
-              Start Your Project
+              {t("cta.buttons.primary")}
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -105,8 +69,8 @@ export default function CTASection() {
               </motion.div>
             </Button>
             
-            <Button size={"lg"}  variant={"outline"}> 
-              Schedule a Call
+            <Button size={"lg"} variant={"outline"}> 
+              {t("cta.buttons.secondary")}
               <motion.div
                 className="w-5 h-5 rounded-full border-2 border-primary group-hover:border-primary-foreground flex items-center justify-center"
                 whileHover={{ rotate: 180 }}
@@ -124,26 +88,19 @@ export default function CTASection() {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           >
-            <p className="text-gray-400 text-sm mb-4">
-              Trusted by leading businesses across Africa
+            <p className="text-muted-foreground text-sm mb-4">
+              {t("cta.trustedBy")}
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              {[
-                "Manufacturing",
-                "Logistics",
-                "Energy",
-                "Government",
-                "Healthcare",
-                "Retail"
-              ].map((industry, index) => (
+              {[0, 1, 2, 3, 4, 5].map((index) => (
                 <motion.span
-                  key={industry}
-                  className="text-xs text-white font-medium px-3 py-1 bg-accent rounded-full"
+                  key={index}
+                  className="text-xs text-foreground bg-accent px-3 py-1 rounded-full"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                   transition={{ duration: 0.4, delay: 1 + index * 0.1, ease: "easeOut" }}
                 >
-                  {industry}
+                  {t(`cta.industries.${index}`)}
                 </motion.span>
               ))}
             </div>

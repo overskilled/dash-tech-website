@@ -4,7 +4,7 @@ import PartnerSection from "@/components/custom/partner-section";
 import PortfolioSection from "@/components/custom/portfolio-section";
 import ProcessSection from "@/components/custom/process-section";
 import ServicesSection from "@/components/custom/service-section";
-import WhyChooseUsSection from "@/components/custom/wy-choose-us";
+import WhyChooseUsSection from "@/components/custom/why-choose-us";
 
 export default function Home() {
   return (

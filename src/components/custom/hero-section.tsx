@@ -3,8 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/locales/client";
 
 export function HeroSection() {
+  const t = useI18n();
+
   return (
     <section
       className="relative -mt-16 h-[90vh] w-full overflow-hidden"
@@ -46,14 +49,17 @@ export function HeroSection() {
                    text-center lg:text-left lg:items-start max-w-5xl"
       >
         <motion.h1
+          id="hero-heading"
           className="font-semibold text-white drop-shadow-xl leading-tight
                      text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
           initial={{ y: 35, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 1.1 }}
         >
-          Empowering Africa's{" "}
-          <span className="block text-primary relative ml-1 inline-block">digital future</span>
+          {t('hero.title.line1')}{" "}
+          <span className="block text-primary relative ml-1 inline-block">
+            {t('hero.title.line2')}
+          </span>
         </motion.h1>
 
         <motion.p
@@ -63,9 +69,7 @@ export function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 1.1 }}
         >
-          Dash Tech Africa delivers innovative digital solutions that help
-          businesses grow, scale, and thrive in a connected world.
-          Transform your ideas into impactful technology.
+          {t('hero.description')}
         </motion.p>
 
         {/* CTA BUTTONS */}
@@ -93,7 +97,7 @@ export function HeroSection() {
               size="lg"
               className="font-semibold shadow-lg shadow-black/20 hover:scale-105 transition-all duration-300"
             >
-              Start your project
+              {t('hero.buttons.startProject')}
             </Button>
           </motion.div>
 
@@ -108,7 +112,7 @@ export function HeroSection() {
               size="lg"
               className="text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
             >
-              Discover services
+              {t('hero.buttons.discoverServices')}
               <ArrowRight className="ml-2" />
             </Button>
           </motion.div>

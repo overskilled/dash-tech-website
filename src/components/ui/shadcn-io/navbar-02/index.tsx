@@ -28,6 +28,7 @@ import {
 import type { ComponentProps } from 'react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import LanguageSelector from '@/components/LanguageSelector';
 
 // Simple logo component for the navbar
 const Logo = (props: React.SVGAttributes<SVGElement>) => {
@@ -113,50 +114,50 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
 
 // Default navigation links
 const defaultNavigationLinks: NavbarNavItem[] = [
-  { href: '#', label: 'Home' },
-  {
-    label: 'Features',
-    submenu: true,
-    type: 'description',
-    items: [
-      {
-        href: '#components',
-        label: 'Components',
-        description: 'Browse all components in the library.',
-      },
-      {
-        href: '#documentation',
-        label: 'Documentation',
-        description: 'Learn how to use the library.',
-      },
-      {
-        href: '#templates',
-        label: 'Templates',
-        description: 'Pre-built layouts for common use cases.',
-      },
-    ],
-  },
-  {
-    label: 'Pricing',
-    submenu: true,
-    type: 'simple',
-    items: [
-      { href: '#product-a', label: 'Product A' },
-      { href: '#product-b', label: 'Product B' },
-      { href: '#product-c', label: 'Product C' },
-      { href: '#product-d', label: 'Product D' },
-    ],
-  },
-  {
-    label: 'About',
-    submenu: true,
-    type: 'icon',
-    items: [
-      { href: '#getting-started', label: 'Getting Started', icon: 'BookOpenIcon' },
-      { href: '#tutorials', label: 'Tutorials', icon: 'LifeBuoyIcon' },
-      { href: '#about-us', label: 'About Us', icon: 'InfoIcon' },
-    ],
-  },
+  // { href: '#', label: 'Home' },
+  // {
+  //   label: 'Features',
+  //   submenu: true,
+  //   type: 'description',
+  //   items: [
+  //     {
+  //       href: '#components',
+  //       label: 'Components',
+  //       description: 'Browse all components in the library.',
+  //     },
+  //     {
+  //       href: '#documentation',
+  //       label: 'Documentation',
+  //       description: 'Learn how to use the library.',
+  //     },
+  //     {
+  //       href: '#templates',
+  //       label: 'Templates',
+  //       description: 'Pre-built layouts for common use cases.',
+  //     },
+  //   ],
+  // },
+  // {
+  //   label: 'Pricing',
+  //   submenu: true,
+  //   type: 'simple',
+  //   items: [
+  //     { href: '#product-a', label: 'Product A' },
+  //     { href: '#product-b', label: 'Product B' },
+  //     { href: '#product-c', label: 'Product C' },
+  //     { href: '#product-d', label: 'Product D' },
+  //   ],
+  // },
+  // {
+  //   label: 'About',
+  //   submenu: true,
+  //   type: 'icon',
+  //   items: [
+  //     { href: '#getting-started', label: 'Getting Started', icon: 'BookOpenIcon' },
+  //     { href: '#tutorials', label: 'Tutorials', icon: 'LifeBuoyIcon' },
+  //     { href: '#about-us', label: 'About Us', icon: 'InfoIcon' },
+  //   ],
+  // },
 ];
 
 // Language options
@@ -366,55 +367,13 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
           {/* Right side - Language selector and Auth buttons */}
           <div className="flex items-center justify-end gap-3 lg:flex-1">
             {/* Language Selector - Desktop */}
-            <div className="hidden lg:flex items-center">
-              <Select value={selectedLanguage} onValueChange={handleLanguageChange}>
-                <SelectTrigger className="w-28 h-9 border-border bg-transparent hover:bg-accent">
-                  <div className="flex items-center gap-2">
-                    <Globe className="w-4 h-4 text-muted-foreground" />
-                    <SelectValue>
-                      <div className="flex items-center gap-1">
-                        <span>{currentLanguage?.flag}</span>
-                        <span className="text-sm">{currentLanguage?.label}</span>
-                      </div>
-                    </SelectValue>
-                  </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {languages.map((language) => (
-                    <SelectItem key={language.value} value={language.value}>
-                      <div className="flex items-center gap-2">
-                        <span className="text-base">{language.flag}</span>
-                        <span>{language.label}</span>
-                      </div>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            <LanguageSelector />
 
             {/* Mobile menu trigger and Language selector */}
             {isMobile && (
               <div className="flex items-center gap-2">
                 {/* Language Selector - Mobile */}
-                <Select value={selectedLanguage} onValueChange={handleLanguageChange}>
-                  <SelectTrigger className="w-20 h-9 border-border bg-transparent hover:bg-accent">
-                    <SelectValue>
-                      <div className="flex items-center gap-1">
-                        <span>{currentLanguage?.flag}</span>
-                      </div>
-                    </SelectValue>
-                  </SelectTrigger>
-                  <SelectContent>
-                    {languages.map((language) => (
-                      <SelectItem key={language.value} value={language.value}>
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">{language.flag}</span>
-                          <span>{language.label}</span>
-                        </div>
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <LanguageSelector />
 
                 {/* Mobile menu */}
                 <Popover>

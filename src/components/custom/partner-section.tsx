@@ -7,6 +7,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { AnimatedBeam } from "../ui/shadcn-io/animated-beam";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/locales/client";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -32,6 +33,7 @@ export default function PartnerSection() {
     const containerRef = useRef<HTMLDivElement>(null);
     const div1Ref = useRef<HTMLDivElement>(null);
     const div2Ref = useRef<HTMLDivElement>(null);
+    const t = useI18n();
 
     const partners = [
         { title: "Cadyst Group", image: "/cadyst.webp" },
@@ -42,11 +44,12 @@ export default function PartnerSection() {
         { title: "FOCALI", image: "/focali.webp" },
     ];
 
+    // Get marquee texts as array
     const partnerTexts = [
-        "Join our growing network of innovative partners",
-        "Collaborating for digital transformation",
-        "Building Africa's digital future together",
-        "Partnering for innovation and growth"
+        t('partners.marqueeTexts.line1'),
+        t('partners.marqueeTexts.line2'),
+        t('partners.marqueeTexts.line3'),
+        t('partners.marqueeTexts.line4')
     ];
 
     return (
@@ -60,9 +63,9 @@ export default function PartnerSection() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-                        Trusted{" "}
+                        {t('partners.title.line1')}{" "}
                         <span className="text-primary relative inline-block">
-                            Partners
+                            {t('partners.title.line2')}
                             <motion.span
                                 className="absolute bottom-0 left-0 w-full h-1 bg-primary"
                                 initial={{ scaleX: 0 }}
@@ -84,8 +87,7 @@ export default function PartnerSection() {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     >
-                        Collaborating with industry leaders and innovative companies
-                        to drive digital transformation across Africa
+                        {t('partners.description')}
                     </motion.p>
                 </motion.div>
 
@@ -171,7 +173,7 @@ export default function PartnerSection() {
                 >
                     <Marquee className="[&>div]:overflow-hidden" >
                         <MarqueeContent className="overflow-hidden">
-                            {partnerTexts.map((text, index) => (
+                            {partnerTexts.map((text: string, index: number) => (
                                 <MarqueeItem
                                     key={index}
                                     className="mx-8 py-4"

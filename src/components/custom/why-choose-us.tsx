@@ -14,43 +14,46 @@ import {
   Quote
 } from "lucide-react";
 import { Button } from "../ui/button";
-
-const features = [
-  {
-    icon: Globe,
-    title: "African Expertise",
-    description: "Deep understanding of local markets, regulations, and business cultures across Africa"
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovative Solutions",
-    description: "Cutting-edge technology tailored to solve unique African business challenges"
-  },
-  {
-    icon: Settings,
-    title: "Dedicated Support",
-    description: "24/7 local support with rapid response times and personalized service"
-  },
-  {
-    icon: DollarSign,
-    title: "Cost-Effective Pricing",
-    description: "Competitive pricing models designed for African businesses of all sizes"
-  },
-  {
-    icon: Zap,
-    title: "Fast Deployment",
-    description: "Rapid implementation with minimal disruption to your operations"
-  },
-  {
-    icon: ShieldCheck,
-    title: "Proven Track Record",
-    description: "Successful implementations across multiple industries and countries"
-  }
-];
+import { useI18n } from "@/locales/client";
 
 export default function WhyChooseUsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const t = useI18n();
+
+  // Get features data from translations
+  const features = [
+    {
+      icon: Globe,
+      title: t('whyChooseUs.features.africanExpertise.title'),
+      description: t('whyChooseUs.features.africanExpertise.description')
+    },
+    {
+      icon: Lightbulb,
+      title: t('whyChooseUs.features.innovativeSolutions.title'),
+      description: t('whyChooseUs.features.innovativeSolutions.description')
+    },
+    {
+      icon: Settings,
+      title: t('whyChooseUs.features.dedicatedSupport.title'),
+      description: t('whyChooseUs.features.dedicatedSupport.description')
+    },
+    {
+      icon: DollarSign,
+      title: t('whyChooseUs.features.costEffective.title'),
+      description: t('whyChooseUs.features.costEffective.description')
+    },
+    {
+      icon: Zap,
+      title: t('whyChooseUs.features.fastDeployment.title'),
+      description: t('whyChooseUs.features.fastDeployment.description')
+    },
+    {
+      icon: ShieldCheck,
+      title: t('whyChooseUs.features.provenTrackRecord.title'),
+      description: t('whyChooseUs.features.provenTrackRecord.description')
+    }
+  ];
 
   return (
     <section ref={ref} className="py-20">
@@ -63,7 +66,7 @@ export default function WhyChooseUsSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            Why Choose <span className="text-primary">Dash Tech</span>
+            {t('whyChooseUs.title.line1')} <span className="text-primary">{t('whyChooseUs.title.line2')}</span>
           </h2>
           <motion.p
             className="text-lg sm:text-xl text-gray-300 leading-relaxed"
@@ -71,7 +74,7 @@ export default function WhyChooseUsSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Experience the difference of working with Africa's leading digital transformation partner
+            {t('whyChooseUs.description')}
           </motion.p>
         </motion.div>
 
@@ -98,25 +101,13 @@ export default function WhyChooseUsSection() {
                     animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                     transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                   >
-                    <div className="relative w-32 h-32 lg:w-48 lg:h-85 rounded-2xl overflow-hidden  shadow-2xl">
+                    <div className="relative w-32 h-32 lg:w-48 lg:h-85 rounded-2xl overflow-hidden shadow-2xl">
                       <img
                         src="/diletta.webp"
                         alt="Diletta EGBE - CEO Dash Tech Africa"
                         className="w-full h-full object-cover"
                       />
-                      {/* Subtle Gradient Overlay */}
-                      {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" /> */}
                     </div>
-                    
-                    {/* CEO Badge */}
-                    {/* <motion.div
-                      className="absolute -bottom-2 -right-2 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg"
-                      initial={{ scale: 0 }}
-                      animate={isInView ? { scale: 1 } : { scale: 0 }}
-                      transition={{ duration: 0.6, delay: 1, ease: "backOut" }}
-                    >
-                      CEO
-                    </motion.div> */}
                   </motion.div>
 
                   {/* CEO Content */}
@@ -138,7 +129,7 @@ export default function WhyChooseUsSection() {
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
                     >
-                      Technology has the power to transform Africa's future. At Dash Tech, we don't just build solutions—we build partnerships that drive meaningful change and create lasting impact across our continent.
+                      {t('whyChooseUs.ceo.quote')}
                     </motion.blockquote>
 
                     {/* CEO Signature */}
@@ -149,9 +140,9 @@ export default function WhyChooseUsSection() {
                       transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
                     >
                       <div>
-                        <p className="text-white font-bold text-xl">Diletta EGBE</p>
-                        <p className="text-primary font-semibold">CEO & Founder</p>
-                        <p className="text-gray-400 text-sm">Dash Tech</p>
+                        <p className="text-white font-bold text-xl">{t('whyChooseUs.ceo.name')}</p>
+                        <p className="text-primary font-semibold">{t('whyChooseUs.ceo.position')}</p>
+                        <p className="text-gray-400 text-sm">{t('whyChooseUs.ceo.company')}</p>
                       </div>
                     </motion.div>
                   </div>
@@ -185,14 +176,14 @@ export default function WhyChooseUsSection() {
                   <div className="flex flex-col items-center text-center space-y-4">
                     {/* Icon Container with Glass Effect */}
                     <motion.div
-                      className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 group-hover:border-primary/40 group-hover:bg-white/15 transition-all duration-300"
+                      className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 text-white group-hover:text-primary group-hover:border-primary/40 group-hover:bg-white/15 transition-all duration-300"
                       whileHover={{ 
                         scale: 1.1,
                         rotate: 5
                       }}
                       transition={{ type: "spring", stiffness: 400 }}
                     >
-                      <IconComponent className="w-7 h-7 text-primary" />
+                      <IconComponent className="w-7 h-7 " />
                     </motion.div>
                     
                     <div>
@@ -226,13 +217,13 @@ export default function WhyChooseUsSection() {
           transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
         >
           <p className="text-gray-400 text-lg mb-6">
-            Ready to transform your business with African expertise?
+            {t('whyChooseUs.cta.description')}
           </p>
           <Button size={"lg"}>
-            Start Your Digital Journey
+            {t('whyChooseUs.cta.button')}
           </Button>
         </motion.div>
       </div>
     </section>
   );
-}
+} 

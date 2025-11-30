@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/shadcn-io/navbar-02";
 import Footer from "@/components/custom/footer";
+import { I18nProviderClient } from "@/locales/client";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -85,18 +86,23 @@ export const metadata: Metadata = {
   themeColor: "#ffffff",
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface AdminLayoutProps {
+  params: Promise<{ locale: string }>;
   children: React.ReactNode;
-}) {
+}
+
+export default async function RootLayout({ params, children }: AdminLayoutProps) {
+  const { locale } = await params;
+
   return (
-    <html lang="en">
-      <body className={`${outfit.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+    <html lang={locale} className="overscroll-contain scroll-smooth" suppressHydrationWarning>
+      <I18nProviderClient locale={locale}>
+        <body className={`${outfit.variable} antialiased`}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </I18nProviderClient>
     </html>
   );
 }

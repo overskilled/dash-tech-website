@@ -15,6 +15,7 @@ import {
     ArrowUp,
     Heart
 } from "lucide-react";
+import { useI18n } from "@/locales/client";
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -22,39 +23,40 @@ export default function Footer() {
     };
 
     const currentYear = new Date().getFullYear();
+    const t = useI18n();
 
     const footerSections = [
         {
-            title: "Services",
+            title: t("footer.sections.services.title"),
             links: [
-                { name: "Custom Software & ERP", href: "/services/software" },
-                { name: "AI & Computer Vision", href: "/services/ai" },
-                { name: "IoT & Automation", href: "/services/iot" },
-                { name: "Digital Transformation", href: "/services/digital" },
-                { name: "Cybersecurity", href: "/services/cybersecurity" },
-                { name: "IT Consulting", href: "/services/consulting" }
+                { name: t("footer.sections.services.links.0"), href: "/services/software" },
+                { name: t("footer.sections.services.links.1"), href: "/services/ai" },
+                { name: t("footer.sections.services.links.2"), href: "/services/iot" },
+                { name: t("footer.sections.services.links.3"), href: "/services/digital" },
+                { name: t("footer.sections.services.links.4"), href: "/services/cybersecurity" },
+                { name: t("footer.sections.services.links.5"), href: "/services/consulting" }
             ]
         },
         {
-            title: "Company",
+            title: t("footer.sections.company.title"),
             links: [
-                { name: "About Us", href: "/about" },
-                { name: "Our Team", href: "/team" },
-                { name: "Careers", href: "/careers" },
-                { name: "Case Studies", href: "/case-studies" },
-                { name: "Blog", href: "/blog" },
-                { name: "Contact", href: "/contact" }
+                { name: t("footer.sections.company.links.0"), href: "/about" },
+                { name: t("footer.sections.company.links.1"), href: "/team" },
+                { name: t("footer.sections.company.links.2"), href: "/careers" },
+                { name: t("footer.sections.company.links.3"), href: "/case-studies" },
+                { name: t("footer.sections.company.links.4"), href: "/blog" },
+                { name: t("footer.sections.company.links.5"), href: "/contact" }
             ]
         },
         {
-            title: "Solutions",
+            title: t("footer.sections.solutions.title"),
             links: [
-                { name: "VIIZE AI", href: "/solutions/vize" },
-                { name: "AlloTech", href: "/solutions/allotech" },
-                { name: "EVote", href: "/solutions/evote" },
-                { name: "WDMS Pro", href: "/solutions/wdms" },
-                { name: "FuelGuard AI", href: "/solutions/fuelguard" },
-                { name: "Smart IoT", href: "/solutions/iot" }
+                { name: t("footer.sections.solutions.links.0"), href: "/solutions/vize" },
+                { name: t("footer.sections.solutions.links.1"), href: "/solutions/allotech" },
+                { name: t("footer.sections.solutions.links.2"), href: "/solutions/evote" },
+                { name: t("footer.sections.solutions.links.3"), href: "/solutions/wdms" },
+                { name: t("footer.sections.solutions.links.4"), href: "/solutions/fuelguard" },
+                { name: t("footer.sections.solutions.links.5"), href: "/solutions/iot" }
             ]
         }
     ];
@@ -75,7 +77,6 @@ export default function Footer() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
                         {/* Company Info */}
                         <div className="space-y-6">
-
                             <div className="w-40 h-40 bg-white rounded-xl flex items-center justify-center p-2">
                                 <img
                                     src="/logo-dash-tech.webp"
@@ -90,12 +91,10 @@ export default function Footer() {
                                 viewport={{ once: true }}
                             >
                                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                                    Dash Tech
+                                    {t("footer.company.name")}
                                 </h3>
-                                <p className="text-gray-300 leading-relaxed max-w-md">
-                                    Empowering Africa's digital future through innovative technology
-                                    solutions. We transform businesses with cutting-edge software,
-                                    AI, and IoT systems tailored for African markets.
+                                <p className="text-muted-foreground leading-relaxed max-w-md">
+                                    {t("footer.company.description")}
                                 </p>
                             </motion.div>
 
@@ -107,20 +106,20 @@ export default function Footer() {
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="flex items-center gap-3 text-gray-300">
+                                <div className="flex items-center gap-3 text-muted-foreground">
                                     <MapPin className="w-4 h-4 text-primary" />
-                                    <span>Douala, Cameroon | Remote Across Africa</span>
+                                    <span>{t("footer.contact.address")}</span>
                                 </div>
-                                <div className="flex items-center gap-3 text-gray-300">
+                                <div className="flex items-center gap-3 text-muted-foreground">
                                     <Phone className="w-4 h-4 text-primary" />
                                     <a href="tel:+237670000000" className="hover:text-primary transition-colors">
-                                        +237 6 75 89 63 89
+                                        {t("footer.contact.phone")}
                                     </a>
                                 </div>
-                                <div className="flex items-center gap-3 text-gray-300">
+                                <div className="flex items-center gap-3 text-muted-foreground">
                                     <Mail className="w-4 h-4 text-primary" />
                                     <a href="mailto:info@dashtechafrica.com" className="hover:text-primary transition-colors">
-                                        info@dashtechafrica.com
+                                        {t("footer.contact.email")}
                                     </a>
                                 </div>
                             </motion.div>
@@ -141,7 +140,7 @@ export default function Footer() {
                                             href={social.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="w-10 h-10 bg-background rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 border border-border"
+                                            className="w-10 h-10 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 border border-border"
                                             whileHover={{ scale: 1.1, y: -2 }}
                                             whileTap={{ scale: 0.95 }}
                                             initial={{ opacity: 0, scale: 0 }}
@@ -180,7 +179,7 @@ export default function Footer() {
                                             >
                                                 <Link
                                                     href={link.href}
-                                                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm"
+                                                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
                                                 >
                                                     {link.name}
                                                 </Link>
@@ -203,24 +202,24 @@ export default function Footer() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                             <div>
                                 <h4 className="text-xl font-bold text-foreground mb-2">
-                                    Stay Updated
+                                    {t("footer.newsletter.title")}
                                 </h4>
-                                <p className="text-gray-300">
-                                    Get the latest insights on digital transformation in Africa and updates on our innovative solutions.
+                                <p className="text-muted-foreground">
+                                    {t("footer.newsletter.description")}
                                 </p>
                             </div>
                             <div className="flex gap-4">
                                 <input
                                     type="email"
-                                    placeholder="Enter your email"
-                                    className="flex-1 px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                                    placeholder={t("footer.newsletter.placeholder")}
+                                    className="flex-1 px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
                                 />
                                 <motion.button
                                     className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300 whitespace-nowrap"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    Subscribe
+                                    {t("footer.newsletter.button")}
                                 </motion.button>
                             </div>
                         </div>
@@ -234,15 +233,15 @@ export default function Footer() {
                     <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
                         {/* Copyright */}
                         <motion.div
-                            className="flex items-center gap-2 text-gray-400 text-sm"
+                            className="flex items-center gap-2 text-muted-foreground text-sm"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <span>© {currentYear} Dash Tech. All rights reserved.</span>
+                            <span>{t("footer.copyright", { year: currentYear })}</span>
                             <span className="flex items-center gap-1">
-                                Made with <Heart className="w-3 h-3 text-red-500" /> in Africa
+                                {t("footer.madeWith")} <Heart className="w-3 h-3 text-red-500" /> {t("footer.inAfrica")}
                             </span>
                         </motion.div>
 
@@ -254,14 +253,14 @@ export default function Footer() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
                         >
-                            <Link href="/privacy" className="text-gray-400 hover:text-primary transition-colors">
-                                Privacy Policy
+                            <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
+                                {t("footer.legal.privacy")}
                             </Link>
-                            <Link href="/terms" className="text-gray-400 hover:text-primary transition-colors">
-                                Terms of Service
+                            <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                                {t("footer.legal.terms")}
                             </Link>
-                            <Link href="/cookies" className="text-gray-400 hover:text-primary transition-colors">
-                                Cookie Policy
+                            <Link href="/cookies" className="text-muted-foreground hover:text-primary transition-colors">
+                                {t("footer.legal.cookies")}
                             </Link>
                         </motion.div>
 

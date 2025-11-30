@@ -22,6 +22,7 @@ import {
   Home
 } from "lucide-react";
 import { Button } from "../ui/button";
+import { useI18n } from "@/locales/client";
 
 const caseStudies = [
   {
@@ -39,7 +40,7 @@ const caseStudies = [
     },
     duration: "6 months",
     testimonial: "VIIZE detected unauthorized access patterns we never noticed before, saving us thousands in potential losses.",
-    liveLink: "https://traffic.buttertech.ca    ",
+    liveLink: "https://traffic.buttertech.ca",
     caseStudy: "/case-studies/vize"
   },
   {
@@ -153,11 +154,56 @@ const getCategoryIcon = (category: string) => {
   }
 };
 
+// Type-safe translation keys for case studies
+const caseStudyKeys = {
+  titles: [
+    "portfolio.caseStudies.0.title",
+    "portfolio.caseStudies.1.title",
+    "portfolio.caseStudies.2.title",
+    "portfolio.caseStudies.3.title",
+    "portfolio.caseStudies.4.title",
+    "portfolio.caseStudies.5.title"
+  ] as const,
+  clients: [
+    "portfolio.caseStudies.0.client",
+    "portfolio.caseStudies.1.client",
+    "portfolio.caseStudies.2.client",
+    "portfolio.caseStudies.3.client",
+    "portfolio.caseStudies.4.client",
+    "portfolio.caseStudies.5.client"
+  ] as const,
+  categories: [
+    "portfolio.caseStudies.0.category",
+    "portfolio.caseStudies.1.category",
+    "portfolio.caseStudies.2.category",
+    "portfolio.caseStudies.3.category",
+    "portfolio.caseStudies.4.category",
+    "portfolio.caseStudies.5.category"
+  ] as const,
+  descriptions: [
+    "portfolio.caseStudies.0.description",
+    "portfolio.caseStudies.1.description",
+    "portfolio.caseStudies.2.description",
+    "portfolio.caseStudies.3.description",
+    "portfolio.caseStudies.4.description",
+    "portfolio.caseStudies.5.description"
+  ] as const,
+  testimonials: [
+    "portfolio.caseStudies.0.testimonial",
+    "portfolio.caseStudies.1.testimonial",
+    "portfolio.caseStudies.2.testimonial",
+    "portfolio.caseStudies.3.testimonial",
+    "portfolio.caseStudies.4.testimonial",
+    "portfolio.caseStudies.5.testimonial"
+  ] as const
+};
+
 export default function PortfolioSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [selectedProject, setSelectedProject] = useState(0);
   const [isFlipped, setIsFlipped] = useState(Array(caseStudies.length).fill(false));
+  const t = useI18n();
 
   const handleFlip = (index: number) => {
     const newFlipped = [...isFlipped];
@@ -173,6 +219,17 @@ export default function PortfolioSection() {
     setSelectedProject((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
   };
 
+  // Get translated text for dynamic content
+  const getTranslatedProjectData = (index: number) => {
+    return {
+      title: t(caseStudyKeys.titles[index]),
+      client: t(caseStudyKeys.clients[index]),
+      category: t(caseStudyKeys.categories[index]),
+      description: t(caseStudyKeys.descriptions[index]),
+      testimonial: t(caseStudyKeys.testimonials[index])
+    };
+  };
+
   return (
     <section ref={ref} className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,18 +240,8 @@ export default function PortfolioSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6"
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1 } : { scale: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "backOut" }}
-          >
-            <Zap className="w-4 h-4 mr-2" />
-            Real-World Solutions
-          </motion.div> */}
-          
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Our <span className="text-primary">Portfolio</span>
+            {t('portfolio.title')} <span className="text-primary">{t('portfolio.highlightedTitle')}</span>
           </h2>
           <motion.p
             className="text-lg sm:text-xl text-muted-foreground leading-relaxed"
@@ -202,7 +249,7 @@ export default function PortfolioSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            Innovative digital solutions transforming businesses across Africa with measurable impact
+            {t('portfolio.subtitle')}
           </motion.p>
         </motion.div>
 
@@ -240,7 +287,7 @@ export default function PortfolioSection() {
               >
                 <img
                   src={caseStudies[selectedProject].image}
-                  alt={caseStudies[selectedProject].title}
+                  alt={getTranslatedProjectData(selectedProject).title}
                   className="w-full h-90 object-fit group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -249,7 +296,7 @@ export default function PortfolioSection() {
                     {getCategoryIcon(caseStudies[selectedProject].category)}
                   </div>
                   <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-                    {caseStudies[selectedProject].category}
+                    {getTranslatedProjectData(selectedProject).category}
                   </span>
                 </div>
               </motion.div>
@@ -264,13 +311,13 @@ export default function PortfolioSection() {
               >
                 <div>
                   <h3 className="text-3xl font-bold text-foreground mb-2">
-                    {caseStudies[selectedProject].title}
+                    {getTranslatedProjectData(selectedProject).title}
                   </h3>
                   <p className="text-primary font-semibold mb-4">
-                    {caseStudies[selectedProject].client}
+                    {getTranslatedProjectData(selectedProject).client}
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    {caseStudies[selectedProject].description}
+                    {getTranslatedProjectData(selectedProject).description}
                   </p>
                 </div>
 
@@ -291,7 +338,7 @@ export default function PortfolioSection() {
 
                 {/* Technologies */}
                 <div>
-                  <h4 className="text-foreground font-semibold mb-3">Technologies Used</h4>
+                  <h4 className="text-foreground font-semibold mb-3">{t('portfolio.featuredProject.technologies')}</h4>
                   <div className="flex flex-wrap gap-2">
                     {caseStudies[selectedProject].technologies.map((tech) => (
                       <span
@@ -312,7 +359,7 @@ export default function PortfolioSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Play className="w-4 h-4" />
-                    View Case Study
+                    {t('portfolio.featuredProject.viewCaseStudy')}
                   </motion.button>
                   <motion.button
                     className="flex items-center gap-2 border border-input bg-background hover:bg-accent text-foreground px-6 py-3 rounded-xl font-semibold transition-colors duration-300"
@@ -320,7 +367,7 @@ export default function PortfolioSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <ExternalLink className="w-4 h-4" />
-                    Live Demo
+                    {t('portfolio.featuredProject.liveDemo')}
                   </motion.button>
                 </div>
               </motion.div>
@@ -335,91 +382,91 @@ export default function PortfolioSection() {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         >
-          {caseStudies.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className="relative h-80 [perspective:1000px]"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: 1 + index * 0.1, ease: "easeOut" }}
-            >
-              {/* 3D Flip Card */}
+          {caseStudies.map((project, index) => {
+            const translatedProject = getTranslatedProjectData(index);
+            return (
               <motion.div
-                className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]"
-                animate={{ rotateY: isFlipped[index] ? 180 : 0 }}
-                onClick={() => handleFlip(index)}
+                key={project.id}
+                className="relative h-80 [perspective:1000px]"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: 1 + index * 0.1, ease: "easeOut" }}
               >
-                {/* Front of Card */}
-                <div className="absolute inset-0 bg-card rounded-2xl border shadow-sm p-6 [backface-visibility:hidden] cursor-pointer group hover:shadow-md transition-shadow duration-300">
-                  <div className="relative h-40 mb-4 rounded-xl overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                      <div className="bg-primary text-primary-foreground p-1 rounded">
-                        {getCategoryIcon(project.category)}
+                {/* 3D Flip Card */}
+                <motion.div
+                  className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]"
+                  animate={{ rotateY: isFlipped[index] ? 180 : 0 }}
+                  onClick={() => handleFlip(index)}
+                >
+                  {/* Front of Card */}
+                  <div className="absolute inset-0 bg-card rounded-2xl border shadow-sm p-6 [backface-visibility:hidden] cursor-pointer group hover:shadow-md transition-shadow duration-300">
+                    <div className="relative h-40 mb-4 rounded-xl overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={translatedProject.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                        <div className="bg-primary text-primary-foreground p-1 rounded">
+                          {getCategoryIcon(project.category)}
+                        </div>
+                        <span className="bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-semibold">
+                          {translatedProject.category}
+                        </span>
                       </div>
-                      <span className="bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-semibold">
-                        {project.category}
-                      </span>
+                    </div>
+                    
+                    <h3 className="text-foreground font-semibold text-lg mb-2 line-clamp-2">
+                      {translatedProject.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
+                      {translatedProject.description}
+                    </p>
+                    
+                    <div className="flex justify-end items-center">
+                      <motion.div
+                        className="text-muted-foreground group-hover:text-primary transition-colors duration-300"
+                        whileHover={{ x: 5 }}
+                      >
+                        <ArrowRight className="w-5 h-5" />
+                      </motion.div>
                     </div>
                   </div>
-                  
-                  <h3 className="text-foreground font-semibold text-lg mb-2 line-clamp-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex justify-end items-center">
-                    {/* <span className="text-primary text-sm font-semibold">
-                      {project.duration}
-                    </span> */}
-                    <motion.div
-                      className="text-muted-foreground group-hover:text-primary transition-colors duration-300"
-                      whileHover={{ x: 5 }}
+
+                  {/* Back of Card */}
+                  <div className="absolute inset-0 bg-primary/5 rounded-2xl border border-primary/20 p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] cursor-pointer shadow-sm">
+                    <h3 className="text-foreground font-semibold text-lg mb-4">
+                      {t('portfolio.projectCards.keyResults')}
+                    </h3>
+                    
+                    <div className="space-y-3 mb-4">
+                      {Object.entries(project.results).map(([key, value]) => (
+                        <div key={key} className="flex justify-between items-center">
+                          <span className="text-muted-foreground text-sm capitalize">
+                            {key.replace(/([A-Z])/g, ' $1').trim()}
+                          </span>
+                          <span className="text-foreground font-bold">{value}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="text-muted-foreground text-sm italic mb-4 line-clamp-2">
+                      "{translatedProject.testimonial}"
+                    </p>
+
+                    <motion.button
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-2 rounded-lg text-sm font-semibold transition-colors duration-300"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.div>
+                      {t('portfolio.projectCards.viewDetails')}
+                    </motion.button>
                   </div>
-                </div>
-
-                {/* Back of Card */}
-                <div className="absolute inset-0 bg-primary/5 rounded-2xl border border-primary/20 p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] cursor-pointer shadow-sm">
-                  <h3 className="text-foreground font-semibold text-lg mb-4">
-                    Key Results
-                  </h3>
-                  
-                  <div className="space-y-3 mb-4">
-                    {Object.entries(project.results).map(([key, value]) => (
-                      <div key={key} className="flex justify-between items-center">
-                        <span className="text-muted-foreground text-sm capitalize">
-                          {key.replace(/([A-Z])/g, ' $1').trim()}
-                        </span>
-                        <span className="text-foreground font-bold">{value}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <p className="text-muted-foreground text-sm italic mb-4 line-clamp-2">
-                    "{project.testimonial}"
-                  </p>
-
-                  <motion.button
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-2 rounded-lg text-sm font-semibold transition-colors duration-300"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    View Details
-                  </motion.button>
-                </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
 
         {/* Bottom CTA */}
@@ -430,10 +477,10 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
         >
           <p className="text-muted-foreground text-lg mb-6">
-            Ready to create your success story?
+            {t('portfolio.cta.text')}
           </p>
           <Button size={"lg"}>
-            Start Your Project
+            {t('portfolio.cta.button')}
           </Button>
         </motion.div>
       </div>
