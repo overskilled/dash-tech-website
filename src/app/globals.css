@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* ============================================
+   YOUR COLOR PALETTE
+   ============================================ */
+:root {
+  /* HEX — main brand colors */
+  --monza: #e50914;
+  --denim: #1479be;
+  --woodsmoke: #101316;
+  --thunderbird: #c61622;
+  --astral: #3576a0;
+  --mexican-red: #ac202b;
+  --fuzzy-wuzzy-brown: #c94851;
+}
+
+/* ============================================
+   TAILWIND THEME + OUTFIT FONT
+   ============================================ */
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-outfit); /* NEW — WE USE OUTFIT */
+  --font-mono: var(--font-geist-mono);
+
+  /* Light mode colors mapped to your palette */
+  --color-background: var(--woodsmoke);
+  --color-foreground: #ffffff;
+
+  --color-primary: var(--monza);
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: var(--astral);
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: var(--denim);
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: var(--thunderbird);
+  --color-muted: #f0f0f0;
+  --color-muted-foreground: #555;
+
+  --color-border: #1f2326;
+  --color-input: #1f2326;
+  --color-ring: var(--denim);
+
+  /* Charts mapped to your palette */
+  --color-chart-1: var(--monza);
+  --color-chart-2: var(--denim);
+  --color-chart-3: var(--astral);
+  --color-chart-4: var(--mexican-red);
+  --color-chart-5: var(--fuzzy-wuzzy-brown);
+
+  /* Sidebar system */
+  --color-sidebar: var(--woodsmoke);
+  --color-sidebar-foreground: #ffffff;
+
+  --color-sidebar-primary: var(--monza);
+  --color-sidebar-primary-foreground: #ffffff;
+
+  --color-sidebar-accent: var(--astral);
+  --color-sidebar-accent-foreground: #ffffff;
+
+  --color-sidebar-border: #1f2326;
+  --color-sidebar-ring: var(--denim);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Base radius */
+:root {
+  --radius: 0.625rem;
+
+  /* FONT VARIABLES from RootLayout */
+  --font-outfit: var(--font-outfit);
+  --font-geist-mono: var(--font-geist-mono);
+}
+
+/* ============================================
+   DARK MODE (PALLETTE-BASED)
+   ============================================ */
+.dark {
+  --color-background: #0b0d0f;
+  --color-foreground: #ffffff;
+
+  --color-primary: var(--monza);
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: var(--astral);
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: var(--denim);
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: var(--mexican-red);
+
+  --color-border: #1b1e21;
+  --color-input: #1b1e21;
+  --color-ring: var(--astral);
+
+  /* Dark chart variants */
+  --color-chart-1: var(--monza);
+  --color-chart-2: var(--astral);
+  --color-chart-3: var(--fuzzy-wuzzy-brown);
+  --color-chart-4: var(--denim);
+  --color-chart-5: var(--mexican-red);
+
+  --color-sidebar: #0f1215;
+  --color-sidebar-foreground: #ffffff;
+
+  --color-sidebar-primary: var(--monza);
+  --color-sidebar-primary-foreground: #ffffff;
+
+  --color-sidebar-accent: var(--astral);
+  --color-sidebar-accent-foreground: #ffffff;
+
+  --color-sidebar-border: #1b1e21;
+  --color-sidebar-ring: var(--denim);
+}
+
+/* ============================================
+   BASE LAYER — TAILWIND + OUTFIT
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
