@@ -31,7 +31,7 @@ export default function ServicesSection() {
             id: 2,
             title: t('services.items.ai.title'),
             description: t('services.items.ai.description'),
-            image: "/services/ai-cv.webp",
+            image: "/services/ai-girl.webp",
             features: [
                 t('services.items.ai.features.feature1'),
                 t('services.items.ai.features.feature2'),
@@ -55,7 +55,7 @@ export default function ServicesSection() {
             id: 4,
             title: t('services.items.warehouse.title'),
             description: t('services.items.warehouse.description'),
-            image: "/services/wms.webp",
+            image: "/services/wdms.webp",
             features: [
                 t('services.items.warehouse.features.feature1'),
                 t('services.items.warehouse.features.feature2'),
@@ -67,7 +67,7 @@ export default function ServicesSection() {
             id: 5,
             title: t('services.items.fuel.title'),
             description: t('services.items.fuel.description'),
-            image: "/services/fuel.webp",
+            image: "/services/fuel2.webp",
             features: [
                 t('services.items.fuel.features.feature1'),
                 t('services.items.fuel.features.feature2'),

@@ -65,7 +65,7 @@ export default {
                 }
             },
             "warehouse": {
-                "title": "Warehouse & Industrial Digitalization (WDMS)",
+                "title": "Warehouse & Industrial Digitalization",
                 "description": "Complete digital transformation for warehouses, silos, and industrial facilities. Our Warehouse Digital Management System enables automated inventory counting, real-time tracking, movement monitoring, inventory optimization, and loss prevention with comprehensive digital oversight.",
                 "features": {
                     "feature1": "Automated Inventory Counting",
@@ -75,7 +75,7 @@ export default {
                 }
             },
             "fuel": {
-                "title": "Fuel Management & Petroleum Depots",
+                "title": "Fuel Management System",
                 "description": "Advanced fuel management solutions including tank level monitoring, leak detection, delivery tracking, automatic reconciliation, distribution control, and real-time dashboards. Ensure accurate fuel management, prevent losses, and optimize petroleum depot operations.",
                 "features": {
                     "feature1": "Tank Level Monitoring",
@@ -115,7 +115,7 @@ export default {
         "ceo": {
             "quote": "Technology has the power to transform Africa's future. At Dash Tech, we don't just build solutions—we build partnerships that drive meaningful change and create lasting impact across our continent.",
             "name": "Diletta EGBE",
-            "position": "CEO & Founder",
+            "position": "Chief Executive Officer",
             "company": "Dash Tech"
         },
         "features": {
@@ -168,11 +168,11 @@ export default {
         },
         "caseStudies": [
             {
-                "title": "VIIZE - AI Vision Intelligence",
+                "title": "VMARIC - AI Vision Intelligence",
                 "client": "Multiple Industrial Clients",
                 "category": "AI & Computer Vision",
                 "description": "Advanced AI-powered surveillance system that connects to existing cameras to perform real-time object detection, people counting, theft prevention, and anomaly detection in industrial environments.",
-                "testimonial": "VIIZE detected unauthorized access patterns we never noticed before, saving us thousands in potential losses."
+                "testimonial": "VMARIC detected unauthorized access patterns we never noticed before, saving us thousands in potential losses."
             },
             {
                 "title": "Smart IoT for Homes & Industries",
@@ -196,7 +196,7 @@ export default {
                 "testimonial": "EVote made our organizational elections transparent and accessible to all members worldwide."
             },
             {
-                "title": "WDMS - Warehouse Management",
+                "title": "ZYLO - Warehouse Management",
                 "client": "Logistics Companies",
                 "category": "Enterprise Software",
                 "description": "Advanced warehouse digital management system with inventory tracking, automated counting, real-time analytics, and supply chain optimization features.",
@@ -227,7 +227,7 @@ export default {
             {
                 "title": "Discovery & Consultation",
                 "description": "We begin by deeply understanding your business needs, challenges, and objectives through comprehensive discussions and analysis.",
-                "duration": "1-2 weeks",
+                "duration": "2-5 Days",
                 "people": "Business Analyst, Project Manager",
                 "deliverables": [
                     "Requirements Document",
@@ -238,7 +238,7 @@ export default {
             {
                 "title": "Research & Planning",
                 "description": "Our team conducts market research, technical analysis, and creates a detailed project roadmap with clear milestones.",
-                "duration": "2-3 weeks",
+                "duration": "3-5 Days",
                 "people": "UX Researcher, Solution Architect",
                 "deliverables": [
                     "Technical Specification",
@@ -249,7 +249,7 @@ export default {
             {
                 "title": "Design & Prototyping",
                 "description": "We create intuitive user interfaces, interactive prototypes, and design systems that align with your brand and user needs.",
-                "duration": "3-4 weeks",
+                "duration": "1-2 weeks",
                 "people": "UI/UX Designer, Product Designer",
                 "deliverables": [
                     "UI/UX Designs",
@@ -260,7 +260,7 @@ export default {
             {
                 "title": "Development & Testing",
                 "description": "Our developers build your solution using best practices, with continuous testing and quality assurance throughout the process.",
-                "duration": "4-12 weeks",
+                "duration": "2-8 weeks",
                 "people": "Frontend/Backend Devs, QA Engineer",
                 "deliverables": [
                     "MVP Development",
@@ -282,7 +282,7 @@ export default {
             {
                 "title": "Support & Evolution",
                 "description": "Post-launch support, maintenance, and continuous improvement to ensure your solution evolves with your business needs.",
-                "duration": "Ongoing",
+                "duration": "Continuous",
                 "people": "Support Team, Product Manager",
                 "deliverables": [
                     "Technical Support",
@@ -320,7 +320,7 @@ export default {
         "contact": {
             "address": "Douala, Cameroon | Remote Across Africa",
             "phone": "+237 6 75 89 63 89",
-            "email": "info@dashtechafrica.com"
+            "email": "contact@dashtechafrica.com"
         },
         "sections": {
             "services": {
@@ -348,7 +348,7 @@ export default {
             "solutions": {
                 "title": "Solutions",
                 "links": [
-                    "VIIZE AI",
+                    "VMARIC AI",
                     "AlloTech",
                     "EVote",
                     "WDMS Pro",
@@ -365,7 +365,7 @@ export default {
         },
         "copyright": "© 2025 Dash Tech. All rights reserved.",
         "madeWith": "Made with",
-        "inAfrica": "in Africa",
+        "inAfrica": "in Cameroon",
         "legal": {
             "privacy": "Privacy Policy",
             "terms": "Terms of Service",

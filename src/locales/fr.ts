@@ -115,7 +115,7 @@ export default {
         "ceo": {
             "quote": "La technologie a le pouvoir de transformer l'avenir de l'Afrique. Chez Dash Tech, nous ne nous contentons pas de construire des solutions—nous bâtissons des partenariats qui génèrent des changements significatifs et créent un impact durable à travers notre continent.",
             "name": "Diletta EGBE",
-            "position": "DG & Fondatrice",
+            "position": "Directrice Génèrale",
             "company": "Dash Tech"
         },
         "features": {
@@ -168,11 +168,11 @@ export default {
         },
         "caseStudies": [
             {
-                "title": "VIIZE - Intelligence Visuelle IA",
+                "title": "VMARIC - Intelligence Visuelle IA",
                 "client": "Multiples Clients Industriels",
                 "category": "IA & Vision par Ordinateur",
                 "description": "Système de surveillance avancé alimenté par l'IA qui se connecte aux caméras existantes pour effectuer la détection d'objets en temps réel, le comptage de personnes, la prévention des vols et la détection d'anomalies dans les environnements industriels.",
-                "testimonial": "VIIZE a détecté des schémas d'accès non autorisés que nous n'avions jamais remarqués auparavant, nous épargnant des milliers de pertes potentielles."
+                "testimonial": "VMARIC a détecté des schémas d'accès non autorisés que nous n'avions jamais remarqués auparavant, nous épargnant des milliers de pertes potentielles."
             },
             {
                 "title": "IoT Intelligent pour Maisons & Industries",
@@ -227,7 +227,7 @@ export default {
             {
                 "title": "Découverte & Consultation",
                 "description": "Nous commençons par comprendre profondément vos besoins business, défis et objectifs à travers des discussions et analyses complètes.",
-                "duration": "1-2 semaines",
+                "duration": "2-5 Jours",
                 "people": "Analyste Business, Chef de Projet",
                 "deliverables": [
                     "Document d'Exigences",
@@ -238,7 +238,7 @@ export default {
             {
                 "title": "Recherche & Planification",
                 "description": "Notre équipe mène des recherches marché, analyse technique et crée une feuille de route détaillée avec des jalons clairs.",
-                "duration": "2-3 semaines",
+                "duration": "3-5 Jours",
                 "people": "Chercheur UX, Architecte Solution",
                 "deliverables": [
                     "Spécification Technique",
@@ -249,7 +249,7 @@ export default {
             {
                 "title": "Design & Prototypage",
                 "description": "Nous créons des interfaces utilisateur intuitives, des prototypes interactifs et des systèmes design alignés avec votre marque et les besoins utilisateurs.",
-                "duration": "3-4 semaines",
+                "duration": "1-2 semaines",
                 "people": "Designer UI/UX, Designer Produit",
                 "deliverables": [
                     "Designs UI/UX",
@@ -260,7 +260,7 @@ export default {
             {
                 "title": "Développement & Tests",
                 "description": "Nos développeurs construisent votre solution en utilisant les meilleures pratiques, avec des tests continus et assurance qualité tout au long du processus.",
-                "duration": "4-12 semaines",
+                "duration": "2-8 semaines",
                 "people": "Développeurs Frontend/Backend, Ingénieur QA",
                 "deliverables": [
                     "Développement MVP",
@@ -271,7 +271,7 @@ export default {
             {
                 "title": "Déploiement & Lancement",
                 "description": "Nous gérons le processus complet de déploiement, assurant une transition fluide vers la production avec un minimum de perturbations.",
-                "duration": "1-2 semaines",
+                "duration": "3-5 Jours",
                 "people": "Ingénieur DevOps, Chef de Projet",
                 "deliverables": [
                     "Déploiement Production",
@@ -320,7 +320,7 @@ export default {
         "contact": {
             "address": "Douala, Cameroun | Remote à travers l'Afrique",
             "phone": "+237 6 75 89 63 89",
-            "email": "info@dashtechafrica.com"
+            "email": "contact@dashtechafrica.com"
         },
         "sections": {
             "services": {
@@ -348,7 +348,7 @@ export default {
             "solutions": {
                 "title": "Solutions",
                 "links": [
-                    "VIIZE IA",
+                    "VMARIC IA",
                     "AlloTech",
                     "EVote",
                     "WDMS Pro",
@@ -365,7 +365,7 @@ export default {
         },
         "copyright": "© 2025 Dash Tech. Tous droits réservés.",
         "madeWith": "Fait avec",
-        "inAfrica": "en Afrique",
+        "inAfrica": "au Cameroun",
         "legal": {
             "privacy": "Politique de Confidentialité",
             "terms": "Conditions d'Utilisation",

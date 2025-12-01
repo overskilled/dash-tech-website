@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/ui/shadcn-io/navbar-02";
 import Footer from "@/components/custom/footer";
 import { I18nProviderClient } from "@/locales/client";
+import CTASection from "@/components/custom/cta-section";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -100,6 +101,7 @@ export default async function RootLayout({ params, children }: AdminLayoutProps)
         <body className={`${outfit.variable} antialiased`}>
           <Navbar />
           {children}
+          <CTASection />
           <Footer />
         </body>
       </I18nProviderClient>

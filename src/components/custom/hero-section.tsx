@@ -20,7 +20,7 @@ export function HeroSection() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-fit"
           style={{ 
             width: '100%', 
             height: '100%', 
@@ -28,7 +28,7 @@ export function HeroSection() {
           }}
         >
           <source
-            src="/videos/DASHACO HOLDINGS AFRICA  present.mp4"
+            src="/videos/banner2.mp4"
             type="video/mp4"
           />
           {/* Fallback if video doesn't load */}

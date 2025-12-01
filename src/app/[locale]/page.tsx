@@ -1,4 +1,3 @@
-import CTASection from "@/components/custom/cta-section";
 import { HeroSection } from "@/components/custom/hero-section";
 import PartnerSection from "@/components/custom/partner-section";
 import PortfolioSection from "@/components/custom/portfolio-section";
@@ -9,6 +8,7 @@ import WhyChooseUsSection from "@/components/custom/why-choose-us";
 export default function Home() {
   return (
     <div className="">
+      
       <HeroSection />
 
       <PartnerSection />
@@ -21,7 +21,6 @@ export default function Home() {
 
       <ProcessSection />
 
-      <CTASection />
     </div>
   );
 }

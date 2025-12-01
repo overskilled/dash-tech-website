@@ -27,11 +27,11 @@ import { useI18n } from "@/locales/client";
 const caseStudies = [
   {
     id: 1,
-    title: "VIIZE - AI Vision Intelligence",
+    title: "VMARIC - AI Vision Intelligence",
     client: "Multiple Industrial Clients",
     category: "AI & Computer Vision",
     description: "Advanced AI-powered surveillance system that connects to existing cameras to perform real-time object detection, people counting, theft prevention, and anomaly detection in industrial environments.",
-    image: "/portfolio/viize.webp",
+    image: "/portfolio/VMARIC.webp",
     technologies: ["Python", "TensorFlow", "OpenCV", "React", "Node.js", "WebRTC"],
     results: {
       theftPrevention: "92%",
@@ -39,7 +39,7 @@ const caseStudies = [
       falseAlarms: "Reduced by 85%"
     },
     duration: "6 months",
-    testimonial: "VIIZE detected unauthorized access patterns we never noticed before, saving us thousands in potential losses.",
+    testimonial: "VMARIC detected unauthorized access patterns we never noticed before, saving us thousands in potential losses.",
     liveLink: "https://traffic.buttertech.ca",
     caseStudy: "/case-studies/vize"
   },
@@ -121,7 +121,7 @@ const caseStudies = [
     client: "Petroleum Industry",
     category: "AI & IoT",
     description: "Intelligent fuel monitoring system combining IoT sensors and AI to detect leaks, track consumption, prevent theft, and optimize fuel distribution across multiple locations.",
-    image: "/portfolio/fuelguard.webp",
+    image: "/portfolio/fuelguar.webp",
     technologies: ["IoT Sensors", "Machine Learning", "React", "Python", "Cloud Functions"],
     results: {
       theftPrevention: "95%",
@@ -264,13 +264,13 @@ export default function PortfolioSection() {
             {/* Navigation Arrows */}
             <button
               onClick={prevProject}
-              className="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 bg-background hover:bg-accent rounded-full flex items-center justify-center text-foreground border shadow-sm transition-all duration-300 z-10"
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background hover:bg-accent rounded-full flex items-center justify-center text-foreground border shadow-sm transition-all duration-300 z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextProject}
-              className="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 bg-background hover:bg-accent rounded-full flex items-center justify-center text-foreground border shadow-sm transition-all duration-300 z-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background hover:bg-accent rounded-full flex items-center justify-center text-foreground border shadow-sm transition-all duration-300 z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
