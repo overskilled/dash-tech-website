@@ -28,7 +28,8 @@ export function HeroSection() {
           }}
         >
           <source
-            src="/videos/banner2.mp4"
+            // src="/videos/banner2.mp4"
+            src="grok1.mp4"
             type="video/mp4"
           />
           {/* Fallback if video doesn't load */}
@@ -37,7 +38,7 @@ export function HeroSection() {
       </div>
 
       {/* === OVERLAY === */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b fromwhite/70 via-black/50 to-black/70" />
 
       {/* === HERO CONTENT === */}
       <motion.div
@@ -56,7 +57,7 @@ export function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 1.1 }}
         >
-          {t('hero.title.line1')}{" "}
+          {t('hero.title.line1')}
           <span className="block text-primary relative ml-1 inline-block">
             {t('hero.title.line2')}
           </span>

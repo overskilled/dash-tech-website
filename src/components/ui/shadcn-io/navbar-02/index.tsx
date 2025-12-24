@@ -261,7 +261,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                 alt='logo'
                 width={100}
                 height={100}
-                className='rounded-md'
+                className='rounded-md bg-transparent'
               />
             </button>
           </div>
