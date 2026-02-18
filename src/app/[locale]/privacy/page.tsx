@@ -4,11 +4,6 @@ import { motion } from "framer-motion";
 import { Shield, Lock, Eye, UserCheck, Database, Bell } from "lucide-react";
 import { useI18n } from "@/locales/client";
 
-export const metadata = {
-    title: "Privacy Policy | Dash Tech Africa",
-    description: "Learn how Dash Tech Africa collects, uses, and protects your personal information. Comprehensive privacy policy and data protection guidelines.",
-};
-
 export default function PrivacyPolicyPage() {
     const t = useI18n();
 
