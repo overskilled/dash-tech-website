@@ -1,6 +1,6 @@
 "use client";
 
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import { Marquee, MarqueeContent, MarqueeItem } from "@/components/ui/shadcn-io/marquee";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -110,9 +110,8 @@ export default function PartnerSection() {
                                         <div className="relative">
                                             {/* Logo Image */}
                                             <div className="relative overflow-hidden rounded-full">
-                                                <img
+                                                <PartnerImage
                                                     alt={item.title}
-                                                    className="h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 ease-out"
                                                     src={item.image}
                                                 />
                                             </div>
@@ -147,11 +146,7 @@ export default function PartnerSection() {
                                 <Icons.globe />
                             </Circle>
                             <Circle ref={div2Ref}>
-                                <img 
-                                    src="/logo-dash-tech.webp" 
-                                    alt="Dash Tech Africa" 
-                                    className="w-12 h-12 object-contain"
-                                />
+                                <DashLogo />
                             </Circle>
                         </div>
                         
@@ -191,6 +186,42 @@ export default function PartnerSection() {
                 </motion.div>
             </div>
         </section>
+    );
+}
+
+// Image component with fallback
+function PartnerImage({ src, alt }: { src: string; alt: string }) {
+    const [imgSrc, setImgSrc] = useState(src);
+    const [hasError, setHasError] = useState(false);
+
+    const handleError = () => {
+        if (!hasError) {
+            setHasError(true);
+            setImgSrc('/logo-dash-tech.webp');
+        }
+    };
+
+    return (
+        <img
+            alt={alt}
+            className="h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 ease-out"
+            src={imgSrc}
+            onError={handleError}
+        />
+    );
+}
+
+// Dash Tech logo component with fallback
+function DashLogo() {
+    const [imgSrc, setImgSrc] = useState('/logo-dash-tech.webp');
+
+    return (
+        <img
+            src={imgSrc}
+            alt="Dash Tech Africa"
+            className="w-12 h-12 object-contain"
+            onError={() => setImgSrc('/dash-logo-bg-white.webp')}
+        />
     );
 }
 

@@ -244,24 +244,29 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
       <header
         ref={combinedRef}
         className={cn(
-          "sticky top-0 z-50 w-full transition-all duration-300 bg-transparent border-b-0",
+          "sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-xl bg-transparent border-b-0",
           className
         )}
         {...props}
       >
-        <div className="container bg-transparent mx-auto flex h-16 items-center justify-between">
+        <div className="container bg-transparent mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6">
           {/* Left side - Logo */}
           <div className="flex items-center lg:flex-1">
             <button
               onClick={(e) => e.preventDefault()}
-              className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
+              className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Image
                 src={"/dash-logo-bg-white.webp"}
-                alt='logo'
-                width={100}
-                height={100}
-                className='rounded-md bg-transparent'
+                alt='Dash Tech Africa Logo'
+                width={120}
+                height={120}
+                className='rounded-md bg-transparent w-24 h-24 md:w-32 md:h-32 object-contain'
+                priority
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/logo-dash-tech.webp';
+                }}
               />
             </button>
           </div>
@@ -366,33 +371,33 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
 
           {/* Right side - Language selector and Auth buttons */}
           <div className="flex items-center justify-end gap-3 lg:flex-1">
-            {/* Language Selector - Desktop */}
-            <LanguageSelector />
+            {/* Language Selector - Always visible */}
+            <div className="flex items-center">
+              <LanguageSelector />
+            </div>
 
-            {/* Mobile menu trigger and Language selector */}
-            {isMobile && (
+            {/* Mobile menu trigger */}
+            {/* {isMobile && (
               <div className="flex items-center gap-2">
-                {/* Language Selector - Mobile */}
-                {/* <LanguageSelector /> */}
-
-                {/* Mobile menu */}
+                Mobile menu
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
-                      className="group h-9 w-9 hover:bg-accent hover:text-accent-foreground"
+                      className="group h-11 w-11 hover:bg-accent hover:text-accent-foreground border-2 border-primary/20"
                       size="icon"
+                      variant="outline"
                     >
-                      <HamburgerIcon />
+                      <HamburgerIcon className="w-5 h-5" />
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent align="end" className="w-64 p-1">
+                  <PopoverContent align="end" className="w-72 p-2 shadow-xl border-2">
                     <NavigationMenu className="max-w-none">
                       <NavigationMenuList className="flex-col items-start gap-0">
                         {navigationLinks.map((link, index) => (
                           <NavigationMenuItem key={index} className="w-full">
                             {link.submenu ? (
                               <>
-                                <div className="text-muted-foreground px-2 py-1.5 text-xs font-medium">
+                                <div className="text-muted-foreground px-3 py-2 text-sm font-semibold">
                                   {link.label}
                                 </div>
                                 <ul>
@@ -400,7 +405,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                                     <li key={itemIndex}>
                                       <button
                                         onClick={(e) => e.preventDefault()}
-                                        className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
+                                        className="flex w-full items-center rounded-md px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
                                       >
                                         {item.label}
                                       </button>
@@ -411,12 +416,12 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                             ) : (
                               <button
                                 onClick={(e) => e.preventDefault()}
-                                className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
+                                className="flex w-full items-center rounded-md px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
                               >
                                 {link.label}
                               </button>
                             )}
-                            {/* Add separator between different types of items */}
+                            Add separator between different types of items
                             {index < navigationLinks.length - 1 &&
                               ((!link.submenu && navigationLinks[index + 1].submenu) ||
                                 (link.submenu && !navigationLinks[index + 1].submenu) ||
@@ -426,7 +431,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                                 <div
                                   role="separator"
                                   aria-orientation="horizontal"
-                                  className="bg-border -mx-1 my-1 h-px w-full"
+                                  className="bg-border -mx-1 my-2 h-px w-full"
                                 />
                               )}
                           </NavigationMenuItem>
@@ -436,7 +441,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                   </PopoverContent>
                 </Popover>
               </div>
-            )}
+            )}  */}
           </div>
         </div>
       </header>

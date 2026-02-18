@@ -371,5 +371,117 @@ export default {
             "terms": "Conditions d'Utilisation",
             "cookies": "Politique des Cookies"
         }
+    },
+    "privacy": {
+        "title": "Politique de Confidentialité",
+        "subtitle": "Votre vie privée est importante pour nous. Cette politique décrit comment nous collectons, utilisons et protégeons vos informations personnelles.",
+        "lastUpdated": "Dernière mise à jour",
+        "introduction": "Chez Dash Tech Africa, nous nous engageons à protéger votre vie privée et à assurer la sécurité de vos informations personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos données lorsque vous utilisez nos services, visitez notre site web ou interagissez avec nos solutions numériques.",
+        "sections": {
+            "dataCollection": {
+                "title": "Informations que Nous Collectons",
+                "content": "Nous collectons différents types d'informations pour fournir et améliorer nos services :\n\n• Informations Personnelles : Nom, adresse e-mail, numéro de téléphone, détails de l'entreprise et titre de poste lorsque vous nous contactez ou utilisez nos services.\n\n• Données Techniques : Adresse IP, type de navigateur, informations sur l'appareil, système d'exploitation et modèles d'utilisation lors de votre visite sur notre site web.\n\n• Informations Professionnelles : Exigences du projet, spécifications techniques et enregistrements de communication lorsque vous engagez nos services.\n\n• Données Analytiques : Données d'interaction avec le site web, pages vues, modèles de clics et temps passé sur les pages pour améliorer l'expérience utilisateur.\n\nNous collectons uniquement les informations nécessaires à la fourniture de nos services et à l'amélioration de votre expérience."
+            },
+            "dataUsage": {
+                "title": "Comment Nous Utilisons Vos Informations",
+                "content": "Vos informations sont utilisées aux fins suivantes :\n\n• Fourniture de Services : Pour fournir, maintenir et améliorer nos solutions numériques et services techniques.\n\n• Communication : Pour répondre aux demandes, fournir un support client et envoyer des notifications liées au service.\n\n• Personnalisation : Pour personnaliser votre expérience et fournir du contenu et des recommandations pertinents.\n\n• Analytique : Pour comprendre le comportement des utilisateurs, identifier les tendances et améliorer notre site web et nos services.\n\n• Conformité Légale : Pour se conformer aux lois, réglementations et processus légaux applicables.\n\n• Sécurité : Pour protéger contre la fraude, l'accès non autorisé et autres risques de sécurité.\n\nNous ne vendons jamais vos informations personnelles à des tiers."
+            },
+            "dataSecurity": {
+                "title": "Mesures de Sécurité des Données",
+                "content": "Nous mettons en œuvre des mesures de sécurité conformes aux normes de l'industrie pour protéger vos données :\n\n• Cryptage : Toutes les transmissions de données sont cryptées à l'aide des protocoles SSL/TLS.\n\n• Contrôle d'Accès : Des contrôles d'accès stricts garantissent que seul le personnel autorisé peut accéder aux données personnelles.\n\n• Audits Réguliers : Nous effectuons des audits de sécurité et des évaluations de vulnérabilité réguliers.\n\n• Sauvegardes de Données : Sauvegardes cryptées régulières pour éviter la perte de données.\n\n• Réponse aux Incidents : Plan complet de réponse aux incidents pour les violations de sécurité potentielles.\n\n• Formation du Personnel : Formation régulière sur la protection des données et les meilleures pratiques de sécurité.\n\nBien que nous nous efforcions de protéger vos informations, aucune méthode de transmission sur Internet n'est sécurisée à 100%."
+            },
+            "userRights": {
+                "title": "Vos Droits et Choix",
+                "content": "Vous disposez des droits suivants concernant vos données personnelles :\n\n• Accès : Demander l'accès aux informations personnelles que nous détenons sur vous.\n\n• Correction : Demander la correction d'informations inexactes ou incomplètes.\n\n• Suppression : Demander la suppression de vos données personnelles, sous réserve d'obligations légales.\n\n• Objection : Vous opposer au traitement de vos informations personnelles à certaines fins.\n\n• Portabilité des Données : Demander une copie de vos données dans un format structuré et lisible par machine.\n\n• Retrait du Consentement : Retirer votre consentement au traitement des données à tout moment.\n\nPour exercer ces droits, veuillez nous contacter à privacy@dashtechafrica.com."
+            },
+            "cookies": {
+                "title": "Cookies et Suivi",
+                "content": "Nous utilisons des cookies et des technologies similaires pour :\n\n• Cookies Essentiels : Activer les fonctionnalités de base et la sécurité du site web.\n\n• Cookies Analytiques : Comprendre comment les visiteurs interagissent avec notre site web.\n\n• Cookies de Préférences : Se souvenir de vos paramètres et préférences.\n\n• Cookies Marketing : Diffuser du contenu pertinent et mesurer l'efficacité des campagnes.\n\nVous pouvez contrôler les préférences de cookies via les paramètres de votre navigateur. La désactivation de certains cookies peut affecter la fonctionnalité du site web. Pour des informations détaillées, veuillez consulter notre Politique des Cookies."
+            },
+            "updates": {
+                "title": "Mises à Jour de la Politique",
+                "content": "Nous pouvons mettre à jour cette politique de confidentialité périodiquement pour refléter les changements dans nos pratiques ou les exigences légales :\n\n• Notification : Nous vous informerons des changements importants par e-mail ou avis sur le site web.\n\n• Révision : Nous vous encourageons à consulter cette politique régulièrement.\n\n• Date d'Effet : Les modifications prennent effet à la date de publication.\n\n• Utilisation Continue : Votre utilisation continue de nos services après les modifications constitue une acceptation.\n\nLes versions précédentes de cette politique sont disponibles sur demande."
+            }
+        },
+        "contact": {
+            "title": "Nous Contacter",
+            "description": "Si vous avez des questions, préoccupations ou demandes concernant cette politique de confidentialité ou nos pratiques en matière de données, veuillez nous contacter :"
+        }
+    },
+    "terms": {
+        "title": "Conditions d'Utilisation",
+        "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser nos services.",
+        "lastUpdated": "Dernière mise à jour",
+        "introduction": "Ces Conditions d'Utilisation régissent votre accès et votre utilisation des services, sites web et solutions numériques de Dash Tech Africa. En accédant ou en utilisant nos services, vous acceptez d'être lié par ces conditions. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services.",
+        "sections": {
+            "acceptance": {
+                "title": "Acceptation des Conditions",
+                "content": "En accédant et en utilisant les services de Dash Tech Africa, vous reconnaissez que :\n\n• Vous avez lu, compris et acceptez d'être lié par ces Conditions d'Utilisation.\n\n• Vous avez la capacité légale de conclure cet accord.\n\n• Vous respecterez toutes les lois et réglementations applicables.\n\n• Vous acceptez la responsabilité de toutes les activités sous votre compte.\n\n• Ces conditions constituent un accord juridiquement contraignant entre vous et Dash Tech Africa.\n\nSi vous acceptez au nom d'une organisation, vous déclarez avoir l'autorité de lier cette organisation."
+            },
+            "services": {
+                "title": "Description des Services",
+                "content": "Dash Tech Africa fournit :\n\n• Développement de Logiciels Personnalisés : Applications web et mobiles, systèmes ERP/CRM et solutions d'entreprise.\n\n• IA & Vision par Ordinateur : Reconnaissance faciale, détection d'objets, OCR et analyses intelligentes.\n\n• IoT & Automatisation : Capteurs intelligents, systèmes SCADA, automatisation industrielle et solutions de surveillance.\n\n• Transformation Digitale : Gestion d'entrepôt, surveillance de carburant, solutions de ville intelligente et jumeaux numériques.\n\n• Services de Conseil : Conseil IT, cybersécurité, infrastructure cloud et conseil technique.\n\nLes services sont fournis tels quels et peuvent être modifiés ou interrompus à notre discrétion."
+            },
+            "userResponsibilities": {
+                "title": "Responsabilités de l'Utilisateur",
+                "content": "En tant qu'utilisateur de nos services, vous acceptez de :\n\n• Fournir des informations exactes, actuelles et complètes lors de l'inscription et de l'utilisation.\n\n• Maintenir la sécurité de vos identifiants de compte et nous informer de tout accès non autorisé.\n\n• Utiliser nos services uniquement à des fins légales et conformément à ces conditions.\n\n• Ne pas tenter d'obtenir un accès non autorisé à nos systèmes ou réseaux.\n\n• Ne pas interférer avec ou perturber l'intégrité ou les performances de nos services.\n\n• Ne pas utiliser nos services pour transmettre du code nuisible, des logiciels malveillants ou du contenu malveillant.\n\n• Respecter toutes les lois applicables en matière de protection et de confidentialité des données.\n\n• Respecter les droits de propriété intellectuelle de Dash Tech Africa et des tiers."
+            },
+            "intellectualProperty": {
+                "title": "Droits de Propriété Intellectuelle",
+                "content": "Tous les droits de propriété intellectuelle dans nos services et contenus appartiennent à Dash Tech Africa :\n\n• Propriété : Tous les logiciels, designs, documentations et matériels restent notre propriété.\n\n• Licence Limitée : Nous vous accordons une licence limitée, non exclusive et non transférable pour utiliser nos services.\n\n• Restrictions : Vous ne pouvez pas copier, modifier, distribuer, vendre ou louer une partie de nos services.\n\n• Travail Personnalisé : La propriété des solutions développées sur mesure est définie dans les contrats individuels.\n\n• Commentaires : Tout commentaire ou suggestion que vous fournissez peut être utilisé sans compensation.\n\n• Marques : Le nom, le logo et les marques Dash Tech Africa sont notre propriété.\n\nL'utilisation non autorisée de notre propriété intellectuelle peut entraîner des poursuites judiciaires."
+            },
+            "limitations": {
+                "title": "Limitations de Responsabilité",
+                "content": "Dans toute la mesure permise par la loi :\n\n• Aucune Garantie : Les services sont fournis \"tels quels\" sans garantie d'aucune sorte.\n\n• Disponibilité du Service : Nous ne garantissons pas un service ininterrompu ou sans erreur.\n\n• Perte de Données : Nous ne sommes pas responsables de la perte de données ; vous êtes responsable des sauvegardes.\n\n• Dommages Indirects : Nous ne sommes pas responsables des dommages indirects, consécutifs ou accessoires.\n\n• Responsabilité Maximale : Notre responsabilité totale est limitée au montant payé pour les services au cours des 12 derniers mois.\n\n• Services Tiers : Nous ne sommes pas responsables des services ou intégrations tiers.\n\nCertaines juridictions n'autorisent pas les limitations sur les garanties implicites, donc celles-ci peuvent ne pas s'appliquer à vous."
+            },
+            "termination": {
+                "title": "Résiliation",
+                "content": "L'une ou l'autre partie peut résilier les services dans les conditions suivantes :\n\n• Par Vous : Vous pouvez résilier en fournissant un avis écrit et en réglant les paiements en attente.\n\n• Par Nous : Nous pouvons résilier immédiatement en cas de violation des conditions, d'activité illégale ou de non-paiement.\n\n• Effet de la Résiliation : Lors de la résiliation, votre droit d'utiliser nos services cesse immédiatement.\n\n• Conservation des Données : Nous pouvons conserver certaines données comme requis par la loi ou à des fins commerciales légitimes.\n\n• Survie : Les dispositions concernant la propriété intellectuelle, la responsabilité et la résolution des litiges survivent à la résiliation.\n\n• Aucun Remboursement : La résiliation ne vous donne pas droit à des remboursements pour les services déjà rendus."
+            }
+        },
+        "governingLaw": {
+            "title": "Loi Applicable et Résolution des Litiges",
+            "content": "Ces Conditions sont régies par les lois du Cameroun. Tout litige découlant de ces conditions ou de nos services sera résolu par des négociations de bonne foi. Si les négociations échouent, les litiges seront soumis aux tribunaux compétents de Douala, Cameroun."
+        },
+        "contact": {
+            "title": "Coordonnées",
+            "description": "Pour toute question concernant ces Conditions d'Utilisation, veuillez nous contacter :"
+        }
+    },
+    "cookies": {
+        "title": "Politique des Cookies",
+        "subtitle": "Découvrez comment nous utilisons les cookies et technologies similaires pour améliorer votre expérience.",
+        "lastUpdated": "Dernière mise à jour",
+        "introduction": "Cette Politique des Cookies explique comment Dash Tech Africa utilise les cookies et technologies de suivi similaires sur notre site web et services. En utilisant notre site web, vous consentez à l'utilisation de cookies comme décrit dans cette politique.",
+        "sections": {
+            "whatAreCookies": {
+                "title": "Qu'est-ce que les Cookies ?",
+                "content": "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez un site web :\n\n• Objectif : Les cookies aident les sites web à se souvenir d'informations sur votre visite, préférences et interactions.\n\n• Stockage : Les cookies sont stockés dans votre navigateur web et peuvent être accessibles par le site web qui les a créés.\n\n• Types : Cookies de session (temporaires) et cookies persistants (restent après la fermeture du navigateur).\n\n• Taille : Les cookies sont généralement très petits et ne nuisent pas à votre appareil.\n\n• Contrôle : Vous avez un contrôle total sur l'acceptation et la suppression des cookies via les paramètres du navigateur.\n\nLes cookies améliorent votre expérience de navigation et nous aident à comprendre comment les utilisateurs interagissent avec notre site web."
+            },
+            "cookieTypes": {
+                "title": "Types de Cookies que Nous Utilisons",
+                "content": "Nous utilisons différentes catégories de cookies :\n\n1. Cookies Strictement Nécessaires :\n   • Essentiels pour la fonctionnalité et la sécurité du site web\n   • Ne peuvent pas être désactivés sans affecter le fonctionnement du site web\n   • Exemples : Authentification, sécurité, équilibrage de charge\n\n2. Cookies de Performance et d'Analyse :\n   • Collectent des données d'utilisation anonymes pour améliorer les performances du site web\n   • Nous aident à comprendre le comportement et les préférences des utilisateurs\n   • Exemples : Google Analytics, suivi des cartes thermiques\n\n3. Cookies de Fonctionnalité :\n   • Se souviennent de vos préférences et paramètres\n   • Améliorent les fonctionnalités et la personnalisation du site web\n   • Exemples : Préférence de langue, sélection de région\n\n4. Cookies Marketing et Publicitaires :\n   • Suivent vos intérêts pour diffuser du contenu pertinent\n   • Mesurent l'efficacité des campagnes marketing\n   • Exemples : Pixels de médias sociaux, cookies de reciblage"
+            },
+            "howWeUse": {
+                "title": "Comment Nous Utilisons les Cookies",
+                "content": "Nous utilisons les cookies aux fins suivantes :\n\n• Authentification : Maintenir votre statut de connexion et les sessions sécurisées.\n\n• Préférences : Se souvenir de votre langue, région et paramètres d'affichage.\n\n• Analytique : Comprendre comment les visiteurs interagissent avec notre site web et identifier les domaines d'amélioration.\n\n• Sécurité : Détecter et prévenir les activités frauduleuses et l'accès non autorisé.\n\n• Performance : Optimiser la vitesse et l'expérience utilisateur du site web.\n\n• Marketing : Diffuser du contenu pertinent et mesurer l'efficacité des campagnes.\n\n• Médias Sociaux : Activer le partage et l'intégration des médias sociaux.\n\nLes cookies nous aident à fournir une meilleure expérience plus personnalisée."
+            },
+            "thirdParty": {
+                "title": "Cookies Tiers",
+                "content": "Notre site web peut utiliser des cookies tiers de :\n\n• Fournisseurs d'Analyse : Google Analytics, pour comprendre l'utilisation du site web et les sources de trafic.\n\n• Plateformes de Médias Sociaux : Facebook, LinkedIn, Twitter pour le partage social et l'engagement.\n\n• Réseaux Publicitaires : Pour diffuser des publicités pertinentes et mesurer les performances des campagnes.\n\n• Réseaux de Diffusion de Contenu : Pour optimiser la diffusion de contenu et les performances du site web.\n\n• Outils de Support Client : Chat en direct et systèmes de tickets de support.\n\nLes cookies tiers sont soumis aux politiques de confidentialité de ces fournisseurs. Nous vous recommandons de consulter leurs politiques."
+            },
+            "manageCookies": {
+                "title": "Gestion des Préférences de Cookies",
+                "content": "Vous pouvez contrôler et gérer les cookies de plusieurs manières :\n\n• Paramètres du Navigateur : La plupart des navigateurs vous permettent de bloquer ou de supprimer les cookies via les paramètres.\n\n• Outils d'Exclusion : Utilisez les outils d'exclusion de l'industrie pour les cookies publicitaires.\n\n• Consentement aux Cookies : Utilisez notre bannière de consentement aux cookies pour gérer les préférences.\n\n• Ne Pas Suivre : Activez \"Ne Pas Suivre\" dans les paramètres de votre navigateur.\n\nRemarque : La désactivation de certains cookies peut affecter la fonctionnalité et l'expérience utilisateur du site web.\n\nGestion des cookies spécifique au navigateur :\n• Chrome : Paramètres > Confidentialité et sécurité > Cookies\n• Firefox : Options > Vie privée et sécurité > Cookies\n• Safari : Préférences > Confidentialité > Cookies\n• Edge : Paramètres > Confidentialité > Cookies"
+            },
+            "consent": {
+                "title": "Votre Consentement",
+                "content": "En utilisant notre site web, vous consentez à l'utilisation de cookies comme décrit dans cette politique :\n\n• Consentement Explicite : Lorsque vous acceptez les cookies via notre bannière de consentement.\n\n• Consentement Implicite : En continuant à utiliser notre site web après avoir été informé des cookies.\n\n• Retrait : Vous pouvez retirer votre consentement à tout moment en ajustant les paramètres des cookies.\n\n• Mises à Jour : Nous vous informerons des changements importants dans nos pratiques en matière de cookies.\n\nVos choix en matière de confidentialité sont respectés et nous fournissons des informations transparentes sur les cookies."
+            }
+        },
+        "contact": {
+            "title": "Questions sur les Cookies",
+            "description": "Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter :"
+        }
     }
 } as const

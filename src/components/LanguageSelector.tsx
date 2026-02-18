@@ -42,36 +42,31 @@ const LanguageSelector = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                    {locale === "en" ?
-                        (
-                            <>
-                                {/* <img
-                                    src={languages[0].flag}
-                                    alt={languages[0].name}
-                                    className="h-5 w-7"
-                                /> */}
-                                <span>
-                                    {languages[0].name.slice(0, 2).toUpperCase()}
-                                </span>
-                            </>
-                        )
-                        : (
-                            <>
-                                <span>
-                                    {languages[1].name.slice(0, 2).toUpperCase()}
-                                </span>
-
-                            </>
-                        )
-                    }
+                <Button
+                    variant="outline"
+                    size="default"
+                    className="h-10 px-4 gap-2 font-semibold border-2 hover:border-primary/50 transition-all duration-300"
+                >
+                    <span className="hidden sm:inline">
+                        {locale === "en" ? languages[0].name : languages[1].name}
+                    </span>
+                    <span className="sm:hidden">
+                        {locale === "en" ? "EN" : "FR"}
+                    </span>
+                    <ChevronDown className="w-4 h-4 opacity-70" />
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent align="end" className="w-40 z-[9999]">
                 {languages.map((lang) => (
-                    <DropdownMenuItem key={lang.code} onSelect={() => onLanguageChange(lang)}>
-                        {/* <img src={lang.flag} alt={lang.name} className="h-4 w-6 mr-2" /> */}
-                        {lang.name}
+                    <DropdownMenuItem
+                        key={lang.code}
+                        onSelect={() => onLanguageChange(lang)}
+                        className="cursor-pointer font-medium"
+                    >
+                        <span className="flex items-center gap-2">
+                            {/* <span className="text-lg">{lang.code === 'en' ? '🇬🇧' : '🇫🇷'}</span> */}
+                            {lang.name}
+                        </span>
                     </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -16,6 +16,28 @@ import {
     Heart
 } from "lucide-react";
 import { useI18n } from "@/locales/client";
+
+// Logo component with fallback
+function FooterLogo() {
+    const [imgSrc, setImgSrc] = useState('/logo-dash-tech.webp');
+    const [hasError, setHasError] = useState(false);
+
+    const handleError = () => {
+        if (!hasError) {
+            setHasError(true);
+            setImgSrc('/dash-logo-bg-white.webp');
+        }
+    };
+
+    return (
+        <img
+            src={imgSrc}
+            alt="Dash Tech Africa Logo"
+            className="w-full h-full object-contain"
+            onError={handleError}
+        />
+    );
+}
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -78,11 +100,7 @@ export default function Footer() {
                         {/* Company Info */}
                         <div className="space-y-6">
                             <div className="w-40 h-40 bg-white rounded-xl flex items-center justify-center p-2">
-                                <img
-                                    src="/logo-dash-tech.webp"
-                                    alt="Dash Tech Africa Logo"
-                                    className="w-full h-full object-contain"
-                                />
+                                <FooterLogo />
                             </div>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
