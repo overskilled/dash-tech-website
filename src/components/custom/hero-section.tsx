@@ -1,124 +1,115 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useI18n } from "@/locales/client";
+import Link from "next/link";
 
 export function HeroSection() {
   const t = useI18n();
+  const ease = [0.16, 1, 0.3, 1] as const;
 
   return (
     <section
-      className="relative -mt-16 h-[90vh] w-full overflow-hidden"
+      className="relative -mt-20 min-h-screen w-full overflow-hidden flex items-end"
       aria-labelledby="hero-heading"
     >
-      {/* === BACKGROUND VIDEO - FIXED AUTOPLAY === */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 -z-10">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-fit"
-          style={{ 
-            width: '100%', 
-            height: '100%', 
-            objectFit: 'cover' 
-          }}
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <source
-            // src="/videos/banner2.mp4"
-            src="grok1.mp4"
-            type="video/mp4"
-          />
-          {/* Fallback if video doesn't load */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-800" />
+          <source src="grok1.mp4" type="video/mp4" />
         </video>
+        {/* Solid overlay */}
+        <div className="absolute inset-0 bg-black/55" />
       </div>
 
-      {/* === OVERLAY === */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b fromwhite/70 via-black/50 to-black/70" />
-
-      {/* === HERO CONTENT === */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.3, ease: "easeOut" }}
-        className="container mx-auto container-padding-x h-full
-                   flex flex-col items-center justify-center
-                   text-center lg:text-left lg:items-start max-w-5xl"
-      >
-        <motion.h1
-          id="hero-heading"
-          className="font-semibold text-white drop-shadow-xl leading-tight
-                     text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-          initial={{ y: 35, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 1.1 }}
-        >
-          {t('hero.title.line1')}
-          <span className="block text-primary relative ml-1 inline-block">
-            {t('hero.title.line2')}
-          </span>
-        </motion.h1>
-
-        <motion.p
-          className="mt-6 text-white/90 drop-shadow max-w-2xl
-                     text-base sm:text-lg md:text-xl"
-          initial={{ y: 35, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 1.1 }}
-        >
-          {t('hero.description')}
-        </motion.p>
-
-        {/* CTA BUTTONS */}
-        <motion.div
-          className="mt-8 flex flex-col sm:flex-row gap-4"
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.6,
-              },
-            },
-          }}
-        >
+      {/* Hero Content */}
+      <div className="container-editorial pb-16 md:pb-20 lg:pb-24 pt-40 w-full">
+        <div className="max-w-4xl">
           <motion.div
-            variants={{
-              hidden: { y: 20, opacity: 0 },
-              show: { y: 0, opacity: 1 },
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
           >
-            <Button
-              size="lg"
-              className="font-semibold shadow-lg shadow-black/20 hover:scale-105 transition-all duration-300"
+            {/* Eyebrow */}
+            <motion.p
+              className="text-white/50 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium mb-4 md:mb-6"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8, ease }}
             >
-              {t('hero.buttons.startProject')}
-            </Button>
+              Digital Solutions for Africa
+            </motion.p>
+
+            {/* Main Heading */}
+            <motion.h1
+              id="hero-heading"
+              className="font-semibold text-white text-display"
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 1, ease }}
+            >
+              {t('hero.title.line1')}
+              <br />
+              <span className="text-primary">{t('hero.title.line2')}</span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              className="mt-6 md:mt-8 text-white/60 max-w-xl text-body-lg"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8, ease }}
+            >
+              {t('hero.description')}
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8, ease }}
+            >
+              <Link href="/contact">
+                <Button size="lg">
+                  {t('hero.buttons.startProject')}
+                </Button>
+              </Link>
+              <Link href="/#services">
+                <Button variant="outline" size="lg">
+                  {t('hero.buttons.discoverServices')}
+                </Button>
+              </Link>
+            </motion.div>
           </motion.div>
 
+          {/* Stats strip */}
           <motion.div
-            variants={{
-              hidden: { y: 20, opacity: 0 },
-              show: { y: 0, opacity: 1 },
-            }}
+            className="mt-12 md:mt-16 flex flex-wrap gap-8 md:gap-12 border-t border-white/10 pt-6 md:pt-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
           >
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
-            >
-              {t('hero.buttons.discoverServices')}
-              <ArrowRight className="ml-2" />
-            </Button>
+            {[
+              { value: "50+", label: "Projects Delivered" },
+              { value: "6+", label: "Countries Served" },
+              { value: "10+", label: "Years Experience" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <p className="text-2xl sm:text-3xl font-semibold text-white">{stat.value}</p>
+                <p className="text-xs sm:text-sm text-white/40 mt-1">{stat.label}</p>
+              </div>
+            ))}
           </motion.div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

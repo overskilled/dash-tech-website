@@ -4,226 +4,171 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { 
-  Globe, 
-  Lightbulb, 
-  Settings, 
-  DollarSign, 
-  Zap, 
-  ShieldCheck,
-  Quote
-} from "lucide-react";
 import { Button } from "../ui/button";
 import { useI18n } from "@/locales/client";
+import Link from "next/link";
 
 export default function WhyChooseUsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useI18n();
 
-  // Get features data from translations
   const features = [
     {
-      icon: Globe,
       title: t('whyChooseUs.features.africanExpertise.title'),
-      description: t('whyChooseUs.features.africanExpertise.description')
+      description: t('whyChooseUs.features.africanExpertise.description'),
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
     },
     {
-      icon: Lightbulb,
       title: t('whyChooseUs.features.innovativeSolutions.title'),
-      description: t('whyChooseUs.features.innovativeSolutions.description')
+      description: t('whyChooseUs.features.innovativeSolutions.description'),
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
     },
     {
-      icon: Settings,
       title: t('whyChooseUs.features.dedicatedSupport.title'),
-      description: t('whyChooseUs.features.dedicatedSupport.description')
+      description: t('whyChooseUs.features.dedicatedSupport.description'),
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
     },
     {
-      icon: DollarSign,
       title: t('whyChooseUs.features.costEffective.title'),
-      description: t('whyChooseUs.features.costEffective.description')
+      description: t('whyChooseUs.features.costEffective.description'),
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     },
     {
-      icon: Zap,
       title: t('whyChooseUs.features.fastDeployment.title'),
-      description: t('whyChooseUs.features.fastDeployment.description')
+      description: t('whyChooseUs.features.fastDeployment.description'),
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
     },
     {
-      icon: ShieldCheck,
       title: t('whyChooseUs.features.provenTrackRecord.title'),
-      description: t('whyChooseUs.features.provenTrackRecord.description')
+      description: t('whyChooseUs.features.provenTrackRecord.description'),
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
     }
   ];
 
+  const ease = [0.16, 1, 0.3, 1] as const;
+
   return (
-    <section ref={ref} className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
+    <section ref={ref} className="section-padding">
+      <div className="container-editorial">
+        {/* Header */}
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-20"
+          initial={{ opacity: 0, y: 32 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
+          transition={{ duration: 0.8, ease }}
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            {t('whyChooseUs.title.line1')} <span className="text-primary">{t('whyChooseUs.title.line2')}</span>
-          </h2>
-          <motion.p
-            className="text-lg sm:text-xl text-gray-300 leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
-            {t('whyChooseUs.description')}
-          </motion.p>
-        </motion.div>
+          <div>
+            <p className="text-white/40 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium mb-4">
+              {t('whyChooseUs.title.line1')} {t('whyChooseUs.title.line2')}
+            </p>
+            <h2 className="text-heading font-semibold text-white">
+              {t('whyChooseUs.description')}
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left Side - Enhanced CEO Section */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
-            {/* CEO Card with Image on Left */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 relative overflow-hidden">
-              {/* Background Pattern */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-16 translate-x-16" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full translate-y-12 -translate-x-12" />
-              
-              <div className="relative z-10">
-                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
-                  {/* CEO Image - Larger and more prominent */}
-                  <motion.div
-                    className="flex-shrink-0"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                  >
-                    <div className="relative w-32 h-32 lg:w-48 lg:h-85 rounded-2xl overflow-hidden shadow-2xl">
-                      <img
-                        src="/diletta.webp"
-                        alt="Diletta EGBE - CEO Dash Tech Africa"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </motion.div>
-
-                  {/* CEO Content */}
-                  <div className="flex-1 text-center lg:text-left">
-                    {/* Quote Icon */}
-                    <motion.div
-                      className="text-4xl text-primary mb-4 lg:mb-6"
-                      initial={{ scale: 0, rotate: -180 }}
-                      animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
-                      transition={{ duration: 0.6, delay: 0.8, ease: "backOut" }}
-                    >
-                      "
-                    </motion.div>
-
-                    {/* CEO Message */}
-                    <motion.blockquote
-                      className="text-lg sm:text-xl text-white leading-relaxed mb-6"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-                    >
-                      {t('whyChooseUs.ceo.quote')}
-                    </motion.blockquote>
-
-                    {/* CEO Signature */}
-                    <motion.div
-                      className="border-t border-white/20 pt-4"
-                      initial={{ opacity: 0 }}
-                      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                      transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
-                    >
-                      <div>
-                        <p className="text-white font-bold text-xl">{t('whyChooseUs.ceo.name')}</p>
-                        <p className="text-primary font-semibold">{t('whyChooseUs.ceo.position')}</p>
-                        <p className="text-gray-400 text-sm">{t('whyChooseUs.ceo.company')}</p>
-                      </div>
-                    </motion.div>
-                  </div>
+          {/* CEO Quote */}
+          <div className="flex flex-col justify-end">
+            <div className="border-l-2 border-primary pl-6">
+              <blockquote className="text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+                &ldquo;{t('whyChooseUs.ceo.quote')}&rdquo;
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden">
+                  <img
+                    src="/diletta.webp"
+                    alt={t('whyChooseUs.ceo.name')}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">{t('whyChooseUs.ceo.name')}</p>
+                  <p className="text-white/40 text-xs">{t('whyChooseUs.ceo.position')}, {t('whyChooseUs.ceo.company')}</p>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
-          {/* Right Side - Features Grid with Glass Background */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <motion.div
-                  key={feature.title}
-                  className="bg-white/5 backdrop-blur-sm hover:cursor-pointer rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 group hover:bg-white/10"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1, ease: "easeOut" }}
-                  whileHover={{ 
-                    y: -5,
-                    scale: 1.02,
-                    transition: { type: "spring", stiffness: 300 }
-                  }}
-                >
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    {/* Icon Container with Glass Effect */}
-                    <motion.div
-                      className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 text-white group-hover:text-primary group-hover:border-primary/40 group-hover:bg-white/15 transition-all duration-300"
-                      whileHover={{ 
-                        scale: 1.1,
-                        rotate: 5
-                      }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                    >
-                      <IconComponent className="w-7 h-7 " />
-                    </motion.div>
-                    
-                    <div>
-                      <h3 className="text-white font-semibold text-lg mb-3 group-hover:text-primary transition-colors duration-300">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
+        {/* Full-width hero image */}
+        <motion.div
+          className="relative w-full aspect-[21/9] rounded-xl overflow-hidden mb-8 md:mb-12"
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+          transition={{ duration: 0.8, delay: 0.2, ease }}
+        >
+          <img
+            src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=1600&q=80"
+            alt="African tech professionals collaborating"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8">
+            <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold max-w-2xl">
+              Experience the difference of working with Africa&apos;s leading digital transformation partner
+            </p>
+          </div>
+        </motion.div>
 
-                  {/* Hover Line Effect */}
-                  <motion.div
-                    className="h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full mt-4 mx-auto w-1/2"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
+        {/* Features Grid — image-backed cards */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              className="group relative h-64 sm:h-72 md:h-80 rounded-xl overflow-hidden cursor-pointer"
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.4 + index * 0.08,
+                ease,
+              }}
+            >
+              {/* Background Image */}
+              <img
+                src={feature.image}
+                alt={feature.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+              />
+
+              {/* Solid overlay */}
+              <div className="absolute inset-0 bg-black/55 group-hover:bg-black/45 transition-colors duration-700" />
+
+              {/* Content */}
+              <div className="relative h-full flex flex-col justify-end p-5 sm:p-6">
+                <h3 className="text-white font-semibold text-base sm:text-lg mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-white/50 text-xs sm:text-sm leading-relaxed group-hover:text-white/70 transition-colors duration-700">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+          className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-border/50 pt-10 md:pt-12"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-gray-400 text-lg mb-6">
+          <p className="text-white/40 text-base sm:text-lg">
             {t('whyChooseUs.cta.description')}
           </p>
-          <Button size={"lg"}>
-            {t('whyChooseUs.cta.button')}
-          </Button>
+          <Link href="/contact">
+            <Button size="lg">
+              {t('whyChooseUs.cta.button')}
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
   );
-} 
+}

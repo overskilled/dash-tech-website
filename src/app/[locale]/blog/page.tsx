@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react";
 import { useI18n } from "@/locales/client";
+import { Button } from "@/components/ui/button";
 
 export default function BlogPage() {
     const t = useI18n();
+    const ease = [0.16, 1, 0.3, 1] as const;
 
     const blogPosts = [
         {
@@ -14,7 +15,7 @@ export default function BlogPage() {
             category: "AI & Technology",
             date: "Feb 15, 2026",
             readTime: "5 min read",
-            image: "/banner.png"
+            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
         },
         {
             title: "Building Scalable IoT Solutions for Smart Cities",
@@ -22,7 +23,7 @@ export default function BlogPage() {
             category: "IoT",
             date: "Feb 10, 2026",
             readTime: "8 min read",
-            image: "/banner.png"
+            image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
         },
         {
             title: "Digital Transformation: A Guide for African SMEs",
@@ -30,7 +31,7 @@ export default function BlogPage() {
             category: "Business",
             date: "Feb 5, 2026",
             readTime: "6 min read",
-            image: "/banner.png"
+            image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
         }
     ];
 
@@ -44,124 +45,123 @@ export default function BlogPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-background py-20">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-                {/* Header */}
-                <motion.div
-                    className="text-center mb-16"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6">
-                        <BookOpen className="w-10 h-10 text-primary" />
-                    </div>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-                        Our <span className="text-primary">Blog</span>
-                    </h1>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Insights, tutorials, and stories about digital transformation, technology, and innovation in Africa.
-                    </p>
-                </motion.div>
+        <div className="min-h-screen bg-background">
+            {/* Hero Header */}
+            <section className="pt-28 sm:pt-32 pb-16 md:pb-20">
+                <div className="container-editorial">
+                    <motion.div
+                        className="max-w-2xl"
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease }}
+                    >
+                        <p className="text-white/40 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium mb-4">
+                            Blog
+                        </p>
+                        <h1 className="text-display font-semibold text-white mb-4 md:mb-6">
+                            Our <span className="text-primary">Blog</span>
+                        </h1>
+                        <p className="text-body-lg text-white/50 max-w-xl">
+                            Insights, tutorials, and stories about digital transformation, technology, and innovation in Africa.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
 
-                {/* Categories */}
-                <motion.div
-                    className="flex flex-wrap gap-3 justify-center mb-12"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                    {categories.map((category, index) => (
-                        <button
-                            key={index}
-                            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                                index === 0
-                                    ? "bg-primary text-primary-foreground"
-                                    : "bg-card text-muted-foreground hover:text-foreground border border-border"
-                            }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
-                </motion.div>
+            {/* Categories */}
+            <section className="pb-10 md:pb-12">
+                <div className="container-editorial">
+                    <motion.div
+                        className="flex flex-wrap gap-2"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        {categories.map((category, index) => (
+                            <button
+                                key={index}
+                                className={`px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-all duration-500 cursor-pointer uppercase tracking-[0.06em] ${
+                                    index === 0
+                                        ? "bg-primary text-white"
+                                        : "text-white/30 border border-border/50 hover:text-white/60 hover:border-white/20"
+                                }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </motion.div>
+                </div>
+            </section>
 
-                {/* Blog Posts Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {blogPosts.map((post, index) => (
-                        <motion.article
-                            key={index}
-                            className="bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 * index }}
-                        >
-                            <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
-                                <img
-                                    src={post.image}
-                                    alt={post.title}
-                                    className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        const target = e.target as HTMLImageElement;
-                                        target.src = '/logo-dash-tech.webp';
-                                    }}
-                                />
-                                <div className="absolute top-4 left-4">
-                                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                                        {post.category}
-                                    </span>
+            {/* Blog Grid */}
+            <section className="pb-24 md:pb-32">
+                <div className="container-editorial">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                        {blogPosts.map((post, index) => (
+                            <motion.article
+                                key={index}
+                                className="group cursor-pointer"
+                                initial={{ opacity: 0, y: 24 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                            >
+                                {/* Image */}
+                                <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-4 md:mb-5">
+                                    <img
+                                        src={post.image}
+                                        alt={post.title}
+                                        className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.src = '/logo-dash-tech.webp';
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/15 transition-colors duration-700" />
                                 </div>
-                            </div>
-                            <div className="p-6">
-                                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                                    <span className="flex items-center gap-1">
-                                        <Calendar className="w-4 h-4" />
-                                        {post.date}
-                                    </span>
-                                    <span className="flex items-center gap-1">
-                                        <Clock className="w-4 h-4" />
-                                        {post.readTime}
-                                    </span>
+
+                                {/* Meta */}
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="text-xs text-primary font-medium uppercase tracking-[0.06em]">{post.category}</span>
+                                    <span className="text-xs text-white/15">|</span>
+                                    <span className="text-xs text-white/30">{post.date}</span>
+                                    <span className="text-xs text-white/30">{post.readTime}</span>
                                 </div>
-                                <h3 className="text-xl font-bold text-foreground mb-2 line-clamp-2">
+
+                                {/* Title & Excerpt */}
+                                <h3 className="text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-white/80 transition-colors duration-500 line-clamp-2">
                                     {post.title}
                                 </h3>
-                                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                                <p className="text-white/40 text-xs sm:text-sm leading-relaxed line-clamp-2">
                                     {post.excerpt}
                                 </p>
-                                <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                                    Read More
-                                    <ArrowRight className="w-4 h-4" />
-                                </button>
-                            </div>
-                        </motion.article>
-                    ))}
-                </div>
-
-                {/* Newsletter Signup */}
-                <motion.div
-                    className="mt-20 bg-primary/5 rounded-2xl p-12 border border-primary/20 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                        Stay Updated
-                    </h3>
-                    <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                        Subscribe to our newsletter to get the latest insights on digital transformation in Africa.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="flex-1 px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                        />
-                        <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap">
-                            Subscribe
-                        </button>
+                            </motion.article>
+                        ))}
                     </div>
-                </motion.div>
-            </div>
+
+                    {/* Newsletter */}
+                    <motion.div
+                        className="mt-16 md:mt-20 border-t border-border/50 pt-12 md:pt-16"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
+                            <div>
+                                <h3 className="text-subheading font-semibold text-white mb-2">Stay Updated</h3>
+                                <p className="text-white/40 text-xs sm:text-sm">Subscribe to get the latest insights on digital transformation in Africa.</p>
+                            </div>
+                            <div className="flex gap-3">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className="flex-1 px-4 py-3 bg-transparent border border-border/50 rounded-md text-white text-sm placeholder-white/20 focus:outline-none focus:border-white/30 transition-colors duration-500"
+                                />
+                                <Button>Subscribe</Button>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     );
 }

@@ -1,7 +1,6 @@
 "use client"
 
-import { useState, useTransition } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
     DropdownMenu,
@@ -9,27 +8,22 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useRouter } from 'next/navigation';
 import { useChangeLocale, useCurrentLocale } from '@/locales/client';
 
 type Language = {
     code: string;
     name: string;
-    flag: string;
+    short: string;
 };
 
 const languages: Language[] = [
-    { code: 'en', name: 'English', flag: 'https://flagcdn.com/w20/gb.png' },
-    { code: 'fr', name: 'Français', flag: 'https://flagcdn.com/w20/fr.png' },
+    { code: 'en', name: 'English', short: 'EN' },
+    { code: 'fr', name: 'Francais', short: 'FR' },
 ];
 
 const LanguageSelector = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
-
     const changeLocale = useChangeLocale()
     const locale = useCurrentLocale()
-
-    const router = useRouter()
 
     const onLanguageChange = (item: Language) => {
         if (item.code == "en") {
@@ -39,34 +33,29 @@ const LanguageSelector = () => {
         }
     }
 
+    const currentLang = locale === "en" ? languages[0] : languages[1];
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button
-                    variant="outline"
-                    size="default"
-                    className="h-10 px-4 gap-2 font-semibold border-2 hover:border-primary/50 transition-all duration-300"
+                    variant="ghost"
+                    size="sm"
+                    className="text-white/50 hover:text-white text-xs font-medium tracking-wide"
                 >
-                    <span className="hidden sm:inline">
-                        {locale === "en" ? languages[0].name : languages[1].name}
-                    </span>
-                    <span className="sm:hidden">
-                        {locale === "en" ? "EN" : "FR"}
-                    </span>
-                    <ChevronDown className="w-4 h-4 opacity-70" />
+                    {currentLang.short}
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-40 z-[9999]">
+            <DropdownMenuContent align="end" className="w-32 z-[9999] bg-card border-border">
                 {languages.map((lang) => (
                     <DropdownMenuItem
                         key={lang.code}
                         onSelect={() => onLanguageChange(lang)}
-                        className="cursor-pointer font-medium"
+                        className={`cursor-pointer text-sm ${
+                            locale === lang.code ? "text-white" : "text-white/50"
+                        }`}
                     >
-                        <span className="flex items-center gap-2">
-                            {/* <span className="text-lg">{lang.code === 'en' ? '🇬🇧' : '🇫🇷'}</span> */}
-                            {lang.name}
-                        </span>
+                        {lang.name}
                     </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /* ============================================
-   YOUR COLOR PALETTE
+   DASH TECH AFRICA - DESIGN SYSTEM
+   Senior-level, editorial, image-first
    ============================================ */
 :root {
-  /* HEX — main brand colors */
   --monza: #e50914;
   --denim: #1479be;
   --woodsmoke: #101316;
@@ -15,15 +15,14 @@
 }
 
 /* ============================================
-   TAILWIND THEME + OUTFIT FONT
+   TAILWIND THEME
    ============================================ */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-outfit); /* NEW — WE USE OUTFIT */
+  --font-sans: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
 
-  /* Light mode colors mapped to your palette */
   --color-background: var(--woodsmoke);
   --color-foreground: #ffffff;
 
@@ -37,30 +36,28 @@
   --color-accent-foreground: #ffffff;
 
   --color-destructive: var(--thunderbird);
-  --color-muted: #f0f0f0;
-  --color-muted-foreground: #555;
+  --color-muted: #1a1d21;
+  --color-muted-foreground: #8a8f98;
+
+  --color-card: #141719;
+  --color-card-foreground: #ffffff;
 
   --color-border: #1f2326;
   --color-input: #1f2326;
   --color-ring: var(--denim);
 
-  /* Charts mapped to your palette */
   --color-chart-1: var(--monza);
   --color-chart-2: var(--denim);
   --color-chart-3: var(--astral);
   --color-chart-4: var(--mexican-red);
   --color-chart-5: var(--fuzzy-wuzzy-brown);
 
-  /* Sidebar system */
   --color-sidebar: var(--woodsmoke);
   --color-sidebar-foreground: #ffffff;
-
   --color-sidebar-primary: var(--monza);
   --color-sidebar-primary-foreground: #ffffff;
-
   --color-sidebar-accent: var(--astral);
   --color-sidebar-accent-foreground: #ffffff;
-
   --color-sidebar-border: #1f2326;
   --color-sidebar-ring: var(--denim);
 
@@ -70,59 +67,45 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Base radius */
 :root {
   --radius: 0.625rem;
-
-  /* FONT VARIABLES from RootLayout */
   --font-outfit: var(--font-outfit);
   --font-geist-mono: var(--font-geist-mono);
 }
 
 /* ============================================
-   DARK MODE (PALLETTE-BASED)
+   DARK MODE
    ============================================ */
 .dark {
   --color-background: #0b0d0f;
   --color-foreground: #ffffff;
-
   --color-primary: var(--monza);
   --color-primary-foreground: #ffffff;
-
   --color-secondary: var(--astral);
   --color-secondary-foreground: #ffffff;
-
   --color-accent: var(--denim);
   --color-accent-foreground: #ffffff;
-
   --color-destructive: var(--mexican-red);
-
   --color-border: #1b1e21;
   --color-input: #1b1e21;
   --color-ring: var(--astral);
-
-  /* Dark chart variants */
   --color-chart-1: var(--monza);
   --color-chart-2: var(--astral);
   --color-chart-3: var(--fuzzy-wuzzy-brown);
   --color-chart-4: var(--denim);
   --color-chart-5: var(--mexican-red);
-
   --color-sidebar: #0f1215;
   --color-sidebar-foreground: #ffffff;
-
   --color-sidebar-primary: var(--monza);
   --color-sidebar-primary-foreground: #ffffff;
-
   --color-sidebar-accent: var(--astral);
   --color-sidebar-accent-foreground: #ffffff;
-
   --color-sidebar-border: #1b1e21;
   --color-sidebar-ring: var(--denim);
 }
 
 /* ============================================
-   BASE LAYER — TAILWIND + OUTFIT
+   BASE LAYER
    ============================================ */
 @layer base {
   * {
@@ -132,4 +115,162 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+
+  /* Editorial typography refinements */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    letter-spacing: -0.03em;
+  }
+
+  /* Fluid typography scale — adapted for all screens */
+  .text-display {
+    font-size: clamp(1.75rem, 4vw + 0.75rem, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .text-heading {
+    font-size: clamp(1.5rem, 2.5vw + 0.5rem, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .text-subheading {
+    font-size: clamp(1.125rem, 1.5vw + 0.25rem, 1.875rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  .text-body-lg {
+    font-size: clamp(0.875rem, 0.5vw + 0.5rem, 1.125rem);
+    line-height: 1.7;
+  }
+}
+
+/* ============================================
+   CUSTOM UTILITIES
+   ============================================ */
+@layer utilities {
+  /* Section spacing — generous, editorial */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32 xl:py-40;
+  }
+
+  /* Container with editorial margins */
+  .container-editorial {
+    @apply container mx-auto px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  /* Image treatment — no gradients, just solid overlays */
+  .image-overlay {
+    @apply absolute inset-0 bg-black/40;
+  }
+
+  .image-overlay-light {
+    @apply absolute inset-0 bg-black/20;
+  }
+
+  .image-overlay-heavy {
+    @apply absolute inset-0 bg-black/60;
+  }
+
+  /* Elegant reveal animation */
+  .reveal-up {
+    animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Text highlight — solid underline, no gradient */
+  .text-highlight {
+    @apply relative inline-block;
+  }
+
+  .text-highlight::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[3px] bg-primary;
+  }
+
+  /* Monochrome image filter */
+  .img-mono {
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .img-mono:hover,
+  .group:hover .img-mono {
+    filter: grayscale(0%) contrast(1);
+  }
+}
+
+/* ============================================
+   ANIMATIONS — Subtle, senior-level
+   ============================================ */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar — minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--woodsmoke);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2d31;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3d41;
+}
+
+/* Selection color */
+::selection {
+  background: var(--monza);
+  color: white;
 }

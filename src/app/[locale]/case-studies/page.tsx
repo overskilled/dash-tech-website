@@ -1,16 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FileCheck, TrendingUp, Users, ArrowRight } from "lucide-react";
 import { useI18n } from "@/locales/client";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CaseStudiesPage() {
     const t = useI18n();
+    const ease = [0.16, 1, 0.3, 1] as const;
 
     const caseStudies = [
         {
             title: "DGI Cameroun: Digital Tax System Transformation",
-            client: "Direction Générale des Impôts",
+            client: "Direction Generale des Impots",
             industry: "Government",
             challenge: "Modernize tax collection and processing systems across Cameroon",
             solution: "Custom ERP system with automated workflows and real-time reporting",
@@ -38,7 +40,7 @@ export default function CaseStudiesPage() {
         },
         {
             title: "SIC: Smart Building Management",
-            client: "Société Immobilière du Cameroun",
+            client: "Societe Immobiliere du Cameroun",
             industry: "Real Estate",
             challenge: "Monitor and control building systems efficiently",
             solution: "IoT-based building automation and monitoring platform",
@@ -53,43 +55,58 @@ export default function CaseStudiesPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-background py-20">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-                {/* Header */}
-                <motion.div
-                    className="text-center mb-16"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6">
-                        <FileCheck className="w-10 h-10 text-primary" />
-                    </div>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-                        Success <span className="text-primary">Stories</span>
-                    </h1>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Discover how we've helped businesses across Africa transform their operations with innovative digital solutions.
-                    </p>
-                </motion.div>
+        <div className="min-h-screen bg-background">
+            {/* Hero — full-bleed image */}
+            <section className="relative min-h-[55vh] lg:min-h-[60vh] flex items-end overflow-hidden -mt-20">
+                <div className="absolute inset-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80"
+                        alt="Dash Tech Africa success stories"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/55" />
+                </div>
 
-                {/* Case Studies */}
-                <div className="space-y-12">
-                    {caseStudies.map((study, index) => (
-                        <motion.div
-                            key={index}
-                            className="bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 * index }}
-                        >
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="container-editorial relative z-10 pb-16 md:pb-20 lg:pb-24 pt-40">
+                    <motion.div
+                        className="max-w-2xl"
+                        initial={{ opacity: 0, y: 32 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease }}
+                    >
+                        <p className="text-white/50 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium mb-4 md:mb-6">
+                            Case Studies
+                        </p>
+                        <h1 className="text-display font-semibold text-white mb-4 md:mb-6">
+                            Success <span className="text-primary">Stories</span>
+                        </h1>
+                        <p className="text-body-lg text-white/50 max-w-xl">
+                            Discover how we&apos;ve helped businesses across Africa transform their operations with innovative digital solutions.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Case Studies */}
+            <section className="section-padding">
+                <div className="container-editorial">
+                    <div className="space-y-12 md:space-y-16">
+                        {caseStudies.map((study, index) => (
+                            <motion.div
+                                key={index}
+                                className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start"
+                                initial={{ opacity: 0, y: 24 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
+                            >
                                 {/* Image */}
-                                <div className="aspect-video lg:aspect-square bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
+                                <div className={`lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden bg-card flex items-center justify-center ${
+                                    index % 2 === 1 ? "lg:order-2" : ""
+                                }`}>
                                     <img
                                         src={study.image}
                                         alt={study.client}
-                                        className="w-full h-full object-contain p-12"
+                                        className="w-3/4 h-3/4 object-contain img-mono"
                                         onError={(e) => {
                                             const target = e.target as HTMLImageElement;
                                             target.src = '/logo-dash-tech.webp';
@@ -98,95 +115,73 @@ export default function CaseStudiesPage() {
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-8 md:p-12 flex flex-col justify-center">
+                                <div className={`lg:col-span-7 ${
+                                    index % 2 === 1 ? "lg:order-1" : ""
+                                }`}>
+                                    {/* Tags */}
                                     <div className="flex flex-wrap gap-2 mb-4">
-                                        {study.tags.map((tag, tagIndex) => (
+                                        {study.tags.map((tag) => (
                                             <span
-                                                key={tagIndex}
-                                                className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold"
+                                                key={tag}
+                                                className="text-xs text-white/40 border border-border/50 px-3 py-1 rounded-md"
                                             >
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
 
-                                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                                    <h2 className="text-subheading font-semibold text-white mb-2">
                                         {study.title}
                                     </h2>
 
-                                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                                        <span className="flex items-center gap-1">
-                                            <Users className="w-4 h-4" />
-                                            {study.client}
-                                        </span>
-                                        <span>•</span>
-                                        <span>{study.industry}</span>
-                                    </div>
+                                    <p className="text-white/30 text-xs sm:text-sm mb-6">
+                                        {study.client} &middot; {study.industry}
+                                    </p>
 
-                                    <div className="space-y-4 mb-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 md:mb-8">
                                         <div>
-                                            <h3 className="font-semibold text-foreground mb-2">Challenge</h3>
-                                            <p className="text-muted-foreground text-sm">
-                                                {study.challenge}
-                                            </p>
+                                            <p className="text-white/30 text-xs uppercase tracking-[0.15em] mb-2">Challenge</p>
+                                            <p className="text-white/50 text-xs sm:text-sm leading-relaxed">{study.challenge}</p>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-foreground mb-2">Solution</h3>
-                                            <p className="text-muted-foreground text-sm">
-                                                {study.solution}
-                                            </p>
+                                            <p className="text-white/30 text-xs uppercase tracking-[0.15em] mb-2">Solution</p>
+                                            <p className="text-white/50 text-xs sm:text-sm leading-relaxed">{study.solution}</p>
                                         </div>
                                     </div>
 
-                                    <div className="mb-6">
-                                        <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                                            <TrendingUp className="w-5 h-5 text-primary" />
-                                            Key Results
-                                        </h3>
+                                    {/* Results */}
+                                    <div className="mb-6 md:mb-8">
+                                        <p className="text-white/30 text-xs uppercase tracking-[0.15em] mb-3">Key Results</p>
                                         <ul className="space-y-2">
-                                            {study.results.map((result, resultIndex) => (
-                                                <li
-                                                    key={resultIndex}
-                                                    className="flex items-start gap-2 text-sm text-muted-foreground"
-                                                >
-                                                    <span className="text-primary mt-0.5">✓</span>
+                                            {study.results.map((result) => (
+                                                <li key={result} className="flex items-start gap-3 text-xs sm:text-sm text-white/60">
+                                                    <span className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
                                                     {result}
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
 
-                                    <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2 w-fit">
-                                        Read Full Case Study
-                                        <ArrowRight className="w-4 h-4" />
-                                    </button>
+                                    <Button size="default">Read Full Case Study</Button>
                                 </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                            </motion.div>
+                        ))}
+                    </div>
 
-                {/* CTA */}
-                <motion.div
-                    className="mt-20 bg-primary/5 rounded-2xl p-12 border border-primary/20 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                        Ready to Write Your Success Story?
-                    </h3>
-                    <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                        Let's discuss how we can help transform your business with our innovative digital solutions.
-                    </p>
-                    <a
-                        href="/contact"
-                        className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                    {/* CTA */}
+                    <motion.div
+                        className="mt-16 md:mt-20 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-border/50 pt-10 md:pt-12"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
                     >
-                        Start Your Project
-                    </a>
-                </motion.div>
-            </div>
+                        <p className="text-white/40 text-base sm:text-lg">Ready to write your success story?</p>
+                        <Link href="/contact">
+                            <Button size="lg">Start Your Project</Button>
+                        </Link>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     );
 }

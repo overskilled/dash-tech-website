@@ -1,125 +1,350 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Linkedin, Twitter, Mail } from "lucide-react";
 import { useI18n } from "@/locales/client";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function TeamPage() {
     const t = useI18n();
 
-    const team = [
+    const leadership = [
+        {
+            name: "Bony Dashaco",
+            role: "Chairman",
+            image: "/team/Bony_Dashaco.jpg",
+            bio: "Strategic visionary and founder leading Dash Tech Africa's mission to transform the continent's digital landscape through bold innovation and strategic partnerships.",
+            social: {
+                linkedin: "#",
+                email: "bony@dashtechafrica.com"
+            }
+        },
         {
             name: "Diletta EGBE",
             role: "Chief Executive Officer",
-            image: "/diletta.webp",
-            bio: "Visionary leader with 10+ years of experience in digital transformation and technology innovation.",
+            image: "/team/diletta.webp",
+            bio: "Visionary leader with 10+ years of experience in digital transformation and technology innovation, driving Dash Tech Africa's growth across the continent.",
             social: {
                 linkedin: "#",
-                twitter: "#",
                 email: "diletta@dashtechafrica.com"
             }
         },
-        // Add more team members as needed
     ];
 
-    return (
-        <div className="min-h-screen bg-background py-20">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <motion.div
-                    className="text-center mb-16 max-w-3xl mx-auto"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6">
-                        <Users className="w-10 h-10 text-primary" />
-                    </div>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-                        Meet Our <span className="text-primary">Team</span>
-                    </h1>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                        A passionate team of experts dedicated to transforming African businesses through innovative technology solutions.
-                    </p>
-                </motion.div>
+    const salesTeam = [
+        {
+            name: "Ibrahim Farris",
+            role: "Corporate Sales",
+            image: "/team/ibrahim.png",
+            bio: "Driving enterprise partnerships and business development across West Africa."
+        },
+        {
+            name: "Gabriella Momha",
+            role: "Corporate Sales",
+            image: "/team/gabriella.png",
+            bio: "Building lasting client relationships and delivering tailored digital solutions."
+        },
+        {
+            name: "Thierry Ambassa",
+            role: "Corporate Sales",
+            image: "",
+            bio: "Connecting businesses with the right technology solutions to accelerate growth."
+        },
+    ];
 
-                {/* Team Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {team.map((member, index) => (
-                        <motion.div
-                            key={index}
-                            className="bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 * index }}
-                        >
-                            <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
-                                <img
-                                    src={member.image}
-                                    alt={member.name}
-                                    className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        const target = e.target as HTMLImageElement;
-                                        target.src = '/logo-dash-tech.webp';
-                                    }}
-                                />
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold text-foreground mb-1">
-                                    {member.name}
-                                </h3>
-                                <p className="text-primary text-sm font-medium mb-3">
-                                    {member.role}
-                                </p>
-                                <p className="text-muted-foreground text-sm mb-4">
-                                    {member.bio}
-                                </p>
-                                <div className="flex gap-3">
-                                    <a
-                                        href={member.social.linkedin}
-                                        className="w-9 h-9 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                                    >
-                                        <Linkedin className="w-4 h-4" />
-                                    </a>
-                                    <a
-                                        href={member.social.twitter}
-                                        className="w-9 h-9 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                                    >
-                                        <Twitter className="w-4 h-4" />
-                                    </a>
-                                    <a
-                                        href={`mailto:${member.social.email}`}
-                                        className="w-9 h-9 bg-background rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                                    >
-                                        <Mail className="w-4 h-4" />
-                                    </a>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+    const devTeam = [
+        {
+            name: "Yvan Ouatedem",
+            role: "Lead Developer",
+            image: "/team/yvan.jpg",
+            bio: "Full-stack architect specializing in scalable enterprise systems and cloud infrastructure."
+        },
+        {
+            name: "Stephane Djantio",
+            role: "Software Developer",
+            image: "/team/adrien.png",
+            bio: "Building robust web and mobile applications with a focus on user experience."
+        },
+        {
+            name: "Andy Nzoupet",
+            role: "Software Developer",
+            image: "",
+            bio: "Building robust web and mobile applications with a focus on user experience."
+        },
+    ];
+
+    const ease = [0.16, 1, 0.3, 1] as const;
+
+    return (
+        <div className="min-h-screen bg-background">
+            {/* Hero — full-bleed image with editorial overlay */}
+            <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-end overflow-hidden -mt-20">
+                <div className="absolute inset-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
+                        alt="Dash Tech Africa team collaboration"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/services/smart-city.webp';
+                        }}
+                    />
+                    <div className="absolute inset-0 bg-black/55" />
                 </div>
 
-                {/* Join Team CTA */}
-                <motion.div
-                    className="mt-20 bg-primary/5 rounded-2xl p-12 border border-primary/20 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                    <h2 className="text-3xl font-bold text-foreground mb-4">
-                        Join Our Team
-                    </h2>
-                    <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                        We're always looking for talented individuals who are passionate about technology and making a difference in Africa.
-                    </p>
-                    <a
-                        href="/careers"
-                        className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                <div className="container-editorial relative z-10 pb-16 md:pb-20 lg:pb-24 pt-40">
+                    <motion.div
+                        className="max-w-3xl"
+                        initial={{ opacity: 0, y: 32 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease }}
                     >
-                        View Open Positions
-                    </a>
-                </motion.div>
-            </div>
+                        <p className="text-white/50 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium mb-4 md:mb-6">
+                            Our People
+                        </p>
+                        <h1 className="text-display font-semibold text-white mb-4 md:mb-6">
+                            The Minds Behind{" "}
+                            <span className="text-primary">Dash Tech</span>
+                        </h1>
+                        <p className="text-body-lg text-white/50 max-w-xl">
+                            A passionate team of experts dedicated to transforming African businesses through innovative technology solutions.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Leadership — editorial magazine layout */}
+            <section className="section-padding">
+                <div className="container-editorial">
+                    <motion.div
+                        className="flex items-end justify-between mb-12 md:mb-16 border-b border-border/50 pb-6"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                        <div>
+                            <p className="text-white/30 text-xs uppercase tracking-[0.15em] mb-3">
+                                Leadership
+                            </p>
+                            <h2 className="text-subheading font-semibold text-white">
+                                Executive Team
+                            </h2>
+                        </div>
+                        <p className="text-white/20 text-sm hidden sm:block">02 Members</p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+                        {leadership.map((member, index) => (
+                            <motion.div
+                                key={member.name}
+                                className="group"
+                                initial={{ opacity: 0, y: 32 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.3 + index * 0.15, ease }}
+                            >
+                                {/* Portrait */}
+                                <div className="relative aspect-[3/4] rounded-xl overflow-hidden mb-6 md:mb-8">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.src = '/logo-dash-tech.webp';
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors duration-700" />
+                                </div>
+
+                                {/* Details */}
+                                <div className="space-y-3">
+                                    <div className="flex items-baseline justify-between gap-4">
+                                        <h3 className="text-white font-semibold text-lg sm:text-xl lg:text-2xl">
+                                            {member.name}
+                                        </h3>
+                                        <span className="text-primary text-xs sm:text-sm uppercase tracking-wider flex-shrink-0">
+                                            {member.role}
+                                        </span>
+                                    </div>
+                                    <p className="text-white/40 text-sm sm:text-[0.9375rem] leading-relaxed max-w-md">
+                                        {member.bio}
+                                    </p>
+
+                                    {member.social && (
+                                        <div className="flex gap-5 pt-2">
+                                            {member.social.linkedin && (
+                                                <a href={member.social.linkedin} className="text-xs text-white/25 hover:text-white/60 transition-colors duration-500 uppercase tracking-[0.15em]">
+                                                    LinkedIn
+                                                </a>
+                                            )}
+                                            {member.social.email && (
+                                                <a href={`mailto:${member.social.email}`} className="text-xs text-white/25 hover:text-white/60 transition-colors duration-500 uppercase tracking-[0.15em]">
+                                                    Email
+                                                </a>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Corporate Sales — horizontal card layout with image */}
+            <section className="pb-24 md:pb-32 lg:pb-40">
+                <div className="container-editorial">
+                    <motion.div
+                        className="flex items-end justify-between mb-12 md:mb-16 border-b border-border/50 pb-6"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                        <div>
+                            <p className="text-white/30 text-xs uppercase tracking-[0.15em] mb-3">
+                                Corporate Sales
+                            </p>
+                            <h2 className="text-subheading font-semibold text-white">
+                                Business Development
+                            </h2>
+                        </div>
+                        <p className="text-white/20 text-sm hidden sm:block">03 Members</p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {salesTeam.map((member, index) => (
+                            <motion.div
+                                key={member.name}
+                                className="group"
+                                initial={{ opacity: 0, y: 24 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, delay: 0.5 + index * 0.1, ease }}
+                            >
+                                <div className="relative aspect-[3/4] rounded-xl overflow-hidden mb-5 md:mb-6">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.src = '/logo-dash-tech.webp';
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors duration-700" />
+                                </div>
+
+                                <h3 className="text-white font-semibold text-base sm:text-lg">{member.name}</h3>
+                                <p className="text-white/30 text-xs sm:text-sm mt-1">{member.role}</p>
+                                <p className="text-white/25 text-xs sm:text-sm mt-3 leading-relaxed">{member.bio}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Development — same grid treatment */}
+            <section className="pb-24 md:pb-32 lg:pb-40">
+                <div className="container-editorial">
+                    <motion.div
+                        className="flex items-end justify-between mb-12 md:mb-16 border-b border-border/50 pb-6"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                        <div>
+                            <p className="text-white/30 text-xs uppercase tracking-[0.15em] mb-3">
+                                Development
+                            </p>
+                            <h2 className="text-subheading font-semibold text-white">
+                                Engineering Team
+                            </h2>
+                        </div>
+                        <p className="text-white/20 text-sm hidden sm:block">03 Members</p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {devTeam.map((member, index) => (
+                            <motion.div
+                                key={member.name}
+                                className="group"
+                                initial={{ opacity: 0, y: 24 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, delay: 0.7 + index * 0.1, ease }}
+                            >
+                                <div className="relative aspect-[3/4] rounded-xl overflow-hidden mb-5 md:mb-6">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.src = '/logo-dash-tech.webp';
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors duration-700" />
+                                </div>
+
+                                <h3 className="text-white font-semibold text-base sm:text-lg">{member.name}</h3>
+                                <p className="text-white/30 text-xs sm:text-sm mt-1">{member.role}</p>
+                                <p className="text-white/25 text-xs sm:text-sm mt-3 leading-relaxed">{member.bio}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Full-width culture image band */}
+            <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+                <img
+                    src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600&q=80"
+                    alt="Team culture at Dash Tech Africa"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/services/crm.webp';
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.p
+                        className="text-white/70 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-center px-6 max-w-2xl"
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease }}
+                    >
+                        &ldquo;Together, we build the digital future of Africa.&rdquo;
+                    </motion.p>
+                </div>
+            </section>
+
+            {/* Join CTA */}
+            <section className="section-padding">
+                <div className="container-editorial">
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease }}
+                    >
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center border-t border-border/50 pt-12 md:pt-16">
+                            <div>
+                                <h2 className="text-subheading font-semibold text-white mb-3 md:mb-4">
+                                    Join Our Team
+                                </h2>
+                                <p className="text-white/40 text-sm sm:text-[0.9375rem] leading-relaxed max-w-md">
+                                    We&apos;re always looking for talented individuals who are passionate about technology and making a difference in Africa.
+                                </p>
+                            </div>
+                            <div className="lg:text-right">
+                                <Link href="/careers">
+                                    <Button size="lg">View Open Positions</Button>
+                                </Link>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     );
 }
