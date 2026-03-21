@@ -1,34 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
-import { google } from "googleapis";
 
 // Admin emails that receive meeting invitations for approval
 const ADMIN_EMAILS = (process.env.MEETING_ADMIN_EMAILS || "").split(",").filter(Boolean);
 
-// Google service account credentials (stored in env)
-function getAuth() {
-  const credentials = {
-    client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    private_key: (process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
-  };
-
-  if (!credentials.client_email || !credentials.private_key) {
-    throw new Error("Google service account credentials not configured");
-  }
-
-  return new google.auth.JWT(
-    credentials.client_email,
-    undefined,
-    credentials.private_key,
-    [
-      "https://www.googleapis.com/auth/calendar",
-      "https://www.googleapis.com/auth/calendar.events",
-    ],
-    // Impersonate this user (must be a Google Workspace user who granted domain-wide delegation)
-    process.env.GOOGLE_CALENDAR_IMPERSONATE_EMAIL
+function isConfigured(): boolean {
+  return !!(
+    process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL &&
+    process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY &&
+    ADMIN_EMAILS.length > 0
   );
 }
 
 export async function POST(request: NextRequest) {
+  // Graceful fallback when Google credentials are not configured
+  if (!isConfigured()) {
+    return NextResponse.json(
+      {
+        error:
+          "Meeting booking is not yet configured. Please contact us directly at contact@dashtechafrica.com or call +237 6 75 89 63 89.",
+        configured: false,
+      },
+      { status: 503 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { name, email, phone, subject, message, preferredDate, preferredTime } = body;
@@ -48,14 +43,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (ADMIN_EMAILS.length === 0) {
-      return NextResponse.json(
-        { error: "Meeting system not configured. Please contact us directly." },
-        { status: 503 }
-      );
-    }
+    // Dynamic import — only loaded when credentials are configured
+    const { google } = await import("googleapis");
 
-    const auth = getAuth();
+    const auth = new google.auth.JWT({
+      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      key: (process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+      scopes: [
+        "https://www.googleapis.com/auth/calendar",
+        "https://www.googleapis.com/auth/calendar.events",
+      ],
+      subject: process.env.GOOGLE_CALENDAR_IMPERSONATE_EMAIL,
+    });
+
     const calendar = google.calendar({ version: "v3", auth });
 
     // Build event start/end times (30 min meeting)
@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
     const event = await calendar.events.insert({
       calendarId: "primary",
       conferenceDataVersion: 1,
-      sendUpdates: "all", // Send email invitations to all attendees
+      sendUpdates: "all",
       requestBody: {
         summary: `Dash Tech Consultation: ${subject}`,
         description,
@@ -134,7 +134,8 @@ export async function POST(request: NextRequest) {
       eventId: event.data.id,
       meetLink: meetLink || null,
       startTime: startDateTime.toISOString(),
-      message: "Meeting scheduled successfully. Calendar invitations have been sent to all participants.",
+      message:
+        "Meeting scheduled successfully. Calendar invitations have been sent to all participants.",
     });
   } catch (error: unknown) {
     console.error("Meeting booking error:", error);
@@ -142,10 +143,12 @@ export async function POST(request: NextRequest) {
     const errorMessage =
       error instanceof Error ? error.message : "Failed to schedule meeting";
 
-    // Don't expose internal errors to client
-    if (errorMessage.includes("credentials")) {
+    if (errorMessage.includes("credentials") || errorMessage.includes("private key")) {
       return NextResponse.json(
-        { error: "Meeting system is not configured. Please contact us at contact@dashtechafrica.com" },
+        {
+          error:
+            "Meeting system credentials are invalid. Please contact us at contact@dashtechafrica.com",
+        },
         { status: 503 }
       );
     }
