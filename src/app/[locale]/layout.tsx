@@ -5,6 +5,7 @@ import { Navbar } from "@/components/ui/shadcn-io/navbar-02";
 import Footer from "@/components/custom/footer";
 import { I18nProviderClient } from "@/locales/client";
 import CTASection from "@/components/custom/cta-section";
+import CookieConsent from "@/components/custom/cookie-consent";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -103,6 +104,7 @@ export default async function RootLayout({ params, children }: AdminLayoutProps)
           {children}
           <CTASection />
           <Footer />
+          <CookieConsent />
         </body>
       </I18nProviderClient>
     </html>
