@@ -31,7 +31,7 @@ const caseStudies = [
   },
   {
     id: 3,
-    image: "/portfolio/allotech-app.jpg",
+    image: "/portfolio/allo-Tech.png",
     technologies: ["Flutter", "Laravel", "MySQL", "Google Maps API"],
     results: {
       "Earnings": "+65%",
@@ -51,7 +51,7 @@ const caseStudies = [
   },
   {
     id: 5,
-    image: "/portfolio/wdms-pro.jpg",
+    image: "/portfolio/zylo.png",
     technologies: ["Vue.js", "Laravel", "WebSocket", "Redis", "AWS"],
     results: {
       "Accuracy": "99.8%",

@@ -17,33 +17,33 @@ export default function WhyChooseUsSection() {
     {
       title: t('whyChooseUs.features.africanExpertise.title'),
       description: t('whyChooseUs.features.africanExpertise.description'),
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+      image: "/WhyChooseUs/ExpertiseAfricain.png",
     },
     {
       title: t('whyChooseUs.features.innovativeSolutions.title'),
       description: t('whyChooseUs.features.innovativeSolutions.description'),
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+      image: "/WhyChooseUs/Innovation1.jpg",
     },
     {
       title: t('whyChooseUs.features.dedicatedSupport.title'),
       description: t('whyChooseUs.features.dedicatedSupport.description'),
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+      image: "/WhyChooseUs/supportDedie.jpg",
     },
     {
       title: t('whyChooseUs.features.costEffective.title'),
       description: t('whyChooseUs.features.costEffective.description'),
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    },
-    {
-      title: t('whyChooseUs.features.fastDeployment.title'),
-      description: t('whyChooseUs.features.fastDeployment.description'),
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+      image: "/WhyChooseUs/DashtechPrice.png",
     },
     {
       title: t('whyChooseUs.features.provenTrackRecord.title'),
       description: t('whyChooseUs.features.provenTrackRecord.description'),
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
-    }
+      image: "/whyChooseUs/reussite.png",
+    },
+    {
+      title: t('whyChooseUs.features.fastDeployment.title'),
+      description: t('whyChooseUs.features.fastDeployment.description'),
+      image: "/WhyChooseUs/mains.png",
+    },
   ];
 
   const ease = [0.16, 1, 0.3, 1] as const;
@@ -76,7 +76,7 @@ export default function WhyChooseUsSection() {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden">
                   <img
-                    src="/diletta.webp"
+                    src="/team/diletta.webp"
                     alt={t('whyChooseUs.ceo.name')}
                     className="w-full h-full object-cover"
                   />
@@ -98,7 +98,7 @@ export default function WhyChooseUsSection() {
           transition={{ duration: 0.8, delay: 0.2, ease }}
         >
           <img
-            src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=1600&q=80"
+            src="/WhyChooseUs/withLeaders.webp"
             alt="African tech professionals collaborating"
             className="w-full h-full object-cover"
           />

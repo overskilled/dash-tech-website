@@ -18,7 +18,7 @@ export default function AboutPage() {
         {
             title: "Our Team",
             description: "A diverse team of experienced developers, designers, and strategists passionate about transforming Africa's digital landscape.",
-            image: "/diletta.webp",
+            image: "/whyChooseUs/team.png",
         },
         {
             title: "Our Excellence",
@@ -38,7 +38,7 @@ export default function AboutPage() {
         {
             title: "Made in Africa",
             description: "Proudly African, building solutions tailored for African markets while meeting global standards.",
-            image: "/services/IoT.webp",
+            image: "/madeInAfrica.png",
         }
     ];
 
@@ -109,9 +109,9 @@ export default function AboutPage() {
                         {/* Image */}
                         <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                             <img
-                                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+                                src="/storie.png"
                                 alt="Dash Tech Africa team at work"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                             />
                             <div className="absolute inset-0 bg-black/15" />
                         </div>

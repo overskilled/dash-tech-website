@@ -68,7 +68,7 @@ export default function TeamPage() {
         {
             name: "Andy Nzoupet",
             role: "Software Developer",
-            image: "",
+            image: "/team/andy.jpg",
             bio: "Building robust web and mobile applications with a focus on user experience."
         },
     ];
@@ -81,7 +81,7 @@ export default function TeamPage() {
             <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-end overflow-hidden -mt-20">
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
+                        src="/whyChooseUs/team.png"
                         alt="Dash Tech Africa team collaboration"
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -294,9 +294,9 @@ export default function TeamPage() {
             </section>
 
             {/* Full-width culture image band */}
-            <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+            <section className="relative h[40vh] h-[60vh] md:h-[70vh] overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600&q=80"
+                    src="/togeder.png"
                     alt="Team culture at Dash Tech Africa"
                     className="w-full h-full object-cover"
                     onError={(e) => {

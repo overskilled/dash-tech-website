@@ -187,7 +187,7 @@ export default function ContactPage() {
                             {/* Map / Image */}
                             <div className="mt-10 md:mt-12 relative aspect-[4/3] rounded-xl overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?w=800&q=80"
+                                    src="/localisation.png"
                                     alt="Douala, Cameroon"
                                     className="w-full h-full object-cover"
                                 />
