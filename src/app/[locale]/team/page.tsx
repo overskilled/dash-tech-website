@@ -47,7 +47,7 @@ export default function TeamPage() {
         {
             name: "Thierry Ambassa",
             role: "Corporate Sales",
-            image: "",
+            image: "/team/thierry.jpeg",
             bio: "Connecting businesses with the right technology solutions to accelerate growth."
         },
     ];

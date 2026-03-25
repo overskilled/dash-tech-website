@@ -106,6 +106,89 @@ export default {
             }
         }
     },
+    "products": {
+        "title": {
+            "line1": "Nos",
+            "line2": "Produits"
+        },
+        "description": "Solutions numériques complètes conçues pour faire progresser votre entreprise dans le paysage technologique en évolution de l'Afrique",
+        "keyFeatures": "Fonctionnalités Clés :",
+        "buttons": {
+            "startProject": "Démarrer votre projet"
+        },
+        "items": {
+            "software": {
+                "title": "zylo",
+                "description": "Système avancé de gestion digitale d'entrepôt avec suivi des stocks, comptage automatisé, analytiques en temps réel et fonctionnalités d'optimisation de la chaîne d'approvisionnement.",
+                "features": {
+                    "feature1": "Applications Web & Mobiles Sur Mesure",
+                    "feature2": "Développement ERP/CRM",
+                    "feature3": "Intégrations Tierces",
+                    "feature4": "Automatisation des Processus Métier"
+                }
+            },
+            "ai": {
+                "title": "VMARIC",
+                "description": "Système de surveillance avancé alimenté par l'IA qui se connecte aux caméras existantes pour effectuer la détection d'objets en temps réel, le comptage de personnes, la prévention des vols et la détection d'anomalies dans les environnements industriels.",
+                "features": {
+                    "feature1": "Reconnaissance Faciale",
+                    "feature2": "Détection & Comptage d'Objets",
+                    "feature3": "Traitement OCR & Documents",
+                    "feature4": "Systèmes d'Alerte Intelligents"
+                }
+            },
+            "iot": {
+                "title": "AlloTech",
+                "description": "Plateforme digitale connectant des techniciens qualifiés (plombiers, électriciens, ouvriers du bâtiment) avec des clients. Fonctionnalités incluant la réservation, les notations, les paiements sécurisés et le suivi des services.",
+                "features": {
+                    "feature1": "Capteurs & Dispositifs Intelligents",
+                    "feature2": "Systèmes SCADA/PLC",
+                    "feature3": "Maintenance Prédictive",
+                    "feature4": "Automatisation des Processus Industriels"
+                }
+            },
+            "warehouse": {
+                "title": "E-Vote",
+                "description": "Plateforme de vote en ligne sécurisée et transparente alimentée par la technologie blockchain. Garantit l'intégrité des élections, prévient la fraude et fournit des résultats en temps réel avec des pistes d'audit complètes.",
+                "features": {
+                    "feature1": "Comptage Automatisé des Stocks",
+                    "feature2": "Suivi des Actifs en Temps Réel",
+                    "feature3": "Optimisation des Inventaires",
+                    "feature4": "Systèmes de Prévention des Pertes"
+                }
+            },
+            "fuel": {
+                "title": "FuelGuard AI",
+                "description": "Système intelligent de surveillance du carburant combinant capteurs IoT et IA pour détecter les fuites, suivre la consommation, prévenir le vol et optimiser la distribution de carburant sur plusieurs sites.",
+                "features": {
+                    "feature1": "Surveillance des Niveaux de Réservoirs",
+                    "feature2": "Systèmes de Détection de Fuites",
+                    "feature3": "Suivi des Livraisons",
+                    "feature4": "Tableaux de Bord en Temps Réel"
+                }
+            },
+            "smart": {
+                "title": "carypass",
+                "description": "gestion des hopitaux et carnet medicale toujours plus pret de vous",
+                "features": {
+                    "feature1": "Technologie de Jumeau Numérique",
+                    "feature2": "Suivi des Conteneurs & Véhicules",
+                    "feature3": "Automatisation des Portails",
+                    "feature4": "Optimisation Logistique"
+                }
+            },
+            "cybersecurity": {
+                "title": "church O.S",
+                "description": "gestion des eglise pour toujour etre a l'heure a l'appel",
+                "features": {
+                    "feature1": "Sécurité Vidéo Intelligente",
+                    "feature2": "Infrastructure Cloud",
+                    "feature3": "Sauvegarde & Récupération des Données",
+                    "feature4": "Continuité d'Activité"
+                }
+            }
+        }
+    },
     "whyChooseUs": {
         "title": {
             "line1": "Pourquoi Choisir",

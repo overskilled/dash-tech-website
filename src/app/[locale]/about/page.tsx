@@ -111,7 +111,7 @@ export default function AboutPage() {
                             <img
                                 src="/storie.png"
                                 alt="Dash Tech Africa team at work"
-                                className="w-full h-full object-contain"
+                                className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/15" />
                         </div>
