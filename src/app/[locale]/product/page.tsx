@@ -31,6 +31,7 @@ export default function ProductPage() {
             id: 1,
             title: t('products.items.software.title'),
             description: t('products.items.software.description'),
+            link: "https://zylo-platform.cloud/",
             image: "/portfolio/zylo.png",
             features: [
                 t('products.items.software.features.feature1'),
@@ -102,6 +103,7 @@ export default function ProductPage() {
             title: t('products.items.smart.title'),
             description: t('products.items.smart.description'),
             image: "/portfolio/evote.webp",
+            link: "https://carepass.zylo-platform.cloud/",
             features: [
                 t('products.items.smart.features.feature1'),
                 t('products.items.smart.features.feature2'),
@@ -116,6 +118,7 @@ export default function ProductPage() {
             title: t('products.items.cybersecurity.title'),
             description: t('products.items.cybersecurity.description'),
             image: "/portfolio/zylo.png",
+            link: "https://carepass.zylo-platform.cloud/",
             features: [
                 t('products.items.cybersecurity.features.feature1'),
                 t('products.items.cybersecurity.features.feature2'),
@@ -325,6 +328,15 @@ export default function ProductPage() {
                                                 <DownloadIcon className="w-4 h-4" />
                                                 {downloading === `product-${product.id}` ? "Generating..." : "Download Reference"}
                                             </button>
+                                            <Button
+                                                // onClick={() => handleDownloadProduct(product)}
+                                                disabled={downloading === `product-${product.id}`}
+                                                className="inline-flex items-center justify-center gap-2.5 h-11 px-5 rounded-md border border-white/20 text-white/70 text-[0.8125rem] font-medium uppercase tracking-[0.08em] hover:bg-white/[0.04] hover:border-white/40 hover:text-white transition-all duration-500 cursor-pointer disabled:opacity-50 disabled:cursor-wait"
+                                            >
+                                                <Link href={`/${product.link}`} target="_blank" rel="noopener noreferrer" >
+                                                    voir
+                                                </Link>
+                                            </Button>
                                         </div>
                                     </div>
                                 </div>
