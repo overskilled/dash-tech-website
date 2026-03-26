@@ -168,7 +168,7 @@ export default {
                 }
             },
             "smart": {
-                "title": "CarePass — Digital Health",
+                "title": "CaryPass — Digital Health",
                 "description": "Platform centralizing medical records in Cameroon. Connects patients, doctors, nurses, labs, institutions and insurers in a unified ecosystem accessible via web and mobile.",
                 "features": {
                     "feature1": "Complete digital health record",

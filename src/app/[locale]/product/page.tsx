@@ -106,7 +106,7 @@ export default function ProductPage() {
             id: 6,
             title: t('products.items.smart.title'),
             description: t('products.items.smart.description'),
-            image: "/portfolio/evote.webp",
+            image: "/portfolio/carepass.png",
             link: "https://carepass.zylo-platform.cloud/",
             features: [
                 t('products.items.smart.features.feature1'),
@@ -271,8 +271,9 @@ export default function ProductPage() {
                                     </div>
 
                                     {/* Details */}
-                                    <div className="lg:col-span-6">
-                                        {/* Description */}
+                                    <div className="lg:col-span-6 lg:flex lg:flex-col lg:justify-between">
+                                <div className="">
+                                                                            {/* Description */}
                                         <p className="text-white/50 text-xs sm:text-sm leading-relaxed mb-6 md:mb-8">
                                             {product.description}
                                         </p>
@@ -316,6 +317,7 @@ export default function ProductPage() {
                                                 </div>
                                             ))}
                                         </div>
+                                </div>
 
                                         {/* Action buttons */}
                                         <div className="flex flex-col sm:flex-row gap-3">
