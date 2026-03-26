@@ -178,13 +178,13 @@ export default {
                 }
             },
             "cybersecurity": {
-                "title": "church O.S",
-                "description": "gestion des eglise pour toujour etre a l'heure a l'appel",
+                "title": "Church O.S — Gestion d'Églises",
+                "description": "Plateforme SaaS multi-tenant centralisant la gestion des membres, finances, événements et communication des églises. Interface web et mobile moderne avec streaming live et paiements mobile money intégrés.",
                 "features": {
-                    "feature1": "Sécurité Vidéo Intelligente",
-                    "feature2": "Infrastructure Cloud",
-                    "feature3": "Sauvegarde & Récupération des Données",
-                    "feature4": "Continuité d'Activité"
+                    "feature1": "Gestion des membres & suivi pastoral",
+                    "feature2": "Finances : dons, budgets & rapports",
+                    "feature3": "Événements, présence & streaming live",
+                    "feature4": "Notifications push & app mobile native"
                 }
             }
         }

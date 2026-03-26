@@ -129,8 +129,8 @@ export default function ProductPage() {
                 t('products.items.cybersecurity.features.feature3'),
                 t('products.items.cybersecurity.features.feature4')
             ],
-            useCases: ["Network security", "Cloud migration", "Disaster recovery", "Compliance & governance"],
-            stats: { projects: "15+", uptime: "99.99%", protected: "50+" }
+            useCases: ["Églises & paroisses", "Organisations multi-branches", "Communautés francophones", "Gestion administrative religieuse"],
+            stats: { tenants: "Multi", platforms: "Web & Mobile", payments: "Mobile Money" }
         }
     ];
 

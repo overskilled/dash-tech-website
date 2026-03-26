@@ -178,13 +178,13 @@ export default {
                 }
             },
             "cybersecurity": {
-                "title": "Cybersecurity, Cloud & Infrastructure",
-                "description": "End-to-end security and infrastructure solutions including intelligent video security, physical/virtual servers, cloud services, backup systems, comprehensive cybersecurity measures, and business continuity planning. Protect your digital assets while ensuring operational resilience.",
+                "title": "Church O.S — Church Management",
+                "description": "Multi-tenant SaaS platform centralizing member management, finances, events and communication for churches. Modern web and mobile interface with live streaming and integrated mobile money payments.",
                 "features": {
-                    "feature1": "Intelligent Video Security",
-                    "feature2": "Cloud Infrastructure",
-                    "feature3": "Data Backup & Recovery",
-                    "feature4": "Business Continuity"
+                    "feature1": "Member management & pastoral care",
+                    "feature2": "Finances: donations, budgets & reports",
+                    "feature3": "Events, attendance & live streaming",
+                    "feature4": "Push notifications & native mobile app"
                 }
             }
         }
