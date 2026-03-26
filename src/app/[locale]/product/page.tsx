@@ -46,7 +46,8 @@ export default function ProductPage() {
             id: 2,
             title: t('products.items.ai.title'),
             description: t('products.items.ai.description'),
-            image: "/portfolio/evot.webp",
+            image: "/portfolio/VMARIC.png",
+            link: "https://zylo-platform.cloud/",
             features: [
                 t('products.items.ai.features.feature1'),
                 t('products.items.ai.features.feature2'),
@@ -61,6 +62,7 @@ export default function ProductPage() {
             title: t('products.items.iot.title'),
             description: t('products.items.iot.description'),
             image: "/portfolio/allo-Tech.png",
+            link: "https://zylo-platform.cloud/",
             features: [
                 t('products.items.iot.features.feature1'),
                 t('products.items.iot.features.feature2'),
@@ -75,6 +77,7 @@ export default function ProductPage() {
             title: t('products.items.warehouse.title'),
             description: t('products.items.warehouse.description'),
             image: "/portfolio/evote.webp",
+            link: "https://zylo-platform.cloud/",
             features: [
                 t('products.items.warehouse.features.feature1'),
                 t('products.items.warehouse.features.feature2'),
@@ -89,6 +92,7 @@ export default function ProductPage() {
             title: t('products.items.fuel.title'),
             description: t('products.items.fuel.description'),
             image: "/portfolio/fuelguard.webp",
+            link: "https://zylo-platform.cloud/",
             features: [
                 t('products.items.fuel.features.feature1'),
                 t('products.items.fuel.features.feature2'),
@@ -117,7 +121,7 @@ export default function ProductPage() {
             id: 7,
             title: t('products.items.cybersecurity.title'),
             description: t('products.items.cybersecurity.description'),
-            image: "/portfolio/zylo.png",
+            image: "/portfolio/churchOS.png",
             link: "https://carepass.zylo-platform.cloud/",
             features: [
                 t('products.items.cybersecurity.features.feature1'),
@@ -329,13 +333,11 @@ export default function ProductPage() {
                                                 {downloading === `product-${product.id}` ? "Generating..." : "Download Reference"}
                                             </button>
                                             <Button
-                                                // onClick={() => handleDownloadProduct(product)}
-                                                disabled={downloading === `product-${product.id}`}
                                                 className="inline-flex items-center justify-center gap-2.5 h-11 px-5 rounded-md border border-white/20 text-white/70 text-[0.8125rem] font-medium uppercase tracking-[0.08em] hover:bg-white/[0.04] hover:border-white/40 hover:text-white transition-all duration-500 cursor-pointer disabled:opacity-50 disabled:cursor-wait"
                                             >
-                                                <Link href={`/${product.link}`} target="_blank" rel="noopener noreferrer" >
+                                                <a href={`${product.link}`} target="_blank" rel="noopener noreferrer" >
                                                     voir
-                                                </Link>
+                                                </a>
                                             </Button>
                                         </div>
                                     </div>

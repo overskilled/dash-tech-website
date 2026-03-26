@@ -45,7 +45,7 @@ const HamburgerIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>)
 const navLinks = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Product', href: '/product' },
+  { label: 'Products', href: '/product' },
   { label: 'Portfolio', href: '/#portfolio' },
   { label: 'Team', href: '/team' },
   { label: 'Careers', href: '/careers' },
