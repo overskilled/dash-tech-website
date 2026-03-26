@@ -168,13 +168,13 @@ export default {
                 }
             },
             "smart": {
-                "title": "carypass",
-                "description": "gestion des hopitaux et carnet medicale toujours plus pret de vous",
+                "title": "CarePass — Santé Numérique",
+                "description": "Plateforme centralisant les dossiers médicaux au Cameroun. Connecte patients, médecins, infirmiers, laboratoires, institutions et assurances dans un écosystème unifié accessible via web et mobile.",
                 "features": {
-                    "feature1": "Technologie de Jumeau Numérique",
-                    "feature2": "Suivi des Conteneurs & Véhicules",
-                    "feature3": "Automatisation des Portails",
-                    "feature4": "Optimisation Logistique"
+                    "feature1": "Carnet de santé numérique complet",
+                    "feature2": "7 portails dédiés (Patient, Médecin, Labo, Assurance…)",
+                    "feature3": "Consentement patient & fiche d'urgence QR Code",
+                    "feature4": "Paiement Mobile Money (MTN, Orange)"
                 }
             },
             "cybersecurity": {

@@ -168,13 +168,13 @@ export default {
                 }
             },
             "smart": {
-                "title": "Smart Port, City & Logistics",
-                "description": "Digital twin technology for ports, comprehensive truck and container tracking, OCR automation, gate automation, intelligent security systems, and optimized logistics flow management. Transform traditional operations into smart, efficient, and connected ecosystems.",
+                "title": "CarePass — Digital Health",
+                "description": "Platform centralizing medical records in Cameroon. Connects patients, doctors, nurses, labs, institutions and insurers in a unified ecosystem accessible via web and mobile.",
                 "features": {
-                    "feature1": "Digital Twin Technology",
-                    "feature2": "Container & Vehicle Tracking",
-                    "feature3": "Gate Automation",
-                    "feature4": "Logistics Optimization"
+                    "feature1": "Complete digital health record",
+                    "feature2": "7 dedicated portals (Patient, Doctor, Lab, Insurance…)",
+                    "feature3": "Patient consent & QR Code emergency card",
+                    "feature4": "Mobile Money payment (MTN, Orange)"
                 }
             },
             "cybersecurity": {

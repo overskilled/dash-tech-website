@@ -62,7 +62,7 @@ export default function ProductPage() {
             title: t('products.items.iot.title'),
             description: t('products.items.iot.description'),
             image: "/portfolio/allo-Tech.png",
-            link: "https://zylo-platform.cloud/",
+            link: "https://allotechafrica.com/",
             features: [
                 t('products.items.iot.features.feature1'),
                 t('products.items.iot.features.feature2'),
@@ -114,8 +114,8 @@ export default function ProductPage() {
                 t('products.items.smart.features.feature3'),
                 t('products.items.smart.features.feature4')
             ],
-            useCases: ["Port operations", "Urban logistics", "Container tracking", "Smart city initiatives"],
-            stats: { projects: "5+", efficiency: "60%", containers: "10K+" }
+            useCases: ["Hôpitaux & cliniques", "Laboratoires d'analyses", "Compagnies d'assurance santé", "Cabinets médicaux"],
+            stats: { portals: "7", roles: "6+", payments: "Mobile Money" }
         },
         {
             id: 7,
