@@ -39,8 +39,8 @@ export default function ProductPage() {
                 t('products.items.software.features.feature3'),
                 t('products.items.software.features.feature4')
             ],
-            useCases: ["Enterprise resource planning", "CRM implementation", "Business process automation", "Legacy system modernization"],
-            stats: { projects: "20+", clients: "15+", uptime: "99.9%" }
+            useCases: ["Distribution & logistique multi-sites", "PME cherchant une alternative à Odoo", "Retail, grossistes & supply chain", "Équipes commerciales terrain"],
+            stats: { sites: "Multi", modules: "CRM, Stock, Livraison", auth: "MFA & Rôles" }
         },
         {
             id: 2,
@@ -52,7 +52,8 @@ export default function ProductPage() {
                 t('products.items.ai.features.feature1'),
                 t('products.items.ai.features.feature2'),
                 t('products.items.ai.features.feature3'),
-                t('products.items.ai.features.feature4')
+                t('products.items.ai.features.feature4'),
+                t('products.items.ai.features.feature5')
             ],
             useCases: ["Security & surveillance", "Quality control inspection", "Document digitization", "Traffic & crowd analysis"],
             stats: { projects: "12+", clients: "8+", accuracy: "98.5%" }
@@ -87,23 +88,23 @@ export default function ProductPage() {
             useCases: ["Warehouse operations", "Supply chain management", "Inventory optimization", "Loss prevention"],
             stats: { projects: "8+", reduction: "40%", tracked: "1M+" }
         },
+        // {
+        //     id: 5,
+        //     title: t('products.items.fuel.title'),
+        //     description: t('products.items.fuel.description'),
+        //     image: "/portfolio/fuelguard.webp",
+        //     link: "https://zylo-platform.cloud/",
+        //     features: [
+        //         t('products.items.fuel.features.feature1'),
+        //         t('products.items.fuel.features.feature2'),
+        //         t('products.items.fuel.features.feature3'),
+        //         t('products.items.fuel.features.feature4')
+        //     ],
+        //     useCases: ["Fuel depot management", "Fleet fuel tracking", "Leak detection & prevention", "Distribution optimization"],
+        //     stats: { projects: "6+", savings: "35%", monitored: "200+" }
+        // },
         {
             id: 5,
-            title: t('products.items.fuel.title'),
-            description: t('products.items.fuel.description'),
-            image: "/portfolio/fuelguard.webp",
-            link: "https://zylo-platform.cloud/",
-            features: [
-                t('products.items.fuel.features.feature1'),
-                t('products.items.fuel.features.feature2'),
-                t('products.items.fuel.features.feature3'),
-                t('products.items.fuel.features.feature4')
-            ],
-            useCases: ["Fuel depot management", "Fleet fuel tracking", "Leak detection & prevention", "Distribution optimization"],
-            stats: { projects: "6+", savings: "35%", monitored: "200+" }
-        },
-        {
-            id: 6,
             title: t('products.items.smart.title'),
             description: t('products.items.smart.description'),
             image: "/portfolio/carepass.png",
@@ -114,11 +115,11 @@ export default function ProductPage() {
                 t('products.items.smart.features.feature3'),
                 t('products.items.smart.features.feature4')
             ],
-            useCases: ["Hôpitaux & cliniques", "Laboratoires d'analyses", "Compagnies d'assurance santé", "Cabinets médicaux"],
+            useCases: ["Hôpitaux & cliniques", "Laboratoires d'analyses", "Cabinets médicaux"],
             stats: { portals: "7", roles: "6+", payments: "Mobile Money" }
         },
         {
-            id: 7,
+            id: 6,
             title: t('products.items.cybersecurity.title'),
             description: t('products.items.cybersecurity.description'),
             image: "/portfolio/churchOS.png",
@@ -260,11 +261,11 @@ export default function ProductPage() {
                                 }`}>
                                     {/* Image */}
                                     <div className="lg:col-span-6">
-                                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                                        <div className="relative aspect-[6/3] rounded-xl overflow-hidden">
                                             <img
                                                 src={product.image}
                                                 alt={product.title}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-fit"
                                             />
                                             <div className="absolute inset-0 bg-black/15" />
                                         </div>
@@ -332,7 +333,7 @@ export default function ProductPage() {
                                                 className="inline-flex items-center justify-center gap-2.5 h-11 px-5 rounded-md border border-white/20 text-white/70 text-[0.8125rem] font-medium uppercase tracking-[0.08em] hover:bg-white/[0.04] hover:border-white/40 hover:text-white transition-all duration-500 cursor-pointer disabled:opacity-50 disabled:cursor-wait"
                                             >
                                                 <DownloadIcon className="w-4 h-4" />
-                                                {downloading === `product-${product.id}` ? "Generating..." : "Download Reference"}
+                                                {downloading === `product-${product.id}` ? "Generating..." : "telecharger l'appercue"}
                                             </button>
                                             <Button
                                                 className="inline-flex items-center justify-center gap-2.5 h-11 px-5 rounded-md border border-white/20 text-white/70 text-[0.8125rem] font-medium uppercase tracking-[0.08em] hover:bg-white/[0.04] hover:border-white/40 hover:text-white transition-all duration-500 cursor-pointer disabled:opacity-50 disabled:cursor-wait"

@@ -35,13 +35,13 @@ export default {
         },
         "items": {
             "software": {
-                "title": "Custom Software & ERP/CRM Solutions",
-                "description": "We develop tailored web and mobile applications, custom ERP/CRM systems, and industry-specific platforms with seamless third-party integrations. Our solutions streamline business processes, enhance productivity, and provide real-time insights for informed decision-making across your organization.",
+                "title": "Zylo — Supply Chain & Logistics",
+                "description": "SaaS platform centralizing multi-site management, inventory, orders, deliveries and CRM. Real-time tracking with interactive mapping, inter-warehouse transfers and advanced analytics.",
                 "features": {
-                    "feature1": "Custom Web & Mobile Apps",
-                    "feature2": "ERP/CRM Development",
-                    "feature3": "Third-party Integrations",
-                    "feature4": "Business Process Automation"
+                    "feature1": "Multi-site management & GPS mapping",
+                    "feature2": "Advanced inventory (FIFO, batches, alerts)",
+                    "feature3": "Built-in CRM & sales pipeline",
+                    "feature4": "Deliveries with real-time GPS tracking"
                 }
             },
             "ai": {
@@ -118,13 +118,13 @@ export default {
         },
         "items": {
             "software": {
-                "title": "Custom Software & ERP/CRM Solutions",
-                "description": "We develop tailored web and mobile applications, custom ERP/CRM systems, and industry-specific platforms with seamless third-party integrations. Our solutions streamline business processes, enhance productivity, and provide real-time insights for informed decision-making across your organization.",
+                "title": "Zylo — Supply Chain & Logistics",
+                "description": "SaaS platform centralizing multi-site management, inventory, orders, deliveries and CRM. Real-time tracking with interactive mapping, inter-warehouse transfers and advanced analytics.",
                 "features": {
-                    "feature1": "Custom Web & Mobile Apps",
-                    "feature2": "ERP/CRM Development",
-                    "feature3": "Third-party Integrations",
-                    "feature4": "Business Process Automation"
+                    "feature1": "Multi-site management & GPS mapping",
+                    "feature2": "Advanced inventory (FIFO, batches, alerts)",
+                    "feature3": "Built-in CRM & sales pipeline",
+                    "feature4": "Deliveries with real-time GPS tracking"
                 }
             },
             "ai": {
@@ -134,7 +134,8 @@ export default {
                     "feature1": "Facial Recognition",
                     "feature2": "Object Detection & Counting",
                     "feature3": "OCR & Document Processing",
-                    "feature4": "Intelligent Alert Systems"
+                    "feature4": "Intelligent Alert Systems",
+                    "feature5": "Intelligent Alert Systems"
                 }
             },
             "iot": {

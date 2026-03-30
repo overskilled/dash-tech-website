@@ -13,7 +13,7 @@ export default function TeamPage() {
             name: "Bony Dashaco",
             role: "Chairman",
             image: "/team/Bony_Dashaco.jpg",
-            bio: "Strategic visionary and founder leading Dash Tech Africa's mission to transform the continent's digital landscape through bold innovation and strategic partnerships.",
+            bio: "founder and Strategic visionary leading Dash Tech Africa's mission to transform the continent's digital landscape through bold innovation and strategic partnerships.",
             social: {
                 linkedin: "#",
                 email: "bony@dashtechafrica.com"
@@ -23,7 +23,7 @@ export default function TeamPage() {
             name: "Diletta EGBE",
             role: "Chief Executive Officer",
             image: "/team/diletta.webp",
-            bio: "Visionary leader with 10+ years of experience in digital transformation and technology innovation, driving Dash Tech Africa's growth across the continent.",
+            bio: "coofondator and Visionary leader with 10+ years of experience in digital transformation and technology innovation, driving Dash Tech Africa's growth across the continent.",
             social: {
                 linkedin: "#",
                 email: "diletta@dashtechafrica.com"
@@ -47,7 +47,7 @@ export default function TeamPage() {
         {
             name: "Thierry Ambassa",
             role: "Corporate Sales",
-            image: "/team/thierry.jpeg",
+            image: "/team/thierry.jpg",
             bio: "Connecting businesses with the right technology solutions to accelerate growth."
         },
     ];

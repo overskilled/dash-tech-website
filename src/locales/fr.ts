@@ -118,13 +118,13 @@ export default {
         },
         "items": {
             "software": {
-                "title": "zylo",
-                "description": "Système avancé de gestion digitale d'entrepôt avec suivi des stocks, comptage automatisé, analytiques en temps réel et fonctionnalités d'optimisation de la chaîne d'approvisionnement.",
+                "title": "Zylo — Supply Chain & Logistique",
+                "description": "Plateforme SaaS centralisant la gestion multi-sites, stocks, commandes, livraisons et CRM. Suivi temps réel avec cartographie interactive, gestion des transferts inter-entrepôts et analytics avancés.",
                 "features": {
-                    "feature1": "Applications Web & Mobiles Sur Mesure",
-                    "feature2": "Développement ERP/CRM",
-                    "feature3": "Intégrations Tierces",
-                    "feature4": "Automatisation des Processus Métier"
+                    "feature1": "Gestion multi-sites & cartographie GPS",
+                    "feature2": "Stocks avancés (FIFO, lots, alertes)",
+                    "feature3": "CRM intégré & pipeline de vente",
+                    "feature4": "Livraisons avec suivi GPS temps réel"
                 }
             },
             "ai": {
@@ -134,7 +134,8 @@ export default {
                     "feature1": "Reconnaissance Faciale",
                     "feature2": "Détection & Comptage d'Objets",
                     "feature3": "Traitement OCR & Documents",
-                    "feature4": "Systèmes d'Alerte Intelligents"
+                    "feature4": "Systèmes d'Alerte Intelligents",
+                    "feature5": "les rapports en text et/ou audio"
                 }
             },
             "iot": {
@@ -149,7 +150,7 @@ export default {
             },
             "warehouse": {
                 "title": "E-Vote",
-                "description": "Plateforme de vote en ligne sécurisée et transparente alimentée par la technologie blockchain. Garantit l'intégrité des élections, prévient la fraude et fournit des résultats en temps réel avec des pistes d'audit complètes.",
+                "description": "Plateforme de vote en ligne sécurisée et transparente alimentée par la technologie blockchain. Garantit l'intégrité des élections de tous genre, prévient la fraude et fournit des résultats en temps réel avec des pistes d'audit complètes.",
                 "features": {
                     "feature1": "Comptage Automatisé des Stocks",
                     "feature2": "Suivi des Actifs en Temps Réel",
@@ -169,12 +170,12 @@ export default {
             },
             "smart": {
                 "title": "CaryPass — Santé Numérique",
-                "description": "Plateforme centralisant les dossiers médicaux au Cameroun. Connecte patients, médecins, infirmiers, laboratoires, institutions et assurances dans un écosystème unifié accessible via web et mobile.",
+                "description": "Plateforme centralisant les dossiers médicaux. Connecte patients, médecins, infirmiers, laboratoires, institutions et assurances dans un écosystème unifié accessible via web et mobile.",
                 "features": {
                     "feature1": "Carnet de santé numérique complet",
-                    "feature2": "7 portails dédiés (Patient, Médecin, Labo, Assurance…)",
+                    "feature2": "7 portails dédiés (Patient, Médecin, Labo)",
                     "feature3": "Consentement patient & fiche d'urgence QR Code",
-                    "feature4": "Paiement Mobile Money (MTN, Orange)"
+                    "feature4": "Paiement Mobile"
                 }
             },
             "cybersecurity": {
