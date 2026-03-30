@@ -35,13 +35,13 @@ export default {
         },
         "items": {
             "software": {
-                "title": "Zylo — Supply Chain & Logistics",
-                "description": "SaaS platform centralizing multi-site management, inventory, orders, deliveries and CRM. Real-time tracking with interactive mapping, inter-warehouse transfers and advanced analytics.",
+                "title": "Custom Software & ERP/CRM Solutions",
+                "description": "We develop tailored web and mobile applications, custom ERP/CRM systems, and industry-specific platforms with seamless third-party integrations. Our solutions streamline business processes, enhance productivity, and provide real-time insights for informed decision-making across your organization.",
                 "features": {
-                    "feature1": "Multi-site management & GPS mapping",
-                    "feature2": "Advanced inventory (FIFO, batches, alerts)",
-                    "feature3": "Built-in CRM & sales pipeline",
-                    "feature4": "Deliveries with real-time GPS tracking"
+                    "feature1": "Custom Web & Mobile Apps",
+                    "feature2": "ERP/CRM Development",
+                    "feature3": "Third-party Integrations",
+                    "feature4": "Business Process Automation"
                 }
             },
             "ai": {
@@ -109,9 +109,9 @@ export default {
     "products": {
         "title": {
             "line1": "Our",
-            "line2": "Services"
+            "line2": "Products"
         },
-        "description": "Comprehensive digital solutions tailored to drive your business forward in Africa's evolving tech landscape",
+        "description": "Comprehensive digital solutions designed to drive your business forward in Africa's evolving tech landscape",
         "keyFeatures": "Key Features:",
         "buttons": {
             "startProject": "Start your project"
@@ -128,19 +128,19 @@ export default {
                 }
             },
             "ai": {
-                "title": "AI & Computer Vision Systems",
-                "description": "Advanced artificial intelligence solutions including facial recognition, object counting and classification, optical character recognition (OCR), license plate reading, intelligent alert systems, and automated reporting. Our AI systems transform visual data into actionable business intelligence.",
+                "title": "VMARIC",
+                "description": "Advanced AI-powered surveillance system that connects to existing cameras to perform real-time object detection, people counting, theft prevention, and anomaly detection in industrial environments.",
                 "features": {
                     "feature1": "Facial Recognition",
                     "feature2": "Object Detection & Counting",
                     "feature3": "OCR & Document Processing",
                     "feature4": "Intelligent Alert Systems",
-                    "feature5": "Intelligent Alert Systems"
+                    "feature5": "Text and/or audio reports"
                 }
             },
             "iot": {
-                "title": "IoT & Industrial Automation",
-                "description": "Comprehensive IoT solutions featuring advanced sensors, SCADA/PLC systems, real-time monitoring, predictive maintenance, and industrial line automation. We help businesses optimize operations, reduce downtime, and enhance efficiency through smart connected devices and automated processes.",
+                "title": "AlloTech",
+                "description": "Digital platform connecting skilled technicians (plumbers, electricians, construction workers) with clients. Features include booking, ratings, secure payments, and service tracking.",
                 "features": {
                     "feature1": "Smart Sensors & Devices",
                     "feature2": "SCADA/PLC Systems",
@@ -149,8 +149,8 @@ export default {
                 }
             },
             "warehouse": {
-                "title": "Warehouse & Industrial Digitalization",
-                "description": "Complete digital transformation for warehouses, silos, and industrial facilities. Our Warehouse Digital Management System enables automated inventory counting, real-time tracking, movement monitoring, inventory optimization, and loss prevention with comprehensive digital oversight.",
+                "title": "E-Vote",
+                "description": "Secure and transparent online voting platform powered by blockchain technology. Ensures election integrity for all types of elections, prevents fraud, and provides real-time results with complete audit trails.",
                 "features": {
                     "feature1": "Automated Inventory Counting",
                     "feature2": "Real-time Asset Tracking",
@@ -159,8 +159,8 @@ export default {
                 }
             },
             "fuel": {
-                "title": "Fuel Management System",
-                "description": "Advanced fuel management solutions including tank level monitoring, leak detection, delivery tracking, automatic reconciliation, distribution control, and real-time dashboards. Ensure accurate fuel management, prevent losses, and optimize petroleum depot operations.",
+                "title": "FuelGuard AI",
+                "description": "Intelligent fuel monitoring system combining IoT sensors and AI to detect leaks, track consumption, prevent theft, and optimize fuel distribution across multiple locations.",
                 "features": {
                     "feature1": "Tank Level Monitoring",
                     "feature2": "Leak Detection Systems",
@@ -169,13 +169,13 @@ export default {
                 }
             },
             "smart": {
-                "title": "CaryPass — Digital Health",
-                "description": "Platform centralizing medical records in Cameroon. Connects patients, doctors, nurses, labs, institutions and insurers in a unified ecosystem accessible via web and mobile.",
+                "title": "CarePass — Digital Health",
+                "description": "Platform centralizing medical records. Connects patients, doctors, nurses, labs, institutions and insurers in a unified ecosystem accessible via web and mobile.",
                 "features": {
                     "feature1": "Complete digital health record",
-                    "feature2": "7 dedicated portals (Patient, Doctor, Lab, Insurance…)",
+                    "feature2": "7 dedicated portals (Patient, Doctor, Lab)",
                     "feature3": "Patient consent & QR Code emergency card",
-                    "feature4": "Mobile Money payment (MTN, Orange)"
+                    "feature4": "Mobile Payment"
                 }
             },
             "cybersecurity": {

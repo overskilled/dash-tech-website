@@ -107,11 +107,11 @@ export default function AboutPage() {
                         </div>
 
                         {/* Image */}
-                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                        <div className="relative aspect-[6/3] rounded-xl overflow-hidden">
                             <img
                                 src="/storie.png"
                                 alt="Dash Tech Africa team at work"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-fit"
                             />
                             <div className="absolute inset-0 bg-black/15" />
                         </div>
