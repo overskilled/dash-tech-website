@@ -171,11 +171,11 @@ export default function PortfolioSection() {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               {/* Image - takes 7 columns */}
-              <div className="lg:col-span-7 relative aspect-[4/3] rounded-xl overflow-hidden">
+              <div className="lg:col-span-7 relative aspect-[6/3] rounded-xl overflow-hidden">
                 <img
                   src={caseStudies[selected].image}
                   alt={t(caseStudyKeys.titles[selected])}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fit"
                 />
                 <div className="absolute inset-0 bg-black/10" />
 
@@ -246,7 +246,7 @@ export default function PortfolioSection() {
             <button
               key={project.id}
               onClick={() => setSelected(index)}
-              className={`relative aspect-[3/2] rounded-lg overflow-hidden transition-all duration-300 cursor-pointer ${
+              className={`relative aspect-[4/2] rounded-lg overflow-hidden transition-all duration-300 cursor-pointer ${
                 selected === index
                   ? "ring-2 ring-primary opacity-100"
                   : "opacity-40 hover:opacity-70"
@@ -255,7 +255,7 @@ export default function PortfolioSection() {
               <img
                 src={project.image}
                 alt={t(caseStudyKeys.titles[index])}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fit"
               />
             </button>
           ))}
