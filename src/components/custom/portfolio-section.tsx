@@ -11,7 +11,7 @@ import Link from "next/link";
 const caseStudies = [
   {
     id: 1,
-    image: "/portfolio/VMARIC.webp",
+    image: "/portfolio/VMARIC.png",
     technologies: ["Python", "TensorFlow", "OpenCV", "React", "Node.js"],
     results: {
       "Theft Prevention": "92%",
@@ -21,7 +21,7 @@ const caseStudies = [
   },
   {
     id: 2,
-    image: "/portfolio/smart-iot.jpg",
+    image: "/portfolio/carepass.png",
     technologies: ["IoT Sensors", "React Native", "AWS IoT", "Python"],
     results: {
       "Energy Savings": "35%",
@@ -61,8 +61,8 @@ const caseStudies = [
   },
   {
     id: 6,
-    image: "/portfolio/fuelguar.webp",
-    technologies: ["IoT Sensors", "ML", "React", "Python", "Cloud"],
+    image: "/portfolio/churchOS.png",
+    technologies: ["", "ML", "React", "Python", "Cloud"],
     results: {
       "Theft Prevention": "95%",
       "Fuel Savings": "25%",
