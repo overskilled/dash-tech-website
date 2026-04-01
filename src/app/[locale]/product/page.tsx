@@ -32,7 +32,7 @@ export default function ProductPage() {
             title: t('products.items.software.title'),
             description: t('products.items.software.description'),
             link: "https://zylo-platform.cloud/",
-            image: "/portfolio/zylo.png",
+            image: "/portfolio/zylo.webp",
             features: [
                 t('products.items.software.features.feature1'),
                 t('products.items.software.features.feature2'),
@@ -46,8 +46,8 @@ export default function ProductPage() {
             id: 2,
             title: t('products.items.ai.title'),
             description: t('products.items.ai.description'),
-            image: "/portfolio/VMARIC.png",
-            link: "https://zylo-platform.cloud/",
+            image: "/portfolio/VMARIC.webp",
+            link: "#",
             features: [
                 t('products.items.ai.features.feature1'),
                 t('products.items.ai.features.feature2'),
@@ -62,7 +62,7 @@ export default function ProductPage() {
             id: 3,
             title: t('products.items.iot.title'),
             description: t('products.items.iot.description'),
-            image: "/portfolio/allo-Tech.png",
+            image: "/portfolio/allo-Tech.webp",
             link: "https://allotechafrica.com/",
             features: [
                 t('products.items.iot.features.feature1'),
@@ -107,7 +107,7 @@ export default function ProductPage() {
             id: 5,
             title: t('products.items.smart.title'),
             description: t('products.items.smart.description'),
-            image: "/portfolio/carepass.png",
+            image: "/portfolio/carepass.webp",
             link: "https://carepass.zylo-platform.cloud/",
             features: [
                 t('products.items.smart.features.feature1'),
@@ -122,7 +122,7 @@ export default function ProductPage() {
             id: 6,
             title: t('products.items.cybersecurity.title'),
             description: t('products.items.cybersecurity.description'),
-            image: "/portfolio/churchOS.png",
+            image: "/portfolio/churchOS.webp",
             link: "https://carepass.zylo-platform.cloud/",
             features: [
                 t('products.items.cybersecurity.features.feature1'),
@@ -310,14 +310,14 @@ export default function ProductPage() {
                                         </div>
 
                                         {/* Stats row */}
-                                        <div className="flex flex-wrap gap-6 md:gap-8 mb-6 md:mb-8 py-4 border-y border-border/50">
+                                        {/* <div className="flex flex-wrap gap-6 md:gap-8 mb-6 md:mb-8 py-4 border-y border-border/50">
                                             {Object.entries(product.stats).map(([key, value]) => (
                                                 <div key={key}>
                                                     <p className="text-lg sm:text-xl font-semibold text-white">{value}</p>
                                                     <p className="text-white/30 text-xs capitalize mt-0.5">{key}</p>
                                                 </div>
                                             ))}
-                                        </div>
+                                        </div> */}
                                 </div>
 
                                         {/* Action buttons */}

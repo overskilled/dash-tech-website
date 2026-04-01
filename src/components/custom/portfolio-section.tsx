@@ -11,8 +11,8 @@ import Link from "next/link";
 const caseStudies = [
   {
     id: 1,
-    image: "/portfolio/VMARIC.png",
-    technologies: ["Python", "TensorFlow", "OpenCV", "React", "Node.js"],
+    image: "/portfolio/VMARIC.webp",
+    technologies: ["React", "yollow V5", "Fast Api"],
     results: {
       "Theft Prevention": "92%",
       "Accuracy": "99.5%",
@@ -21,8 +21,8 @@ const caseStudies = [
   },
   {
     id: 2,
-    image: "/portfolio/carepass.png",
-    technologies: ["IoT Sensors", "React Native", "AWS IoT", "Python"],
+    image: "/portfolio/carepass.webp",
+    technologies: ["Next js", "React Native", "Nest js", "postgreSQL"],
     results: {
       "Energy Savings": "35%",
       "Maintenance Cost": "-60%",
@@ -31,8 +31,8 @@ const caseStudies = [
   },
   {
     id: 3,
-    image: "/portfolio/allo-Tech.png",
-    technologies: ["Flutter", "Laravel", "MySQL", "Google Maps API"],
+    image: "/portfolio/allo-Tech.webp",
+    technologies: ["React Native", "PostgreSQL", "Google Maps API"],
     results: {
       "Earnings": "+65%",
       "Satisfaction": "4.8/5",
@@ -42,7 +42,7 @@ const caseStudies = [
   {
     id: 4,
     image: "/portfolio/evote.webp",
-    technologies: ["Blockchain", "React", "Node.js", "PostgreSQL"],
+    technologies: ["Blockchain", "React", "Nest js", "PostgreSQL"],
     results: {
       "Voter Turnout": "+40%",
       "Cost Savings": "75%",
@@ -51,8 +51,8 @@ const caseStudies = [
   },
   {
     id: 5,
-    image: "/portfolio/zylo.png",
-    technologies: ["Vue.js", "Laravel", "WebSocket", "Redis", "AWS"],
+    image: "/portfolio/zylo.webp",
+    technologies: ["Next js", "Nest js", "postgreSQL", "Redis", "AWS"],
     results: {
       "Accuracy": "99.8%",
       "Costs": "-45%",
@@ -61,8 +61,8 @@ const caseStudies = [
   },
   {
     id: 6,
-    image: "/portfolio/churchOS.png",
-    technologies: ["", "ML", "React", "Python", "Cloud"],
+    image: "/portfolio/churchOS.webp",
+    technologies: ["React js", "React Native","Nest js", "postgreSQL"],
     results: {
       "Theft Prevention": "95%",
       "Fuel Savings": "25%",
@@ -210,12 +210,12 @@ export default function PortfolioSection() {
 
                   {/* Results */}
                   <div className="grid grid-cols-3 gap-4 mb-8">
-                    {Object.entries(caseStudies[selected].results).map(([key, value]) => (
+                    {/* {Object.entries(caseStudies[selected].results).map(([key, value]) => (
                       <div key={key}>
                         <p className="text-2xl font-semibold text-white">{value}</p>
                         <p className="text-white/30 text-xs mt-1">{key}</p>
                       </div>
-                    ))}
+                    ))} */}
                   </div>
 
                   {/* Technologies */}

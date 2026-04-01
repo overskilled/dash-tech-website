@@ -43,10 +43,10 @@ export default function AboutPage() {
     ];
 
     const stats = [
-        { number: "50+", label: "Projects Delivered" },
-        { number: "30+", label: "Happy Clients" },
-        { number: "15+", label: "Team Members" },
-        { number: "10+", label: "Years Experience" }
+        { number: "10+", label: "Projects Delivered" },
+        { number: "15+", label: "Happy Clients" },
+        { number: "8+", label: "Team Members" },
+        { number: "3+", label: "Years Experience" }
     ];
 
     return (
@@ -55,7 +55,7 @@ export default function AboutPage() {
             <section className="relative min-h-[55vh] lg:min-h-[65vh] flex items-end overflow-hidden -mt-20">
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
+                        src="/hero.webp"
                         alt="Dash Tech Africa office"
                         className="w-full h-full object-cover"
                     />

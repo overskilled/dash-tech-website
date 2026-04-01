@@ -12,7 +12,7 @@ export default function TeamPage() {
         {
             name: "Bony Dashaco",
             role: "Chairman",
-            image: "/team/Bony_Dashaco.jpg",
+            image: "/team/Bony_Dashaco.webp",
             bio: "founder and Strategic visionary leading Dash Tech Africa's mission to transform the continent's digital landscape through bold innovation and strategic partnerships.",
             social: {
                 linkedin: "#",
@@ -35,19 +35,19 @@ export default function TeamPage() {
         {
             name: "Ibrahim Farris",
             role: "Corporate Sales",
-            image: "/team/ibrahim.png",
+            image: "/team/ibrahim.webp",
             bio: "Driving enterprise partnerships and business development across West Africa."
         },
         {
             name: "Gabriella Momha",
             role: "Corporate Sales",
-            image: "/team/gabriella.png",
+            image: "/team/gabriella.webp",
             bio: "Building lasting client relationships and delivering tailored digital solutions."
         },
         {
             name: "Thierry Ambassa",
             role: "Corporate Sales",
-            image: "/team/thierry.jpg",
+            image: "/team/thierry.webp",
             bio: "Connecting businesses with the right technology solutions to accelerate growth."
         },
     ];
@@ -56,19 +56,19 @@ export default function TeamPage() {
         {
             name: "Yvan Ouatedem",
             role: "Lead Developer",
-            image: "/team/yvan.jpg",
+            image: "/team/yvan.webp",
             bio: "Full-stack architect specializing in scalable enterprise systems and cloud infrastructure."
         },
         {
             name: "Stephane Djantio",
             role: "Software Developer",
-            image: "/team/adrien.jpg",
+            image: "/team/adrien.webp",
             bio: "Building robust web and mobile applications with a focus on user experience."
         },
         {
             name: "Andy Nzoupet",
             role: "Software Developer",
-            image: "/team/andy.jpg",
+            image: "/team/andy.webp",
             bio: "Building robust web and mobile applications with a focus on user experience."
         },
     ];
@@ -81,7 +81,7 @@ export default function TeamPage() {
             <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-end overflow-hidden -mt-20">
                 <div className="absolute inset-0">
                     <img
-                        src="/whyChooseUs/team.png"
+                        src="/whyChooseUs/team.webp"
                         alt="Dash Tech Africa team collaboration"
                         className="w-full h-full object-cover"
                         onError={(e) => {

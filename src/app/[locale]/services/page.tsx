@@ -153,7 +153,7 @@ export default function ServicesPage() {
             <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-end overflow-hidden -mt-20">
                 <div className="absolute inset-0">
                     <img
-                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80"
+                        src="/terre.webp"
                         alt="Dash Tech Africa digital services"
                         className="w-full h-full object-cover"
                     />
@@ -206,9 +206,9 @@ export default function ServicesPage() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         {[
-                            { value: "7", label: "Service Areas" },
-                            { value: "50+", label: "Projects Delivered" },
-                            { value: "6+", label: "Countries Served" },
+                            { value: "2", label: "Service Areas" },
+                            { value: "10+", label: "Projects Delivered" },
+                            { value: "2+", label: "Countries Served" },
                             { value: "24/7", label: "Support Available" },
                         ].map((stat) => (
                             <div key={stat.label}>
@@ -301,14 +301,14 @@ export default function ServicesPage() {
                                         </div>
 
                                         {/* Stats row */}
-                                        <div className="flex flex-wrap gap-6 md:gap-8 mb-6 md:mb-8 py-4 border-y border-border/50">
+                                        {/* <div className="flex flex-wrap gap-6 md:gap-8 mb-6 md:mb-8 py-4 border-y border-border/50">
                                             {Object.entries(service.stats).map(([key, value]) => (
                                                 <div key={key}>
                                                     <p className="text-lg sm:text-xl font-semibold text-white">{value}</p>
                                                     <p className="text-white/30 text-xs capitalize mt-0.5">{key}</p>
                                                 </div>
                                             ))}
-                                        </div>
+                                        </div> */}
 
                                         {/* Action buttons */}
                                         <div className="flex flex-col sm:flex-row gap-3">

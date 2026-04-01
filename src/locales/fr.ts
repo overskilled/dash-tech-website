@@ -252,14 +252,14 @@ export default {
         },
         "caseStudies": [
             {
-                "title": "VMARIC - Intelligence Visuelle IA",
+                "title": "VMARIC - IoT Intelligent pour Maisons & Industries",
                 "client": "Multiples Clients Industriels",
                 "category": "IA & Vision par Ordinateur",
                 "description": "Système de surveillance avancé alimenté par l'IA qui se connecte aux caméras existantes pour effectuer la détection d'objets en temps réel, le comptage de personnes, la prévention des vols et la détection d'anomalies dans les environnements industriels.",
                 "testimonial": "VMARIC a détecté des schémas d'accès non autorisés que nous n'avions jamais remarqués auparavant, nous épargnant des milliers de pertes potentielles."
             },
             {
-                "title": "IoT Intelligent pour Maisons & Industries",
+                "title": "carypasse",
                 "client": "Secteur Résidentiel & Industriel",
                 "category": "IoT & Automatisation",
                 "description": "Écosystème IoT complet pour les maisons intelligentes et l'automatisation industrielle. Surveillez la consommation d'énergie, contrôlez les appareils à distance, maintenance prédictive et surveillance environnementale en temps réel.",

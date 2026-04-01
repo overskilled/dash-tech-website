@@ -157,7 +157,7 @@ export default function CareersPage() {
             <section className="relative min-h-[55vh] lg:min-h-[65vh] flex items-end overflow-hidden -mt-20">
                 <div className="absolute inset-0">
                     <img
-                        src="/carriere.png"
+                        src="/carriere.webp"
                         alt="Join Dash Tech Africa team"
                         className="w-full h-full object-cover"
                     />
@@ -232,7 +232,7 @@ export default function CareersPage() {
             {/* Culture image band */}
             <section className="relative h-[30vh] md:h-[40vh] overflow-hidden">
                 <img
-                    src="/whyChooseUs/team.png"
+                    src="/whyChooseUs/team.webp"
                     alt="Dash Tech Africa team culture"
                     className="w-full h-full object-cover"
                 />

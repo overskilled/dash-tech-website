@@ -17,32 +17,32 @@ export default function WhyChooseUsSection() {
     {
       title: t('whyChooseUs.features.africanExpertise.title'),
       description: t('whyChooseUs.features.africanExpertise.description'),
-      image: "/WhyChooseUs/ExpertiseAfricain.png",
+      image: "/WhyChooseUs/ExpertiseAfricain.webp",
     },
     {
       title: t('whyChooseUs.features.innovativeSolutions.title'),
       description: t('whyChooseUs.features.innovativeSolutions.description'),
-      image: "/WhyChooseUs/innovation1.jpg",
+      image: "/WhyChooseUs/innovation1.webp",
     },
     {
       title: t('whyChooseUs.features.dedicatedSupport.title'),
       description: t('whyChooseUs.features.dedicatedSupport.description'),
-      image: "/WhyChooseUs/supportDedie.jpg",
+      image: "/WhyChooseUs/supportDedie.webp",
     },
     {
       title: t('whyChooseUs.features.costEffective.title'),
       description: t('whyChooseUs.features.costEffective.description'),
-      image: "/WhyChooseUs/DashtechPrice.png",
+      image: "/WhyChooseUs/DashtechPrice.webp",
     },
     {
       title: t('whyChooseUs.features.provenTrackRecord.title'),
       description: t('whyChooseUs.features.provenTrackRecord.description'),
-      image: "/whyChooseUs/reussite.png",
+      image: "/whyChooseUs/reussite.webp",
     },
     {
       title: t('whyChooseUs.features.fastDeployment.title'),
       description: t('whyChooseUs.features.fastDeployment.description'),
-      image: "/WhyChooseUs/mains.png",
+      image: "/WhyChooseUs/mains.webp",
     },
   ];
 
