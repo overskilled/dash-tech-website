@@ -259,9 +259,9 @@ export default {
                 "testimonial": "VMARIC a détecté des schémas d'accès non autorisés que nous n'avions jamais remarqués auparavant, nous épargnant des milliers de pertes potentielles."
             },
             {
-                "title": "carypasse",
-                "client": "Secteur Résidentiel & Industriel",
-                "category": "IoT & Automatisation",
+                "title": "CaryPass - Système de Gestion de Patients",
+                "client": "Secteur Sanitaire",
+                "category": "Sante et bien-etre",
                 "description": "Écosystème IoT complet pour les maisons intelligentes et l'automatisation industrielle. Surveillez la consommation d'énergie, contrôlez les appareils à distance, maintenance prédictive et surveillance environnementale en temps réel.",
                 "testimonial": "Le système IoT nous a aidés à réduire les coûts énergétiques de 35% tout en améliorant la visibilité opérationnelle."
             },
@@ -280,17 +280,17 @@ export default {
                 "testimonial": "EVote a rendu nos élections organisationnelles transparentes et accessibles à tous les membres dans le monde entier."
             },
             {
-                "title": "WDMS - Gestion d'Entrepôt",
+                "title": "Zylo - Gestion d'Entrepôt",
                 "client": "Entreprises Logistiques",
                 "category": "Logiciel d'Entreprise",
                 "description": "Système avancé de gestion digitale d'entrepôt avec suivi des stocks, comptage automatisé, analytiques en temps réel et fonctionnalités d'optimisation de la chaîne d'approvisionnement.",
                 "testimonial": "WDMS Pro a transformé notre entrepôt du chaos vers une organisation complète et efficace."
             },
             {
-                "title": "FuelGuard AI - Gestion de Carburant",
-                "client": "Industrie Pétrolière",
-                "category": "IA & IoT",
-                "description": "Système intelligent de surveillance du carburant combinant capteurs IoT et IA pour détecter les fuites, suivre la consommation, prévenir le vol et optimiser la distribution de carburant sur plusieurs sites.",
+                "title": "Church O.S - Gestion de Carburant",
+                "client": "Eglises et Catedrales",
+                "category": "Foi et Religion",
+                "description": "Plateforme SaaS multi-tenant centralisant la gestion des membres, finances, événements et communication des églises. Interface web et mobile moderne avec streaming live et paiements mobile money intégrés.",
                 "testimonial": "FuelGuard AI nous a aidés à récupérer des milliers de revenus perdus suite à des vols de carburant non détectés."
             }
         ]

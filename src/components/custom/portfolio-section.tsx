@@ -12,7 +12,7 @@ const caseStudies = [
   {
     id: 1,
     image: "/portfolio/VMARIC.webp",
-    technologies: ["React", "yollow V5", "Fast Api"],
+    technologies: ["React", "yollow V5", "Fast Api", "mongo DB"],
     results: {
       "Theft Prevention": "92%",
       "Accuracy": "99.5%",
@@ -42,7 +42,7 @@ const caseStudies = [
   {
     id: 4,
     image: "/portfolio/evote.webp",
-    technologies: ["Blockchain", "React", "Nest js", "PostgreSQL"],
+    technologies: ["Blockchain", "React", "Nest js", "PostgreSQL","React Native"],
     results: {
       "Voter Turnout": "+40%",
       "Cost Savings": "75%",
@@ -52,7 +52,7 @@ const caseStudies = [
   {
     id: 5,
     image: "/portfolio/zylo.webp",
-    technologies: ["Next js", "Nest js", "postgreSQL", "Redis", "AWS"],
+    technologies: ["Next js", "Nest js", "postgreSQL", "React Native"],
     results: {
       "Accuracy": "99.8%",
       "Costs": "-45%",
