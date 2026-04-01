@@ -98,9 +98,9 @@ export function HeroSection() {
             transition={{ delay: 1, duration: 0.8 }}
           >
             {[
-              { value: "50+", label: "Projects Delivered" },
-              { value: "6+", label: "Countries Served" },
-              { value: "10+", label: "Years Experience" },
+              { value: "10+", label: "Projects Delivered" },
+              { value: "2+", label: "Countries Served" },
+              { value: "3+", label: "Years Experience" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl sm:text-3xl font-semibold text-white">{stat.value}</p>

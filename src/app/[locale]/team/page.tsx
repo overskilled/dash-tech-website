@@ -62,7 +62,7 @@ export default function TeamPage() {
         {
             name: "Stephane Djantio",
             role: "Software Developer",
-            image: "/team/adrien.png",
+            image: "/team/adrien.jpg",
             bio: "Building robust web and mobile applications with a focus on user experience."
         },
         {

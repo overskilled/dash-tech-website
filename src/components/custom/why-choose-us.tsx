@@ -22,7 +22,7 @@ export default function WhyChooseUsSection() {
     {
       title: t('whyChooseUs.features.innovativeSolutions.title'),
       description: t('whyChooseUs.features.innovativeSolutions.description'),
-      image: "/WhyChooseUs/Innovation1.jpg",
+      image: "/WhyChooseUs/innovation1.jpg",
     },
     {
       title: t('whyChooseUs.features.dedicatedSupport.title'),
