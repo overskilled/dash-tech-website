@@ -18,7 +18,7 @@ export default function AboutPage() {
         {
             title: "Our Team",
             description: "A diverse team of experienced developers, designers, and strategists passionate about transforming Africa's digital landscape.",
-            image: "/whyChooseUs/team.png",
+            image: "/whyChooseUs/team.webp",
         },
         {
             title: "Our Excellence",
@@ -38,7 +38,7 @@ export default function AboutPage() {
         {
             title: "Made in Africa",
             description: "Proudly African, building solutions tailored for African markets while meeting global standards.",
-            image: "/madeInAfrica.png",
+            image: "/madeInAfrica.webp",
         }
     ];
 
