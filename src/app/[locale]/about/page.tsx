@@ -38,7 +38,7 @@ export default function AboutPage() {
         {
             title: "Made in Africa",
             description: "Proudly African, building solutions tailored for African markets while meeting global standards.",
-            image: "/madeinAfrica.webp",
+            image: "/madeInAfrica.webp",
         }
     ];
 
