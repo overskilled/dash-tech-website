@@ -237,7 +237,7 @@ export default function PortfolioSection() {
 
         {/* Project thumbnails strip */}
         <motion.div
-          className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-3"
+          className="mt-12 flex justify-center gap-3 *:max-w-60"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
