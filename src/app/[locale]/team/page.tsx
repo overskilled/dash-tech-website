@@ -81,7 +81,7 @@ export default function TeamPage() {
             <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-end overflow-hidden -mt-20">
                 <div className="absolute inset-0">
                     <img
-                        src="/whyChooseUs/team.webp"
+                        src="/whyChooseUs/equipe.webp"
                         alt="Dash Tech Africa team collaboration"
                         className="w-full h-full object-cover"
                         onError={(e) => {

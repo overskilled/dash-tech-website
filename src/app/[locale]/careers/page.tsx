@@ -232,7 +232,7 @@ export default function CareersPage() {
             {/* Culture image band */}
             <section className="relative h-[30vh] md:h-[40vh] overflow-hidden">
                 <img
-                    src="/whyChooseUs/team.webp"
+                    src="/togeder.webp"
                     alt="Dash Tech Africa team culture"
                     className="w-full h-full object-cover"
                 />
