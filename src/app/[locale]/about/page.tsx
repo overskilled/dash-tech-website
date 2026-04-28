@@ -109,7 +109,7 @@ export default function AboutPage() {
                         {/* Image */}
                         <div className="relative aspect-[6/3] rounded-xl overflow-hidden">
                             <img
-                                src="/storie.png"
+                                src="/storie.webp"
                                 alt="Dash Tech Africa team at work"
                                 className="w-full h-full object-fit"
                             />
