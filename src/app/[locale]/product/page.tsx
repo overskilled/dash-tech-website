@@ -58,21 +58,21 @@ export default function ProductPage() {
             useCases: ["Security & surveillance", "Quality control inspection", "Document digitization", "Traffic & crowd analysis"],
             stats: { projects: "12+", clients: "8+", accuracy: "98.5%" }
         },
-        {
-            id: 3,
-            title: t('products.items.iot.title'),
-            description: t('products.items.iot.description'),
-            image: "/portfolio/allo-Tech.webp",
-            link: "https://allotechafrica.com/",
-            features: [
-                t('products.items.iot.features.feature1'),
-                t('products.items.iot.features.feature2'),
-                t('products.items.iot.features.feature3'),
-                t('products.items.iot.features.feature4')
-            ],
-            useCases: ["Factory automation", "Environmental monitoring", "Predictive maintenance", "Energy management"],
-            stats: { projects: "10+", devices: "500+", uptime: "99.7%" }
-        },
+        // {
+        //     id: 3,
+        //     title: t('products.items.iot.title'),
+        //     description: t('products.items.iot.description'),
+        //     image: "/portfolio/allo-Tech.webp",
+        //     link: "https://allotechafrica.com/",
+        //     features: [
+        //         t('products.items.iot.features.feature1'),
+        //         t('products.items.iot.features.feature2'),
+        //         t('products.items.iot.features.feature3'),
+        //         t('products.items.iot.features.feature4')
+        //     ],
+        //     useCases: ["Factory automation", "Environmental monitoring", "Predictive maintenance", "Energy management"],
+        //     stats: { projects: "10+", devices: "500+", uptime: "99.7%" }
+        // },
         {
             id: 4,
             title: t('products.items.warehouse.title'),
@@ -90,49 +90,34 @@ export default function ProductPage() {
         },
         // {
         //     id: 5,
-        //     title: t('products.items.fuel.title'),
-        //     description: t('products.items.fuel.description'),
-        //     image: "/portfolio/fuelguard.webp",
-        //     link: "https://zylo-platform.cloud/",
+        //     title: t('products.items.smart.title'),
+        //     description: t('products.items.smart.description'),
+        //     image: "/portfolio/carepass.webp",
+        //     link: "https://carepass.zylo-platform.cloud/",
         //     features: [
-        //         t('products.items.fuel.features.feature1'),
-        //         t('products.items.fuel.features.feature2'),
-        //         t('products.items.fuel.features.feature3'),
-        //         t('products.items.fuel.features.feature4')
+        //         t('products.items.smart.features.feature1'),
+        //         t('products.items.smart.features.feature2'),
+        //         t('products.items.smart.features.feature3'),
+        //         t('products.items.smart.features.feature4')
         //     ],
-        //     useCases: ["Fuel depot management", "Fleet fuel tracking", "Leak detection & prevention", "Distribution optimization"],
-        //     stats: { projects: "6+", savings: "35%", monitored: "200+" }
+        //     useCases: ["Hôpitaux & cliniques", "Laboratoires d'analyses", "Cabinets médicaux"],
+        //     stats: { portals: "7", roles: "6+", payments: "Mobile Money" }
         // },
-        {
-            id: 5,
-            title: t('products.items.smart.title'),
-            description: t('products.items.smart.description'),
-            image: "/portfolio/carepass.webp",
-            link: "https://carepass.zylo-platform.cloud/",
-            features: [
-                t('products.items.smart.features.feature1'),
-                t('products.items.smart.features.feature2'),
-                t('products.items.smart.features.feature3'),
-                t('products.items.smart.features.feature4')
-            ],
-            useCases: ["Hôpitaux & cliniques", "Laboratoires d'analyses", "Cabinets médicaux"],
-            stats: { portals: "7", roles: "6+", payments: "Mobile Money" }
-        },
-        {
-            id: 6,
-            title: t('products.items.cybersecurity.title'),
-            description: t('products.items.cybersecurity.description'),
-            image: "/portfolio/churchOS.webp",
-            link: "https://carepass.zylo-platform.cloud/",
-            features: [
-                t('products.items.cybersecurity.features.feature1'),
-                t('products.items.cybersecurity.features.feature2'),
-                t('products.items.cybersecurity.features.feature3'),
-                t('products.items.cybersecurity.features.feature4')
-            ],
-            useCases: ["Églises & paroisses", "Organisations multi-branches", "Communautés francophones", "Gestion administrative religieuse"],
-            stats: { tenants: "Multi", platforms: "Web & Mobile", payments: "Mobile Money" }
-        }
+        // {
+        //     id: 6,
+        //     title: t('products.items.cybersecurity.title'),
+        //     description: t('products.items.cybersecurity.description'),
+        //     image: "/portfolio/churchOS.webp",
+        //     link: "https://carepass.zylo-platform.cloud/",
+        //     features: [
+        //         t('products.items.cybersecurity.features.feature1'),
+        //         t('products.items.cybersecurity.features.feature2'),
+        //         t('products.items.cybersecurity.features.feature3'),
+        //         t('products.items.cybersecurity.features.feature4')
+        //     ],
+        //     useCases: ["Églises & paroisses", "Organisations multi-branches", "Communautés francophones", "Gestion administrative religieuse"],
+        //     stats: { tenants: "Multi", platforms: "Web & Mobile", payments: "Mobile Money" }
+        // }
     ];
 
     const handleDownloadGuide = useCallback(async () => {
