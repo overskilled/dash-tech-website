@@ -18,7 +18,7 @@ export default function AboutPage() {
         {
             title: "Our Team",
             description: "A diverse team of experienced developers, designers, and strategists passionate about transforming Africa's digital landscape.",
-            image: "/whyChooseUs/equipe.webp",
+            image: "/Iot.webp",
         },
         {
             title: "Our Excellence",
