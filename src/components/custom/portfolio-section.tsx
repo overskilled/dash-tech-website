@@ -19,26 +19,26 @@ const caseStudies = [
       "False Alarms Reduced": "85%"
     },
   },
-  {
-    id: 2,
-    image: "/portfolio/carepass.webp",
-    technologies: ["Next js", "React Native", "Nest js", "postgreSQL"],
-    results: {
-      "Energy Savings": "35%",
-      "Maintenance Cost": "-60%",
-      "Efficiency": "+45%"
-    },
-  },
-  {
-    id: 3,
-    image: "/portfolio/allo-Tech.webp",
-    technologies: ["React Native", "PostgreSQL", "Google Maps API"],
-    results: {
-      "Earnings": "+65%",
-      "Satisfaction": "4.8/5",
-      "Bookings": "+80%"
-    },
-  },
+  // {
+  //   id: 2,
+  //   image: "/portfolio/carepass.webp",
+  //   technologies: ["Next js", "React Native", "Nest js", "postgreSQL"],
+  //   results: {
+  //     "Energy Savings": "35%",
+  //     "Maintenance Cost": "-60%",
+  //     "Efficiency": "+45%"
+  //   },
+  // },
+  // {
+  //   id: 3,
+  //   image: "/portfolio/allo-Tech.webp",
+  //   technologies: ["React Native", "PostgreSQL", "Google Maps API"],
+  //   results: {
+  //     "Earnings": "+65%",
+  //     "Satisfaction": "4.8/5",
+  //     "Bookings": "+80%"
+  //   },
+  // },
   {
     id: 4,
     image: "/portfolio/evote.webp",
@@ -59,16 +59,16 @@ const caseStudies = [
       "Speed": "+70%"
     },
   },
-  {
-    id: 6,
-    image: "/portfolio/churchOS.webp",
-    technologies: ["React js", "React Native","Nest js", "postgreSQL"],
-    results: {
-      "Theft Prevention": "95%",
-      "Fuel Savings": "25%",
-      "Leak Detection": "100%"
-    },
-  }
+  // {
+  //   id: 6,
+  //   image: "/portfolio/churchOS.webp",
+  //   technologies: ["React js", "React Native","Nest js", "postgreSQL"],
+  //   results: {
+  //     "Theft Prevention": "95%",
+  //     "Fuel Savings": "25%",
+  //     "Leak Detection": "100%"
+  //   },
+  // }
 ];
 
 const caseStudyKeys = {
