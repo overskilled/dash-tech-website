@@ -37,7 +37,7 @@ export default function WhyChooseUsSection() {
     {
       title: t('whyChooseUs.features.provenTrackRecord.title'),
       description: t('whyChooseUs.features.provenTrackRecord.description'),
-      image: "/whyChooseUs/equipe.webp",
+      image: "/Haa.webp",
     },
     {
       title: t('whyChooseUs.features.fastDeployment.title'),
